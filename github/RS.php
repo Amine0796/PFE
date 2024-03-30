@@ -41,19 +41,7 @@ if (!isset($_SESSION["user"])) {
                             <span class="nav__name">Travail</span>
                         </a>
 
-                        <a  class="nav__link" >
-                            <img src="../images/formation.png" alt="">
-                            <!-- <ion-icon name="folder-outline" class="nav__icon"></ion-icon> -->
-                            <span class="nav__name">Formation</span>
-
-                            <!-- <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
-
-                            <ul class="collapse__menu">
-                                <a href="#" class="collapse__sublink">Data</a>
-                                <a href="#" class="collapse__sublink">Group</a>
-                                <a href="#" class="collapse__sublink">Members</a>
-                            </ul> -->
-                        </a>
+                        
 
                         <a href="#" class="nav__link">
                             <img src="../images/etranger.png" alt="">
@@ -92,11 +80,11 @@ if (!isset($_SESSION["user"])) {
             </nav>
         </div>
 
-        <?php
-        require_once "travail.php";
-        ?>
+     
 
-        
+        <div class="sonatrach-img">
+            <img src="../images/sonatrach-logo-vector.svg" alt="" class="sonatrach-logo-vector">
+        </div>
         
         <!-- ===== IONICONS ===== -->
         <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>

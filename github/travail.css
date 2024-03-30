@@ -1,8 +1,8 @@
 *{
     margin: 0;
     padding: 0;
-
 }
+
 
 /* 
 .div1 {
@@ -25,12 +25,10 @@
     flex-wrap: wrap;
     justify-content: space-between; 
     align-items: baseline;
-    margin-left: 300px;
-
     
 }
 .aller{
-    background-color: aqua;
+    background-color:aquamarine;
     gap: 10px;
     padding: 20px;
     
@@ -38,7 +36,6 @@
     flex-wrap: wrap;
     /* justify-content: space-between; */
     align-items: baseline;
-    margin-left: 300px;
 
 }
 .retour{
@@ -50,7 +47,6 @@
     flex-wrap: wrap;
     /* justify-content: space-between; */
     align-items: baseline;
-    margin-left: 300px;
 }
 
 input{

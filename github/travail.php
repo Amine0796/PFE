@@ -216,8 +216,7 @@
             </select><br><br>
         </label>
 
-        <label for="number2">Number Input 2:</label>
-        <input type="number" id="number2" name="number2"><br><br>
+
 
         <!-- Date Inputs -->
         

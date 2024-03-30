@@ -35,24 +35,12 @@ if (!isset($_SESSION["user"])) {
                             <!-- <ion-icon name="home-outline" class="nav__icon"></ion-icon> -->
                             <span class="nav__name" >Mise a jour</span>
                         </a>
-                        <a href="#" class="nav__link" id="Travail">
-                            <img src="../images/travail.png" alt="">
-                            <!-- <ion-icon name="chatbubbles-outline" class="nav__icon"></ion-icon> -->
-                            <span class="nav__name">Travail</span>
-                        </a>
+                        
 
                         <a  class="nav__link" >
                             <img src="../images/formation.png" alt="">
                             <!-- <ion-icon name="folder-outline" class="nav__icon"></ion-icon> -->
                             <span class="nav__name">Formation</span>
-
-                            <!-- <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
-
-                            <ul class="collapse__menu">
-                                <a href="#" class="collapse__sublink">Data</a>
-                                <a href="#" class="collapse__sublink">Group</a>
-                                <a href="#" class="collapse__sublink">Members</a>
-                            </ul> -->
                         </a>
 
                         <a href="#" class="nav__link">
@@ -60,24 +48,8 @@ if (!isset($_SESSION["user"])) {
                             
                             <span class="nav__name" >Etranger</span>
                         </a>
-                        <div class="nav__link collapse">
-                            <img src="../images/taxi.png" alt="">
-                            <!-- <ion-icon name="people-outline" class="nav__icon"></ion-icon> -->
-                            <span class="nav__name">Courses</span>
-
-                            <!-- <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon> -->
-
-                            <!-- <ul class="collapse__menu">
-                                <a href="#" class="collapse__sublink">Data</a>
-                                <a href="#" class="collapse__sublink">Group</a>
-                                <a href="#" class="collapse__sublink">Members</a>
-                            </ul> -->
-                        </div>
-                        <a href="#" class="nav__link dashboard-item">
-                            <img src="../images/maintenance.png" alt="">
-                            <!-- <ion-icon name="settings-outline" class="nav__icon"></ion-icon> -->
-                            <span class="nav__name">Produits</span>
-                        </a>
+                        
+                       
                         <a href="#" class="nav__link dashboard-item">
                             <img src="../images/schedule.png" alt="">
                             <!-- <ion-icon name="pie-chart-outline" class="nav__icon"></ion-icon> -->
@@ -92,10 +64,9 @@ if (!isset($_SESSION["user"])) {
             </nav>
         </div>
 
-        <?php
-        require_once "travail.php";
-        ?>
-
+        <div class="sonatrach-img">
+            <img src="../images/sonatrach-logo-vector.svg" alt="" class="sonatrach-logo-vector">
+        </div>
         
         
         <!-- ===== IONICONS ===== -->

@@ -45,48 +45,6 @@ const showMenu = (toggleId, navbarId, bodyId)=>{
 
 
 
-/*open item of sidbar*/   
-
-// Select the div element
-// Select the div element
-let myDiv = document.getElementById("content-area");
-
-// Variable to track the state of the content
-let isVisible = true;
-
-let maj = document.getElementById("maj");
-
-// First event listener to log "hii"
-maj.addEventListener("click", function() {
-    console.log("hello");
-});
-
-// Second event listener to toggle visibility
-maj.addEventListener("click", function() {
-    if (isVisible) {
-        // Hide the content
-        myDiv.style.display = "none";
-    } else {
-        // Show the content
-        myDiv.style.display = "block";
-    }
-    // Toggle the state
-    isVisible = !isVisible;
-});
-
-
-// $(document).ready(function() {
-//     // Add click event listener to sidebar items
-//     $('#maj').click(function() {
-//         // Get the data-file attribute value which contains the HTML file to load
-//         let fileToLoad = $(this).data('file');
-//         console.log('hello');
-        
-//         // Load the HTML file into the content area
-//         $('#content-area').load(fileToLoad);
-//     });
-// });
-
 
 /*******************OPENNNN WINDOWWWWW************************* */ 
 
@@ -111,6 +69,7 @@ xhr.onload = function() {
     // Ouvrir une nouvelle fenêtre avec le contenu HTML spécifié
   var newWindow = window.open("", "_blank", "width=1000,height=1000");
   newWindow.document.write(contenuHTML);
+
   } else {
     // En cas d'erreur, afficher un message d'erreur
     console.error('Impossible de charger le fichier HTML. Statut de la requête : ' + xhr.status);
