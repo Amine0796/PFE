@@ -86,9 +86,9 @@ if (!isset($_SESSION["user"])) {
 
      
 
-        <!-- <div class="sonatrach-img">
-            <img src="../images/sonatrach-logo-vector.svg" alt="" class="sonatrach-logo-vector">
-        </div> -->
+        <div class="sonatrach-img">
+            <img src="../images/sonatrach-img.jpg" alt="" class="bg-dlab">
+        </div>
         
         <!-- ===== IONICONS ===== -->
         <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
@@ -96,7 +96,7 @@ if (!isset($_SESSION["user"])) {
         
         <!-- ===== MAIN JS ===== -->
         <script src="showMenu.js"></script>
-        <script src="travail.js"></script>
+        <script src="travail1.js"></script>
       
 
     </body>

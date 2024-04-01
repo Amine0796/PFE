@@ -1,3 +1,14 @@
+<?php
+// window.php
+session_start();
+
+// Accéder à la variable de session
+$username = $_SESSION["username"];
+
+// Utiliser la variable
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +22,7 @@
 
         <div class="div1">
             <label for="text1">
-                Direction 
+                Directionn
                 <input type="text" id="text1" name="text1"><br><br>
             </label>
             
@@ -24,7 +35,7 @@
     
             <label for="text3">
                 Demande Effuctuee Par 
-                <input type="text" id="text3" name="text3"><br><br>
+                <input type="text" id="text3" name="text3" value="<?php echo $username; ?>"><br><br>
             </label>
             
     
