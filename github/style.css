@@ -167,9 +167,8 @@ img{
     list-style-type: none;
 }
 
-.logout-btn{
-  background: #FFE4B5;
-  display: none;
+.lougout-btn{
+  background-color: blue;
 }
 
 
@@ -177,7 +176,7 @@ img{
 
 
 /* transparentttttt imaggggggge */
-
+/* 
 .sonatrach-logo-vector{
 height: 100vh;
 width: 100%;
@@ -189,4 +188,4 @@ background-color: rgb(231, 224, 230);
   height: 100%;
   width: 100%;
   
-}
+} */

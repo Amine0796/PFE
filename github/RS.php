@@ -30,7 +30,7 @@ if (!isset($_SESSION["user"])) {
                 
                     </div>
                     <div class="nav__list">
-                        <a href="#" class="nav__link active " id="maj" >
+                        <a href="maj.php" class="nav__link active " id="maj" >
                             <img src="../images/file.png" alt="">
                             <!-- <ion-icon name="home-outline" class="nav__icon"></ion-icon> -->
                             <span class="nav__name" >Mise a jour</span>
@@ -71,7 +71,11 @@ if (!isset($_SESSION["user"])) {
                             <!-- <ion-icon name="pie-chart-outline" class="nav__icon"></ion-icon> -->
                             <span class="nav__name">Suivi des demandes</span>
                         </a>
-                        <a href="logout.php" class="btn btn-danger" class="logout-btn">Logout</a>
+                        <a href="logout.php" class="nav__link">
+                            <img src="../images/se-deconnecter.png" alt="">
+                            <!-- <ion-icon name="pie-chart-outline" class="nav__icon"></ion-icon> -->
+                            <span class="nav__name">Logout</span>
+                        </a>
 
                     </div>
                 </div>
@@ -91,6 +95,7 @@ if (!isset($_SESSION["user"])) {
         <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
         
         <!-- ===== MAIN JS ===== -->
-        <script src="main.js"></script>
+        <script src="showMenu.js"></script>
+        <!-- <script src="travail.js"></script> -->
     </body>
 </html>
