@@ -1,10 +1,11 @@
 <?php
 session_start();
 if (isset($_SESSION["user"])) {
-   header("Location: index.php");
+   header("Location: chef-formation.php");
    exit();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,13 +52,13 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
       if ($user) {
         // Verify password using password hashing
         if ($username == $user["Username"] && $password == $user["Password"]) {
-          if ($user["poste"] == "chef formation") {
+          if ($user["Poste"] == "chef-formation") {
             $_SESSION["user"] = "yes";
 
           header("Location: chef-formation.php");
           exit();
           }
-          if ($user["poste"] == "RS") {
+          if ($user["Poste"] == "RS") {
             $_SESSION["user"] = "yes";
 
           header("Location: RS.php");

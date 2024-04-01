@@ -46,6 +46,4 @@
         </div>
     </div>  
 </body>
-<script src="showMenu.js"></script>
-<script src="showMenu.js"></script>
 </html>

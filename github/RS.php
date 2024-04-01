@@ -12,7 +12,7 @@ if (!isset($_SESSION["user"])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- ===== CSS ===== -->
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style4.css">
         <!--      bootstrap  -->
         <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> -->
 
@@ -71,7 +71,7 @@ if (!isset($_SESSION["user"])) {
                             <!-- <ion-icon name="pie-chart-outline" class="nav__icon"></ion-icon> -->
                             <span class="nav__name">Suivi des demandes</span>
                         </a>
-                        <a href="logout.php" class="nav__link">
+                        <a href="logout.php" class="nav__link logout-btn">
                             <img src="../images/se-deconnecter.png" alt="">
                             <!-- <ion-icon name="pie-chart-outline" class="nav__icon"></ion-icon> -->
                             <span class="nav__name">Logout</span>
@@ -86,9 +86,9 @@ if (!isset($_SESSION["user"])) {
 
      
 
-        <div class="sonatrach-img">
+        <!-- <div class="sonatrach-img">
             <img src="../images/sonatrach-logo-vector.svg" alt="" class="sonatrach-logo-vector">
-        </div>
+        </div> -->
         
         <!-- ===== IONICONS ===== -->
         <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
@@ -96,6 +96,8 @@ if (!isset($_SESSION["user"])) {
         
         <!-- ===== MAIN JS ===== -->
         <script src="showMenu.js"></script>
-        <!-- <script src="travail.js"></script> -->
+        <script src="travail.js"></script>
+      
+
     </body>
 </html>
