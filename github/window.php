@@ -1,14 +1,3 @@
-<?php
-// window.php
-session_start();
-
-// Accéder à la variable de session
-$username = $_SESSION["username"];
-
-// Utiliser la variable
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

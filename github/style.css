@@ -69,6 +69,7 @@ a{
   justify-content: space-between;
   /* width: 250px; */
   overflow: hidden;
+  
 }
 .nav__brand{
   display: grid;
@@ -87,6 +88,7 @@ a{
   font-weight: 800;
 }
 
+
 .nav__link{
   display: grid;
   grid-template-columns: max-content max-content;
@@ -98,7 +100,7 @@ a{
   margin-bottom: 1rem;
   transition: .3s;
   cursor: pointer;
-}
+  }
 .nav__link:hover{
   background-color: var(--first-color);
 }
@@ -184,8 +186,12 @@ width: 100%;
 background-color: rgb(126, 52, 115);
 } 
  .sonatrach-img{
+  position: absolute;
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
+}
+.content{
+  position: relative;
 }

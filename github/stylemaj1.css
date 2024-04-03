@@ -7,13 +7,11 @@
   
 }
 
-body {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    font-family: 'Roboto', sans-serif;
-    background-color: #ffe1b5;
+
+#table-maj{
+    margin-left: 100px;
 }
+
 table {
     width: 100%;
     border-collapse: collapse;

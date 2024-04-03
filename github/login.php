@@ -6,13 +6,7 @@ if (isset($_SESSION["user"])) {
 }
 ?>
 
-<?php
-// login.php
-session_start();
 
-// Définir la variable de session
-$_SESSION['username'] = $user["Username"];
-?>
 
 <!DOCTYPE html>
 <html lang="en">
