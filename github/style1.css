@@ -120,6 +120,7 @@ a{
 .body-pd{
   padding: 0rem 0 0 10rem;
   
+  
 
   /* padding: 2rem 0 0 16rem; */
 }
@@ -186,12 +187,12 @@ width: 100%;
 background-color: rgb(126, 52, 115);
 } 
  .sonatrach-img{
-  position: absolute;
+  
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
 }
 .content{
-  position: relative;
+  margin-left: 92px;
 }
