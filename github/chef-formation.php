@@ -220,10 +220,13 @@ if(isset($_POST['valider-formation'])){
     
     $result=mysqli_query($conn,$sql);
     if($result){
-        echo "<div class='inserted-successfully'>Data inserted succesfully !</div>";
+        echo "<script>alert('Data inserted successfully!');</script>";
+        echo "<script>window.location.replace('RS.php');</script>";
+        exit();
     }else{
-        echo "Something went wrong";
-        
+        echo "<script>alert('Something went wrong');</script>";
+        echo "<script>window.location.replace('RS.php');</script>";
+        exit();
     }
 
 }
