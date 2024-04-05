@@ -1,8 +1,8 @@
 <?php
 session_start();
-if (!isset($_SESSION["user"])) {
-   header("Location: login.php");
-}
+// if (!isset($_SESSION["user"])) {
+//    header("Location: login.php");
+// }
 ?>
 <?php
 include "database.php"
@@ -15,8 +15,8 @@ include "database.php"
 
         <!-- ===== CSS ===== -->
         <link rel="stylesheet" href="formation.css">
-        <link rel="stylesheet" href="style1.css">
-        <link rel="stylesheet" href="stylemaj1.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="stylemaj.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <!--      bootstrap  -->
         <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> -->
@@ -188,6 +188,7 @@ if(isset($_POST['valider-formation'])){
     $Departement=$_POST['departement-formation'];
     $Demandeur=$_POST['demande-dffuctuee-par-formation']; 
     $CompteAnalytique=$_POST['compte-analytique-formation']; 
+    $NumDemande=$_POST['num-demande-formation'];
     $DateDemande=$_POST['date-demande-formation'];
     $Destinataire=$_POST['destinataire-formation']; 
     $DateDu=$_POST['du-formation'];
@@ -214,14 +215,15 @@ if(isset($_POST['valider-formation'])){
     $TypeAcheminementMateriel=$_POST['type-acheminement-du-materiel-formation'] ;
     $Observation=$_POST['observation-formation'] ;
 
-    $sql = "INSERT INTO demande_mission (Direction, Departement, Demandeur, CompteAnalytique, DateDemande, Destinataire, DateDu, DateAu, RegionDeroulementMission, LieuMission, Itineraire, ObjetMission, NomMissionnaires, MoyenTransportAller, MoyenTransportRetour, DemandeHebergement, DemandeVehiculeServiceAller, DemandeVehiculeServiceRetour, PointDepart, DemandeHebergementAller, NombreNuitesTrajetAller, PointRetour, DemandeHebergementRetour, NombreNuitesTrajetRetour, BesoinAutorisationTransportProduitsDangereux, TypeProduits, DemandeAcheminementMateriel, TypeAcheminementMateriel, Observation) 
-    VALUES ('$Direction', '$Departement', '$Demandeur', '$CompteAnalytique', '$DateDemande', '$Destinataire', '$DateDu', '$DateAu', '$RegionDeroulementMission', '$LieuMission', '$Itineraire', '$ObjetMission', '$NomMissionnaires', '$MoyenTransportAller', '$MoyenTransportRetour', '$DemandeHebergement', '$DemandeVehiculeServiceAller', '$DemandeVehiculeServiceRetour', '$PointDepart', '$DemandeHebergementAller', '$NombreNuitesTrajetAller', '$PointRetour', '$DemandeHebergementRetour', '$NombreNuitesTrajetRetour', '$BesoinAutorisationTransportProduitsDangereux', '$TypeProduits', '$DemandeAcheminementMateriel', '$TypeAcheminementMateriel', '$Observation')";
+    $sql = "INSERT INTO demande_mission (Direction, Departement, Demandeur, CompteAnalytique, NumDemande, DateDemande, Destinataire, DateDu, DateAu, RegionDeroulementMission, LieuMission, Itineraire, ObjetMission, NomMissionnaires, MoyenTransportAller, MoyenTransportRetour, DemandeHebergement, DemandeVehiculeServiceAller, DemandeVehiculeServiceRetour, PointDepart, DemandeHebergementAller, NombreNuitesTrajetAller, PointRetour, DemandeHebergementRetour, NombreNuitesTrajetRetour, BesoinAutorisationTransportProduitsDangereux, TypeProduits, DemandeAcheminementMateriel, TypeAcheminementMateriel, Observation) 
+    VALUES ('$Direction', '$Departement', '$Demandeur', '$CompteAnalytique','$NumDemande', '$DateDemande', '$Destinataire', '$DateDu', '$DateAu', '$RegionDeroulementMission', '$LieuMission', '$Itineraire', '$ObjetMission', '$NomMissionnaires', '$MoyenTransportAller', '$MoyenTransportRetour', '$DemandeHebergement', '$DemandeVehiculeServiceAller', '$DemandeVehiculeServiceRetour', '$PointDepart', '$DemandeHebergementAller', '$NombreNuitesTrajetAller', '$PointRetour', '$DemandeHebergementRetour', '$NombreNuitesTrajetRetour', '$BesoinAutorisationTransportProduitsDangereux', '$TypeProduits', '$DemandeAcheminementMateriel', '$TypeAcheminementMateriel', '$Observation')";
     
     $result=mysqli_query($conn,$sql);
     if($result){
-        echo "Data inserted succesfully !";
+        echo "<div class='inserted-successfully'>Data inserted succesfully !</div>";
     }else{
-        die("Something went wrong;");
+        echo "Something went wrong";
+        
     }
 
 }
@@ -244,7 +246,7 @@ if(isset($_POST['valider-formation'])){
 
                                             <label for="text3">
                                                 Demande Effuctuee Par 
-                                                <input type="text"  name="demande-dffuctuee-par-formation"><br><br>
+                                                <input type="text" name="demande-dffuctuee-par-formation" value="<?php echo $_SESSION["username"]; ?>"><br><br>
                                             </label>
                                             
 
@@ -253,6 +255,13 @@ if(isset($_POST['valider-formation'])){
                                                 <input type="text" id="text4" name="compte-analytique-formation"><br><br>
                                             </label>
                                             
+
+                                            <label>
+                                                Num Demande 
+                                                <input type="text" name="num-demande-formation" required><br><br>
+                                            </label>
+
+
 
                                             <label for="date1">
                                                 Date Demande 
@@ -333,7 +342,7 @@ if(isset($_POST['valider-formation'])){
                                             <label >
                                                 Demande hebergement
                                                 <select  name="demande-hebergement-formation">
-                                                    <option></option>
+                                                    
                                                     <option>Oui</option> 
                                                     <option>Non</option>
                                                 </select><br><br>
@@ -346,7 +355,7 @@ if(isset($_POST['valider-formation'])){
                                             <label for="text10">
                                                 Demande Vehicule service aller 
                                                 <select  name="demande-vehicule-service-aller-formation">
-                                                    <option></option>
+                                                    
                                                     <option>Oui</option> 
                                                     <option>Non</option>
                                                 </select><br><br>
@@ -362,7 +371,7 @@ if(isset($_POST['valider-formation'])){
                                             <label for="text11">
                                                 Demande hebergement aller
                                                 <select  name="demande-hebergement-aller-formation">
-                                                    <option></option>
+                                                    
                                                     <option>Oui</option> 
                                                     <option>Non</option>
                                                 </select><br><br>
@@ -383,7 +392,7 @@ if(isset($_POST['valider-formation'])){
                                             <label for="text10">
                                                 Demande Vehicule service Retour 
                                                 <select  name="demande-vehicule-service-retour-formation">
-                                                    <option></option>
+                                                    
                                                     <option>Oui</option> 
                                                     <option>Non</option>
                                                 </select><br><br>
@@ -399,7 +408,7 @@ if(isset($_POST['valider-formation'])){
                                             <label for="text11">
                                                 Demande hebergement Retour
                                                 <select  name="demande-hebergement-retour-formation">
-                                                    <option></option>
+                                                    
                                                     <option>Oui</option> 
                                                     <option>Non</option>
                                                 </select><br><br>
@@ -420,7 +429,7 @@ if(isset($_POST['valider-formation'])){
                                             <label for="text11">
                                                 Besoin Autorisation Transport Produits Dangereux
                                                 <select  name="besoin-autorisation-transport-produits-dangereux-formation">
-                                                    <option></option>
+                                                    
                                                     <option>Oui</option> 
                                                     <option>Non</option>
                                                 </select><br><br>
@@ -434,7 +443,7 @@ if(isset($_POST['valider-formation'])){
                                             <label for="text11">
                                                 Demande Acheminement du materiel
                                                 <select  name="demande-acheminement-du-materiel-formation">
-                                                    <option></option>
+                                                    
                                                     <option>Oui</option> 
                                                     <option>Non</option>
                                                 </select><br><br>
@@ -515,6 +524,6 @@ if(isset($_POST['valider-formation'])){
         
         <!-- ===== MAIN JS ===== -->
         <script src="showMenu.js"></script>
-        <script src="affiche-contenu1.js"></script>
+        <script src="affiche-contenu-formation1.js"></script>
     </body>
 </html>

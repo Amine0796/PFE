@@ -28,7 +28,8 @@
 }
 body{
   position: relative;
-  margin: 0;
+  /* margin: 0; */
+  margin-left: 92px;
   /* padding: 2rem 0 0 6.75rem; */
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
@@ -119,7 +120,7 @@ a{
 /*Add padding body*/
 .body-pd{
   padding: 0rem 0 0 10rem;
-  
+  margin-left: 80px;
   
 
   /* padding: 2rem 0 0 16rem; */
@@ -168,9 +169,7 @@ img{
     text-align: center;
     gap: 30px;
 }
-.lii{
-    list-style-type: none;
-}
+
 
 .logout-btn{
 background-color: red;}
@@ -187,12 +186,8 @@ width: 100%;
 background-color: rgb(126, 52, 115);
 } 
  .sonatrach-img{
-  
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
-}
-.content{
-  margin-left: 92px;
 }

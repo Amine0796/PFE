@@ -1,14 +1,19 @@
 let tableMaj = document.getElementById("table-maj");
 tableMaj.style.display = "none";
 
-let tableFormation = document.getElementById("table-formation")
-tableFormation.style.display = "none"
 
 let tableEtranger = document.getElementById("table-etranger")
 tableEtranger.style.display = "none"
 
 let tableSuivi = document.getElementById("table-suivi")
 tableSuivi.style.display = "none"
+
+let tableTravail = document.getElementById("table-travail")
+tableTravail.style.display = "none"
+
+let tableCourse = document.getElementById("table-course")
+tableCourse.style.display = "none"
+
 
 let contenus = document.querySelectorAll('.content');
 let sonatrachImg = document.getElementById("sonatrach-img"); // Define sonatrachImg
@@ -44,10 +49,7 @@ maj.addEventListener("click", function() {
     afficherContenu("table-maj");
 });
 
-let formation = document.getElementById("formation");
-formation.addEventListener("click", function() {
-    afficherContenu("table-formation");
-});
+
 
 let etranger = document.getElementById("etranger");
 etranger.addEventListener("click", function() {
@@ -59,5 +61,14 @@ suivi.addEventListener("click", function() {
     afficherContenu("table-suivi");
 });
 
+let travail = document.getElementById("travail");
+travail.addEventListener("click", function() {
+    afficherContenu("table-travail");
+});
+
+let course = document.getElementById("course");
+course.addEventListener("click", function() {
+    afficherContenu("table-course");
+});
 
 
