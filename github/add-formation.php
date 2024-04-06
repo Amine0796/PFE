@@ -1,3 +1,6 @@
+<?php
+require_once "add-formation.php";
+?>
 <div class="content" id="table-formation">
     <form method="post">
     <p class="header-text">Ajouter une demande de formation</p>
@@ -24,7 +27,7 @@
 
             <label for="datenow">
                 Date de demande
-                <input type="text" id="datenow">
+                <input type="date" id="datenow">
             </label><!-- <br><br> -->
 
             <label for="destinataire">
