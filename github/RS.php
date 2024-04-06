@@ -1,10 +1,12 @@
 <?php
 session_start();
-if (!isset($_SESSION["user"])) {
-   header("Location: login.php");
-}
+// if (!isset($_SESSION["user"])) {
+//    header("Location: login.php");
+// }
 ?>
-
+<?php
+include "database.php"
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -12,7 +14,12 @@ if (!isset($_SESSION["user"])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- ===== CSS ===== -->
-        <link rel="stylesheet" href="style1.css">
+        <!-- <link rel="stylesheet" href="formation.css"> -->
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="stylemaj.css">
+        <link rel="stylesheet" href="suivistyle.css">
+        <link rel="stylesheet" href="addstyle.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <!--      bootstrap  -->
         <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> -->
 
@@ -22,20 +29,34 @@ if (!isset($_SESSION["user"])) {
         <div class="l-navbar" id="navbar">
             <nav class="nav">
                 <div>
+                    <!-- menu outline  -->
                     <div class="nav__brand" >
                         <ion-icon name="menu-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
                     <div class="sonatrach">
-                            <a href="#" class="nav__logo">Sonatrach</a>
+                            <a class="nav__logo">Sonatrach</a>
                     </div> 
-                
+                    <!-- **************** -->
+
+                    <!-- home outline -->
+                    <div class="nav__brand" id="home" style="cursor: pointer;">
+                            <ion-icon name="home-outline" class="nav__toggle"></ion-icon>
+                        <div class="">
+                            <a  class="nav__logo">accueil</a>
+                        </div> 
+                    </div>
+
+                    <!-- **************** -->
+
+                <!-- *******NAV LISTTTTTT********* -->
                     </div>
                     <div class="nav__list">
-                        <a href="maj.php" class="nav__link active " id="maj" >
+                        <a  class="nav__link active " id="maj" >
                             <img src="../images/file.png" alt="">
                             <!-- <ion-icon name="home-outline" class="nav__icon"></ion-icon> -->
                             <span class="nav__name" >Mise a jour</span>
                         </a>
-                        <a href="#" class="nav__link" id="Travail">
+                        
+                        <a  class="nav__link active " id="travail">
                             <img src="../images/travail.png" alt="">
                             <!-- <ion-icon name="chatbubbles-outline" class="nav__icon"></ion-icon> -->
                             <span class="nav__name">Travail</span>
@@ -43,34 +64,24 @@ if (!isset($_SESSION["user"])) {
 
                         
 
-                        <a href="#" class="nav__link">
+                        <a  class="nav__link" id="etranger">
                             <img src="../images/etranger.png" alt="">
                             
                             <span class="nav__name" >Etranger</span>
                         </a>
-                        <div class="nav__link collapse">
+                        
+                        <a class="nav__link collapse" id="course">
                             <img src="../images/taxi.png" alt="">
                             <!-- <ion-icon name="people-outline" class="nav__icon"></ion-icon> -->
                             <span class="nav__name">Courses</span>
-
-                            <!-- <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon> -->
-
-                            <!-- <ul class="collapse__menu">
-                                <a href="#" class="collapse__sublink">Data</a>
-                                <a href="#" class="collapse__sublink">Group</a>
-                                <a href="#" class="collapse__sublink">Members</a>
-                            </ul> -->
-                        </div>
-                        <a href="#" class="nav__link dashboard-item">
-                            <img src="../images/maintenance.png" alt="">
-                            <!-- <ion-icon name="settings-outline" class="nav__icon"></ion-icon> -->
-                            <span class="nav__name">Produits</span>
                         </a>
-                        <a href="#" class="nav__link dashboard-item">
+
+                        <a  class="nav__link dashboard-item" id="suivi">
                             <img src="../images/schedule.png" alt="">
                             <!-- <ion-icon name="pie-chart-outline" class="nav__icon"></ion-icon> -->
                             <span class="nav__name">Suivi des demandes</span>
                         </a>
+                        
                         <a href="logout.php" class="nav__link logout-btn">
                             <img src="../images/se-deconnecter.png" alt="">
                             <!-- <ion-icon name="pie-chart-outline" class="nav__icon"></ion-icon> -->
@@ -82,22 +93,185 @@ if (!isset($_SESSION["user"])) {
                 
                 
             </nav>
-        </div>
-
-     
-
-        <div class="sonatrach-img">
-            <img src="../images/sonatrach-img.jpg" alt="" class="bg-dlab">
+            
         </div>
         
+
+        <div class="sonatrach-img">
+            <img src="../images/sonatrach-img.jpg" alt="" class="bg-dlab" id="sonatrach-img">
+        </div>
+        
+        
+
+        <!-- ***************************                      ********************************
+        ********************************                      ********************************
+        ********************************   mise a jourrrrrrr  ********************************
+        ********************************                      ********************************
+        ********************************                      ********************************-->
+
+        <?php require_once "maj-rs.php" ?>
+
+        <!-- ***************************                      ********************************
+        ********************************   FINNNNNNNN         ********************************
+        ********************************   mise a jourrrrrrr  ********************************
+        ********************************                      ********************************
+        ********************************                      ********************************-->
+
+
+
+
+        <!-- ***************************                      ********************************
+        ********************************                      ********************************
+        ********************************   TRAVAILLLLLLLLLLL  ********************************
+        ********************************                      ********************************
+        ********************************                      ********************************-->
+
+
+        <?php require_once "add-travail.php" ?>
+
+
+
+        <!-- ***************************                      ********************************
+        ********************************                      ********************************
+        ********************************   FIN TRAVAILLLLLLLL ********************************
+        ********************************                      ********************************
+        ********************************                      ********************************-->
+
+
+        <!-- ***************************                      ********************************
+        ********************************                      ********************************
+        ********************************   ETRAAAAAAAAAANGER  ********************************
+        ********************************                      ********************************
+        ********************************                      ********************************-->
+
+        <?php require_once "add-etranger-rs.php" ?>
+
+
+        <!-- ***************************                      ********************************
+        ********************************                      ********************************
+        ********************************   FIN ETRAAAAAAANGER ********************************
+        ********************************                      ********************************
+        ********************************                      ********************************-->
+
+        <!-- ***************************                      ********************************
+        ********************************                      ********************************
+        ********************************   COURSEEEEEEEEEEEE  ********************************
+        ********************************                      ********************************
+        ********************************                      ********************************-->
+
+        <?php require_once "add-course.php" ?>
+
+        <!-- ***************************                      ********************************
+        ********************************                      ********************************
+        ********************************   FIN COURSEEEEEEEEE ********************************
+        ********************************                      ********************************
+        ********************************                      ********************************-->
+
+
+
+        <!-- ***************************                      ********************************
+        ********************************                      ********************************
+        ********************************  SUIVI DES DEMANDES  ********************************
+        ********************************                      ********************************
+        ********************************                      ********************************-->
+
+        <?php require_once "suivi-rs.php" ?>
+                                
+
+        <!-- ***************************                      ********************************
+        ********************************                      ********************************
+        ********************************FIN SUIVI DES DEMANDES********************************
+        ********************************                      ********************************
+        ********************************                      ********************************-->
+
+
+        
+
+<!--  -->
+
         <!-- ===== IONICONS ===== -->
         <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
         <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
         
         <!-- ===== MAIN JS ===== -->
         <script src="showMenu.js"></script>
-        <script src="travail1.js"></script>
-      
-
+        <script src="affiche-contenu-travail.js"></script>
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
