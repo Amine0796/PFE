@@ -60,13 +60,13 @@ if(isset($_POST['valider-formation'])){
                                                 
 
         <label for="text2">
-            Departement 
+            Département 
             <input type="text"  name="departement-formation">
         </label>
 
 
         <label for="text3">
-            Demande Effuctuee Par 
+            Demande effuctuée Par 
             <input type="text" name="demande-dffuctuee-par-formation" value="<?php echo $_SESSION["username"]; ?>">
         </label>
                                                 
@@ -144,8 +144,8 @@ if(isset($_POST['valider-formation'])){
         <label >
             Moyen de Transport aller 
             <select  name="moyen-de-transport-aller-formation">
-                <option>Avion</option>
-                <option>Vehicule</option>
+                <option value="avion">Avion</option>
+                <option value="vehicule">Vehicule</option>
             </select>
         </label>
                                                 
@@ -154,8 +154,8 @@ if(isset($_POST['valider-formation'])){
         <label >
             Moyen de transport retour 
             <select  name="moyen-de-transport-retour-formation">
-                <option>Avion</option>
-                <option>Vehicule</option>
+                <option value="avion">Avion</option>
+                <option value="vehicule">Vehicule</option>
             </select>
         </label>
                                                 
@@ -164,8 +164,8 @@ if(isset($_POST['valider-formation'])){
             Demande hebergement
             <select  name="demande-hebergement-formation">
                 <!-- <option></option>  -->
-                <option>Oui</option> 
-                <option>Non</option>
+                <option value="oui">Oui</option> 
+                <option value="non">Non</option>
             </select>
         </label>
                                                 
@@ -175,8 +175,8 @@ if(isset($_POST['valider-formation'])){
                 Demande Vehicule service aller 
                 <select  name="demande-vehicule-service-aller-formation">
                     <!-- <option></option>  -->
-                    <option>Oui</option> 
-                    <option>Non</option>
+                    <option value="oui">Oui</option> 
+                    <option value="non">Non</option>
                 </select>
             </label>
 
@@ -190,8 +190,8 @@ if(isset($_POST['valider-formation'])){
             <label for="text11">
                 Demande hebergement aller
                 <select  name="demande-hebergement-aller-formation">
-                    <option>Oui</option> 
-                    <option>Non</option>
+                    <option value="oui">Oui</option> 
+                    <option value="non">Non</option>
                 </select>
             </label>
 
@@ -210,9 +210,8 @@ if(isset($_POST['valider-formation'])){
                                                 <label for="text10">
                                                     Demande Vehicule service Retour 
                                                     <select  name="demande-vehicule-service-retour-formation">
-                                                        
-                                                        <option>Oui</option> 
-                                                        <option>Non</option>
+                                                        <option value="oui">Oui</option> 
+                                                        <option value="non">Non</option>
                                                     </select>
                                                 </label>
 
@@ -226,9 +225,8 @@ if(isset($_POST['valider-formation'])){
                                                 <label for="text11">
                                                     Demande hebergement Retour
                                                     <select  name="demande-hebergement-retour-formation">
-                                                        
-                                                        <option>Oui</option> 
-                                                        <option>Non</option>
+                                                        <option value="oui">Oui</option> 
+                                                        <option value="non">Non</option>
                                                     </select>
                                                 </label>
 
@@ -261,9 +259,8 @@ if(isset($_POST['valider-formation'])){
                                                 <label for="demande-acheminement-du-materiel-formation">
                                                     Demande Acheminement du materiel
                                                     <select  name="demande-acheminement-du-materiel-formation">
-                                                        
-                                                        <option>Oui</option> 
-                                                        <option>Non</option>
+                                                        <option value="oui">Oui</option> 
+                                                        <option value="non">Non</option>
                                                     </select>
                                                 </label>
 
@@ -282,7 +279,6 @@ if(isset($_POST['valider-formation'])){
 
                                             <div class="boutons-kr">
                                                 <button type="submit" class="btn-formation" name="valider-formation">Valider</button>
-
                                                 <button type="submit" class="btn-formation" name="annuler-formation" >Annuler</button>
                                             </div>
                                         </div>

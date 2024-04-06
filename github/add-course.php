@@ -2,69 +2,70 @@
         <p class="header-text">Ajouter une demande de course</p>
 
         <div class="container-kr">
-            <label for="direction">
+            <label for="direction-course">
                 Direction
-                <input type="text" id="direction">
+                <input type="text" id="direction-course">
             </label><!-- <br><br> -->
             
-            <label for="departement">
+            <label for="departement-course">
                 Département
-                <input type="text" id="departement">
+                <input type="text" id="departement-course">
             </label><!-- <br><br> -->
 
-            <label for="demandeur">
+            <label for="demandeur-course">
                 Demande effectuée par
-                <input type="text" id="demandeur">
+                <input type="text" id="demandeur-course">
             </label><!-- <br><br> -->
 
-            <label for="canalytique">
+            <label for="compte-analytique-course">
                 Compte analytique
-                <input type="text" id="canalytique">
+                <input type="text" id="compte-analytique-course">
             </label><!-- <br><br> -->
 
-            <label for="datenow">
+            <label for="date-demande-course">
                 Date de demande
-                <input type="text" id="datenow">
+                <input type="text" id="date-demande-course">
             </label><!-- <br><br> -->
 
-            <label for="destinataire">
+            <label for="destinataire-course">
                 Destinataire
-                <input type="text" id="destinataire">
+                <input type="text" id="destinataire-course">
             </label>
 
-            <label for="dest">
+            <label for="dest-course">
                 Destination
-                <input type="text" id="dest">
+                <input type="text" id="dest-course">
             </label>
 
-            <label for="objetdemande">
+            <label for="objet-demande-course">
                 Objet de la demande
-                <input type="text" id="objetdemande">
+                <input type="text" id="objet-demande-course">
             </label><!-- <br><br> -->
 
-            <label for="missionnaires">
+            <label for="missionnaires-course">
                 Nom(s) du(des) missionnaire(s)
-                <input type="text" id="missionnaires"><br><br>
+                <input type="text" id="missionnaires-course">
             </label>
 
-            <label for="datdepart">
+            <label for="date-depart-course">
                 Date du départ
-                <input type="text" id="datdepart">
+                <input type="text" id="date-depart-course">
             </label><!-- <br><br> -->
 
-            <label for="heuredep">
+            <label for="heure-depart-course">
                 Heure du départ
-                <input type="text" id="heuredep">
+                <input type="text" id="heure-depart-course">
             </label><!-- <br><br> -->
-            <label for="ptdepart">
+
+            <label for="point-depart-course">
                 Point du départ
-                <input type="text" id="ptdepart"><br><br>
+                <input type="text" id="point-depart-course">
             </label>
         </div>
         
         <div class="boutons-kr">
-            <button type="submit">Valider</button>
-            <button>Fermer</button>
+            <button type="submit" class="btn-course" name="valider-course">Valider</button>
+            <button type="submit" class="btn-course" name="annuler-course" >Annuler</button>
         </div>
 
 </div>
