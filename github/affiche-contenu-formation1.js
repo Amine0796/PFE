@@ -10,11 +10,8 @@ tableEtranger.style.display = "none"
 let tableSuivi = document.getElementById("table-suivi")
 tableSuivi.style.display = "none"
 
-// let tableTravail = document.getElementById("table-travail")
-// tableTravail.style.display = "none"
-
-// let tableCourse = document.getElementById("table-course")
-// tableCourse.style.display = "none"
+let sonatrachImgDiv = document.querySelector(".sonatrach-img")
+sonatrachImgDiv.style.display = "none"
 
 
 let contenus = document.querySelectorAll('.content');
@@ -66,14 +63,6 @@ suivi.addEventListener("click", function() {
     afficherContenu("table-suivi");
 });
 
-// let travail = document.getElementById("travail");
-// travail.addEventListener("click", function() {
-//     afficherContenu("table-travail");
-// });
 
-// let course = document.getElementById("course");
-// course.addEventListener("click", function() {
-//     afficherContenu("table-course");
-// });
 
 

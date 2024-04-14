@@ -159,7 +159,7 @@ include "database.php"
                 </tbody>
             </table>
         </div>
-        <div class="btn-class">
+        <div class="btn-maj">
         <button id="btn-retour">Retour</button>
         <button id="btn-confirmer">confirmer</button>
         </div>
@@ -519,7 +519,7 @@ if(isset($_POST['valider-formation'])){
 
         
 
-<!--  -->
+
 
         <!-- ===== IONICONS ===== -->
         <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>

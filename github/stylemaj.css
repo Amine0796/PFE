@@ -7,10 +7,10 @@
   
 }
 
-
+/* 
 #table-maj{
-    /* margin-left: 100px; */
-}
+     margin-left: 100px; 
+} */
 
 table {
     width: 100%;
@@ -95,9 +95,10 @@ td button:hover{
     outline: none; /* Supprimer l'outline */
   }
   
-  .btn-class{
+  .btn-maj{
     display: flex;
     justify-content: center;
     gap: 50px;
     align-items: center;
+    padding: 20px;
 }

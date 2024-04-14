@@ -165,7 +165,7 @@ include "database.php"
                 </tbody>
             </table>
         </div>
-        <div class="btn-class">
+        <div class="btn-maj">
         <button id="btn-retour">Retour</button>
         <button id="btn-confirmer">confirmer</button>
         </div>
