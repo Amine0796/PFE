@@ -17,7 +17,7 @@ require_once "add-formation.php";
 
             <label for="demandeur">
                 Demande effectuée par
-                <input type="text" id="demandeur">
+                <input type="text" id="demandeur" value="<?php echo $_SESSION["username"]; ?>">
             </label><!-- <br><br> -->
 
             <label for="canalytique">

@@ -1,46 +1,48 @@
 <?php
 require_once "database.php";
-if(isset($_POST['valider-formation'])){
-    $Direction=$_POST['direction-formation'];
-    $Departement=$_POST['departement-formation'];
-    $Demandeur=$_POST['demande-dffuctuee-par-formation']; 
-    $CompteAnalytique=$_POST['compte-analytique-formation']; 
-    $NumDemande=$_POST['num-demande-formation'];
-    $DateDemande=$_POST['date-demande-formation'];
-    $Destinataire=$_POST['destinataire-formation']; 
-    $DateDu=$_POST['du-formation'];
-    $DateAu=$_POST['au-formation'];
-    $RegionDeroulementMission=$_POST['region-deroulement-mission-formation']; 
-    $LieuMission=$_POST['lieu-de-la-mission-formation'];
-    $Itineraire=$_POST['itineraire-formation'] ;
-    $ObjetMission=$_POST['objet-de-la-mission-formation'] ;
-    $NomMissionnaires=$_POST['noms-des-missionaires-formation'] ;
-    $MoyenTransportAller=$_POST['moyen-de-transport-aller-formation'] ;
-    $MoyenTransportRetour=$_POST['moyen-de-transport-retour-formation'] ;
-    $DemandeHebergement=$_POST['demande-hebergement-formation'] ;
-    $DemandeVehiculeServiceAller=$_POST['demande-vehicule-service-aller-formation'] ;
-    $DemandeVehiculeServiceRetour=$_POST['demande-vehicule-service-retour-formation'];
-    $PointDepart=$_POST['point-de-depart-formation'] ;
-    $DemandeHebergementAller=$_POST['demande-hebergement-aller-formation'] ;
-    $NombreNuitesTrajetAller=$_POST['nombre-de-nuite-du-trajet-aller-formation'] ;
-    $PointRetour=$_POST['point-de-retour-formation'] ;
-    $DemandeHebergementRetour=$_POST['demande-hebergement-retour-formation'] ;
-    $NombreNuitesTrajetRetour=$_POST['nombre-de-nuite-du-trajet-retour-formation'] ;
-    $BesoinAutorisationTransportProduitsDangereux=$_POST['besoin-autorisation-transport-produits-dangereux-formation'] ;
-    $TypeProduits=$_POST['type-produits-formation']; 
-    $DemandeAcheminementMateriel=$_POST['demande-acheminement-du-materiel-formation'] ;
-    $TypeAcheminementMateriel=$_POST['type-acheminement-du-materiel-formation'] ;
-    $Observation=$_POST['observation-formation'] ;
+if(isset($_POST['valider-travail'])){
+    $Direction=$_POST['direction-travail'];
+    $Departement=$_POST['departement-travail'];
+    $Demandeur=$_POST['demande-dffuctuee-par-travail']; 
+    $CompteAnalytique=$_POST['compte-analytique-travail']; 
+    $NumDemande=$_POST['num-demande-travail'];
+    $DateDemande=$_POST['date-demande-travail'];
+    $Destinataire=$_POST['destinataire-travail']; 
+    $DateDu=$_POST['du-travail'];
+    $DateAu=$_POST['au-travail'];
+    $RegionDeroulementMission=$_POST['region-deroulement-mission-travail']; 
+    $LieuMission=$_POST['lieu-de-la-mission-travail'];
+    $Itineraire=$_POST['itineraire-travail'] ;
+    $ObjetMission=$_POST['objet-de-la-mission-travail'] ;
+    $NomMissionnaires=$_POST['noms-des-missionaires-travail'] ;
+    $MoyenTransportAller=$_POST['moyen-de-transport-aller-travail'] ;
+    $MoyenTransportRetour=$_POST['moyen-de-transport-retour-travail'] ;
+    $DemandeHebergement=$_POST['demande-hebergement-travail'] ;
+    $DemandeVehiculeServiceAller=$_POST['demande-vehicule-service-aller-travail'] ;
+    $DemandeVehiculeServiceRetour=$_POST['demande-vehicule-service-retour-travail'];
+    $PointDepart=$_POST['point-de-depart-travail'] ;
+    $DemandeHebergementAller=$_POST['demande-hebergement-aller-travail'] ;
+    $NombreNuitesTrajetAller=$_POST['nombre-de-nuite-du-trajet-aller-travail'] ;
+    $PointRetour=$_POST['point-de-retour-travail'] ;
+    $DemandeHebergementRetour=$_POST['demande-hebergement-retour-travail'] ;
+    $NombreNuitesTrajetRetour=$_POST['nombre-de-nuite-du-trajet-retour-travail'] ;
+    $BesoinAutorisationTransportProduitsDangereux=$_POST['besoin-autorisation-transport-produits-dangereux-travail'] ;
+    $TypeProduits=$_POST['type-produits-travail']; 
+    $DemandeAcheminementMateriel=$_POST['demande-acheminement-du-materiel-travail'] ;
+    $TypeAcheminementMateriel=$_POST['type-acheminement-du-materiel-travail'] ;
+    $Observation=$_POST['observation-travail'] ;
 
     $sql = "INSERT INTO demande_mission (Direction, Departement, Demandeur, CompteAnalytique, NumDemande, DateDemande, Destinataire, DateDu, DateAu, RegionDeroulementMission, LieuMission, Itineraire, ObjetMission, NomMissionnaires, MoyenTransportAller, MoyenTransportRetour, DemandeHebergement, DemandeVehiculeServiceAller, DemandeVehiculeServiceRetour, PointDepart, DemandeHebergementAller, NombreNuitesTrajetAller, PointRetour, DemandeHebergementRetour, NombreNuitesTrajetRetour, BesoinAutorisationTransportProduitsDangereux, TypeProduits, DemandeAcheminementMateriel, TypeAcheminementMateriel, Observation) 
     VALUES ('$Direction', '$Departement', '$Demandeur', '$CompteAnalytique','$NumDemande', '$DateDemande', '$Destinataire', '$DateDu', '$DateAu', '$RegionDeroulementMission', '$LieuMission', '$Itineraire', '$ObjetMission', '$NomMissionnaires', '$MoyenTransportAller', '$MoyenTransportRetour', '$DemandeHebergement', '$DemandeVehiculeServiceAller', '$DemandeVehiculeServiceRetour', '$PointDepart', '$DemandeHebergementAller', '$NombreNuitesTrajetAller', '$PointRetour', '$DemandeHebergementRetour', '$NombreNuitesTrajetRetour', '$BesoinAutorisationTransportProduitsDangereux', '$TypeProduits', '$DemandeAcheminementMateriel', '$TypeAcheminementMateriel', '$Observation')";
     
     $result=mysqli_query($conn,$sql);
     if($result){
+        echo "<script>console.log('if1');</script>";
         echo "<script>alert('Data inserted successfully!');</script>";
         echo "<script>window.location.replace('RS.php');</script>";
         exit();
     }else{
+        echo "<script>console.log('if2');</script>";
         echo "<script>alert('Something went wrong');</script>";
         echo "<script>window.location.replace('RS.php');</script>";
         exit();
@@ -55,13 +57,13 @@ if(isset($_POST['valider-formation'])){
     <div class="container-kr">
         <label for="text1">
             Direction
-            <input type="text"  name="direction-formation">
+            <input type="text"  name="direction-travail">
         </label>
                                                 
 
         <label for="text2">
             Departement 
-            <input type="text"  name="departement-formation">
+            <input type="text"  name="departement-travail">
         </label>
 
 
@@ -73,43 +75,43 @@ if(isset($_POST['valider-formation'])){
 
         <label for="text4">
             Compte Analytique
-            <input type="text" id="text4" name="compte-analytique-formation">
+            <input type="text" id="text4" name="compte-analytique-travail">
         </label>
                                                 
 
         <label>
             Num Demande 
-            <input type="text" name="num-demande-formation" required>
+            <input type="text" name="num-demande-travail" required>
         </label>
 
 
 
         <label for="date1">
             Date Demande 
-            <input type="date"  name="date-demande-formation">
+            <input type="date"  name="date-demande-travail">
         </label>
                                                 
                                                 
         <label for="text5">
             Destinataire 
-            <input type="text"  name="destinataire-formation">
+            <input type="text"  name="destinataire-travail">
         </label>
                                                 
                                                 
         <label for="date2">
             Du 
-            <input type="date" name="du-formation">
+            <input type="date" name="du-travail">
         </label>
 
         <label for="date3">
             Au
-            <input type="date" name="au-formation">
+            <input type="date" name="au-travail">
         </label>
                                                 
 
         <label for="select1">
             Region deroulement mission
-            <select id="select1" name="region-deroulement-mission-formation">
+            <select id="select1" name="region-deroulement-mission-travail">
                 <option>NORD</option>
                 <option>SUD</option>
                 <option>EST</option>
@@ -119,31 +121,31 @@ if(isset($_POST['valider-formation'])){
                                                 
         <label for="text6">
             lieu de la mission 
-            <input type="text" name="lieu-de-la-mission-formation">
+            <input type="text" name="lieu-de-la-mission-travail">
         </label>
                                                 
 
         <label for="text7">
             Itineraire
-            <input type="text" name="itineraire-formation">
+            <input type="text" name="itineraire-travail">
         </label>
 
         <label for="text8">
             objet de la mission
-            <input type="text" name="objet-de-la-mission-formation">
+            <input type="text" name="objet-de-la-mission-travail">
         </label>
                                                 
 
         <label for="text9">
             Nom(s) du(des) missionaire(s)
-            <input type="text" name="noms-des-missionaires-formation">
+            <input type="text" name="noms-des-missionaires-travail">
         </label>
                                                 
 
 
         <label >
             Moyen de Transport aller 
-            <select  name="moyen-de-transport-aller-formation">
+            <select  name="moyen-de-transport-aller-travail">
                 <option>Avion</option>
                 <option>Vehicule</option>
             </select>
@@ -153,7 +155,7 @@ if(isset($_POST['valider-formation'])){
 
         <label >
             Moyen de transport retour 
-            <select  name="moyen-de-transport-retour-formation">
+            <select  name="moyen-de-transport-retour-travail">
                 <option>Avion</option>
                 <option>Vehicule</option>
             </select>
@@ -162,7 +164,7 @@ if(isset($_POST['valider-formation'])){
 
         <label >
             Demande hebergement
-            <select  name="demande-hebergement-formation">
+            <select  name="demande-hebergement-travail">
                 <!-- <option></option>  -->
                 <option>Oui</option> 
                 <option>Non</option>
@@ -173,7 +175,7 @@ if(isset($_POST['valider-formation'])){
         <div class="aller">
             <label for="text10">
                 Demande Vehicule service aller 
-                <select  name="demande-vehicule-service-aller-formation">
+                <select  name="demande-vehicule-service-aller-travail">
                     <!-- <option></option>  -->
                     <option>Oui</option> 
                     <option>Non</option>
@@ -183,13 +185,13 @@ if(isset($_POST['valider-formation'])){
 
             <label for="text12">
                 Point de depart
-                <input type="text" name="point-de-depart-formation">
+                <input type="text" name="point-de-depart-travail">
             </label>
 
 
             <label for="text11">
                 Demande hebergement aller
-                <select  name="demande-hebergement-aller-formation">
+                <select  name="demande-hebergement-aller-travail">
                     <option>Oui</option> 
                     <option>Non</option>
                 </select>
@@ -200,7 +202,7 @@ if(isset($_POST['valider-formation'])){
 
                                                 <label for="text13">
                                                     nombre de nuite du trajet - Aller
-                                                    <input type="number" name="nombre-de-nuite-du-trajet-aller-formation">
+                                                    <input type="number" name="nombre-de-nuite-du-trajet-aller-travail">
                                                 </label>
                                             </div>
 
@@ -209,7 +211,7 @@ if(isset($_POST['valider-formation'])){
                                             <div class="retour">
                                                 <label for="text10">
                                                     Demande Vehicule service Retour 
-                                                    <select  name="demande-vehicule-service-retour-formation">
+                                                    <select  name="demande-vehicule-service-retour-travail">
                                                         
                                                         <option>Oui</option> 
                                                         <option>Non</option>
@@ -219,13 +221,13 @@ if(isset($_POST['valider-formation'])){
 
                                                 <label for="text12">
                                                     Point de retour
-                                                    <input type="text"  name="point-de-retour-formation">
+                                                    <input type="text"  name="point-de-retour-travail">
                                                 </label>
 
 
                                                 <label for="text11">
                                                     Demande hebergement Retour
-                                                    <select  name="demande-hebergement-retour-formation">
+                                                    <select  name="demande-hebergement-retour-travail">
                                                         
                                                         <option>Oui</option> 
                                                         <option>Non</option>
@@ -237,53 +239,53 @@ if(isset($_POST['valider-formation'])){
 
                                                 <label for="text13">
                                                     nombre de nuite du trajet - Retour
-                                                    <input type="number" id="text13" name="nombre-de-nuite-du-trajet-retour-formation">
+                                                    <input type="number" id="text13" name="nombre-de-nuite-du-trajet-retour-travail">
                                                 </label>
                                             </div>
 
 
 
-                                            <div class="observation-formation">
-                                                <label for="besoin-autorisation-transport-produits-dangereux-formation">
+                                            <div class="observation-travail">
+                                                <label for="besoin-autorisation-transport-produits-dangereux-travail">
                                                     Besoin Autorisation Transport Produits Dangereux
-                                                    <select  name="besoin-autorisation-transport-produits-dangereux-formation">
+                                                    <select  name="besoin-autorisation-transport-produits-dangereux-travail">
                                                         
                                                         <option>Oui</option> 
                                                         <option>Non</option>
                                                     </select>
                                                 </label>
 
-                                                <label for="type-produits-formation">
+                                                <label for="type-produits-travail">
                                                     Type Produits
-                                                    <input type="text" name="type-produits-formation">
+                                                    <input type="text" name="type-produits-travail">
                                                 </label>
 
-                                                <label for="demande-acheminement-du-materiel-formation">
+                                                <label for="demande-acheminement-du-materiel-travail">
                                                     Demande Acheminement du materiel
-                                                    <select  name="demande-acheminement-du-materiel-formation">
+                                                    <select  name="demande-acheminement-du-materiel-travail">
                                                         
                                                         <option>Oui</option> 
                                                         <option>Non</option>
                                                     </select>
                                                 </label>
 
-                                                <label for="type-acheminement-du-materiel-formation">
+                                                <label for="type-acheminement-du-materiel-travail">
                                                     Type Acheminement du materiel
-                                                    <input type="text" name="type-acheminement-du-materiel-formation">
+                                                    <input type="text" name="type-acheminement-du-materiel-travail">
                                                 </label>
 
 
-                                                <label for="observation-formation">
+                                                <label for="observation-travail">
                                                     Observation
-                                                    <input type="text" name="observation-formation">
+                                                    <input type="text" name="observation-travail">
                                                 </label>
 
                                             </div>
 
                                             <div class="boutons-kr">
-                                                <button type="submit" class="btn-formation" name="valider-formation">Valider</button>
+                                                <button type="submit" class="btn-travail" name="valider-travail">Valider</button>
 
-                                                <button type="submit" class="btn-formation" name="annuler-formation" >Annuler</button>
+                                                <button type="submit" class="btn-travail" name="annuler-travail" >Annuler</button>
                                             </div>
                                         </div>
                                     </form>
