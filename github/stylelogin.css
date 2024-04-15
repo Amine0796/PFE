@@ -95,7 +95,3 @@ input{
         background: #f0b285;
         cursor: pointer;
 }
-
-.password-error{
-    display: flex;
-}

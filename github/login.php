@@ -11,19 +11,16 @@ if (isset($_SESSION["user"])) {
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['username']) && isset($_POST['password'])) {
     require_once "database.php"; // Include database connection
     
-    // Get the username and password from the POST request
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    // Construct the SQL query with user input (not recommended for security reasons)
-    $query = "SELECT username, password, poste FROM users WHERE username='$username' AND password='$password'";
-
-    // Execute the query
-    $result = $conn->query($query);
+    // Prepare SQL statement to prevent SQL injection
+    $query = "SELECT username, password, poste FROM users WHERE username=? AND password=?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("ss", $_POST['username'], $_POST['password']);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
     // Check if user exists
     if ($result->num_rows == 0) {
-        echo "<div class='password-error' style='margin-top:5px; margin-left: 560px;'><table width='560' border='0'><tr><td colspan='1'></td><td><center><font color='red' face='verdana' size='2'><b>Login ou Mot de passe erroné...<br>Veuillez recommencer</b></font></center></td><td></td></tr></table></div>";
+        echo "<div style='margin-top:5px; margin-left: 560px;'><table width='560' border='0'><tr><td colspan='1'></td><td><center><font color='red' face='verdana' size='2'><b>Login ou Mot de passe erroné...<br>Veuillez recommencer</b></font></center></td><td></td></tr></table></div>";
         include('login.html');
         exit();
     }
