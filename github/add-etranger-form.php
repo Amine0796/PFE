@@ -3,90 +3,90 @@
     <p class="header-text">Ajouter une demande à l'étranger</p>
 
         <div class="container-kr">
-            <label for="direction">
+            <label for="direction-etrangerF">
                 Direction
-                <input type="text" id="direction">
+                <input type="text" id="direction-etrangerF">
             </label><!-- <br><br> -->
             
-            <label for="departement">
+            <label for="departement-etrangerF">
                 Département
-                <input type="text" id="departement">
+                <input type="text" id="departement-etrangerF">
             </label><!-- <br><br> -->
 
-            <label for="demandeur">
+            <label for="demandeur-etrangerF">
                 Demande effectuée par
-                <input type="text" id="demandeur" value="<?php echo $_SESSION["username"]; ?>">
+                <input type="text" id="demandeur-etrangerF" value="<?php echo $_SESSION["username"]; ?>">
             </label><!-- <br><br> -->
 
-            <label for="canalytique">
+            <label for="compte-analytique-etrangerF">
                 Compte analytique
-                <input type="text" id="canalytique">
+                <input type="text" id="compte-analytique-etrangerF">
             </label><!-- <br><br> -->
 
-            <label for="datenow">
+            <label for="date-demande-etrangerF">
                 Date de demande
-                <input type="text" id="datenow">
+                <input type="text" id="date-demande-etrangerF">
             </label><!-- <br><br> -->
 
-            <label for="destinataire">
+            <label for="destinataire-etrangerF">
                 Destinataire
-                <input type="text" id="destinataire">
+                <input type="text" id="destinataire-etrangerF">
             </label>
 
-            <label for="datedebut">
+            <label for="du-etrangerF">
                 Période de la mission du 
-                <input type="date" id="datedebut">
+                <input type="date" id="du-etrangerF">
             </label>
 
-            <label for="datefin">
+            <label for="au-etrangerF">
                 au
-                <input type="date" id="datefin">
+                <input type="date" id="au-etrangerF">
             </label><!-- <br><br> -->
 
-            <label for="nbjours">
+            <label for="n-bjours-etrangerF">
                 Nombre des jours
-                <input type="number" id="nbjours">
+                <input type="number" id="nb-jours-etrangerF">
             </label><!-- <br><br> -->
         
-            <label for="objetmission">
+            <label for="objet-mission-etrangerF">
                 Objet de la mission
-                <input type="text" id="objetmission">
+                <input type="text" id="objet-mission-etrangerF">
             </label><!-- <br><br> -->
             
             
-            <label for="lieumission">
+            <label for="lieu-mission-etrangerF">
                 Lieu de mission
-                <input type="text" id="lieumission">
+                <input type="text" id="lieu-mission-etrangerF">
             </label>
             
-            <label for="pays">
+            <label for="pays-etrangerF">
                 Pays
-                <input type="text" id="pays">
+                <input type="text" id="pays-etrangerF">
             </label>
             
-            <label for="cadremission">
+            <label for="cadre-mission-etrangerF">
                 Cadre de la mission
-                <select id="cadremission" >
+                <select id="cadre-mission-etrangerF" >
                     <option value=""></option>
-                    <option value="">Contrat</option> 
-                    <option value="">Plan de formation</option>
-                    <option value="">Autre</option>
+                    <option value="contrat">Contrat</option> 
+                    <option value="plan de formation">Plan de formation</option>
+                    <option value="autre">Autre</option>
                 </select><!-- <br><br> -->            
             </label>
             
-            <label for="infocomplement">
+            <label for="info-complement-etrangerF">
                 Information complémentaire <!-- contrat N° if contrat -->
-                <input type="text" id="infocomplement">
+                <input type="text" id="info-complement-etrangerF">
             </label>
             
-            <label for="missionnaires">
+            <label for="missionnaires-etrangerF">
                 Nom(s) et fonction du (des) missionnaire(s)
-                <input type="text" id="missionnaires">
+                <input type="text" id="missionnaires-etrangerF">
             </label>
             
-            <label for="situationvisa">
+            <label for="situation-visa-etrangerF">
                 Situation visa
-                <select id="situationvisa" >
+                <select id="situation-visa-etrangerF" >
                     <option value=""></option>
                     <option value="">Obtenue pour tous les missionnaires</option> 
                     <option value="">En cours pour tous les missoinnaires</option>
@@ -95,25 +95,25 @@
                 </select><!-- <br><br> -->            
             </label>
             
-            <label for="infovisa">
+            <label for="info-visa-etrangerF">
                 Information complémentaire visa
-                <input type="text" id="infovisa">
+                <input type="text" id="info-visa-etrangerF">
             </label>
             
-            <label for="objectifsmission">
+            <label for="objectifs-mission-etrangerF">
                 Objectifs de la mission
-                <input type="text" id="objectifsmission">
+                <input type="text" id="objectifs-mission-etrangerF">
             </label>
             
-            <label for="opportunit">
+            <label for="opportunite-etrangerF">
                 Opportunité Mission
-                <input type="text" id="opportunit">
+                <input type="text" id="opportunit-etrangerF">
             </label>
         </div>
 
         <div class="boutons-kr">
-            <button type="submit">Valider</button>
-            <button>Fermer</button>
+            <button type="submit" class="btn-etrangerF" name="valider-etrangerF">Valider</button>
+            <button type="submit" class="btn-etrangerF" name="annuler-etrangerF" >Annuler</button>
         </div>
     </form>
 </div>

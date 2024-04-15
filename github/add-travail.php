@@ -37,12 +37,10 @@ if(isset($_POST['valider-travail'])){
     
     $result=mysqli_query($conn,$sql);
     if($result){
-        echo "<script>console.log('if1');</script>";
         echo "<script>alert('Data inserted successfully!');</script>";
         echo "<script>window.location.replace('RS.php');</script>";
         exit();
     }else{
-        echo "<script>console.log('if2');</script>";
         echo "<script>alert('Something went wrong');</script>";
         echo "<script>window.location.replace('RS.php');</script>";
         exit();
@@ -69,7 +67,7 @@ if(isset($_POST['valider-travail'])){
 
         <label for="text3">
             Demande Effuctuee Par 
-            <input type="text" name="demande-dffuctuee-par-formation" value="<?php echo $_SESSION["username"]; ?>">
+            <input type="text" name="demande-dffuctuee-par-travail" value="<?php echo $_SESSION["username"]; ?>">
         </label>
                                                 
 
