@@ -1,0 +1,12 @@
+.btnconsulter{
+    padding: 5px 10px; 
+    background-color: rgb(212, 206, 194); 
+    color: #000000; 
+    border: none; 
+    border-radius: 10px;
+    cursor: pointer;
+}
+.btnconsulter:hover{
+    background-color: rgb(250, 198, 150);
+
+}

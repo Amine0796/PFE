@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    font-family: "Poppins", sans-serif;
+}
+form{
+    display: flex;
+    flex-direction: column;
+
+}
+.header-text{
+    text-align: center;
+    font-size: large;
+}
+#table-formation, #table-etranger {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* font-family: 'Roboto', sans-serif; */
+}
+.container-kr{
+    /* display: block; */
+    /* justify-content: center; */
+    align-content: baseline;
+    min-height: 100vh;
+    position: relative;
+    width: 900px;
+    border-radius: 30px;
+    border:#ffffff solid 1px;
+    padding: 40px;
+}
+.container-kr label{
+    display: block;
+    margin: 10px;
+}
+.container-kr input, select{
+    flex-direction: column;
+    margin: 10px 0;
+    position: relative;
+    width: 300px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    outline: none; 
+}
+
+.boutons-kr{
+    display: flex;
+   justify-content: center;
+   gap: 50px;
+   align-items: center;
+}
+
+.boutons-kr button{
+    padding: 10px 20px; 
+    background-color: #c27904; 
+    color: #fff; 
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer; 
+}
+.boutons-kr button{
+    background-color: rgb(179, 87, 0);
+}
