@@ -86,7 +86,7 @@ if(isset($_POST['valider-travail'])){
 
         <label for="date1">
             Date Demande 
-            <input type="date"  name="date-demande-travail">
+            <input type="date"  name="date-demande-travail" value="<?php echo date('Y-m-d'); ?>">
         </label>
                                                 
                                                 
@@ -98,12 +98,12 @@ if(isset($_POST['valider-travail'])){
                                                 
         <label for="date2">
             Du 
-            <input type="date" name="du-travail">
+            <input type="date" name="du-travail" value="<?php echo date('Y-m-d'); ?>">
         </label>
 
         <label for="date3">
             Au
-            <input type="date" name="au-travail">
+            <input type="date" name="au-travail" value="<?php echo date('Y-m-d'); ?>">
         </label>
                                                 
 
@@ -200,7 +200,7 @@ if(isset($_POST['valider-travail'])){
 
                                                 <label for="text13">
                                                     nombre de nuite du trajet - Aller
-                                                    <input type="number" name="nombre-de-nuite-du-trajet-aller-travail">
+                                                    <input type="number" name="nombre-de-nuite-du-trajet-aller-travail" value="1">
                                                 </label>
                                             </div>
 
@@ -237,7 +237,7 @@ if(isset($_POST['valider-travail'])){
 
                                                 <label for="text13">
                                                     nombre de nuite du trajet - Retour
-                                                    <input type="number" id="text13" name="nombre-de-nuite-du-trajet-retour-travail">
+                                                    <input type="number" id="text13" name="nombre-de-nuite-du-trajet-retour-travail" value="1">
                                                 </label>
                                             </div>
 

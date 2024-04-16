@@ -31,7 +31,7 @@
                     if ($result) {
                         
                         while ($row=mysqli_fetch_assoc($result)) {
-                            $nDemande = $row['idDemandeMission'];
+                            $nDemande = $row['NumDemande'];
                             $dateDemande = $row['DateDemande'];
                             $objetMission = $row['ObjetMission'];
                             $dateDu = $row['DateDu'];
@@ -44,8 +44,8 @@
                             <td>'.$dateAu.'</td>
                             <td></td>
                             <td>
-                                <button><i class="bx bxs-edit"></i></button> 
-                                <button><i class="bx bxs-trash"></i></button>
+                                <button ><i class="bx bxs-edit"></i></button> 
+                                <button id="delete_row_travail"><i class="bx bxs-trash"></i></button>
                             </td>
                         </tr>';
                         }
