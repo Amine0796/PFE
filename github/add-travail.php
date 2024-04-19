@@ -79,7 +79,7 @@ if(isset($_POST['valider-travail'])){
 
         <label>
             Num Demande 
-            <input type="text" name="num-demande-travail" required>
+            <input type="number" name="num-demande-travail" value="1" min="1" required>
         </label>
 
 
@@ -237,7 +237,7 @@ if(isset($_POST['valider-travail'])){
 
                                                 <label >
                                                     nombre de nuite du trajet - Retour
-                                                    <input type="number" id="text13" name="nombre-de-nuite-du-trajet-retour-travail" value="1">
+                                                    <input type="number" id="text13" name="nombre-de-nuite-du-trajet-retour-travail" value="1" min="1" >
                                                 </label>
                                             </div>
 

@@ -17,28 +17,43 @@
                     <tr>
                         <th>N° demande</th>
                         <th>Date demande</th>
-                        <th>Objet mission</th>
-                        <th>Période du</th>
-                        <th>Période au</th>
-                        <th>Etat du demande</th>
+                        <th>Objet formation</th>
+                        <th>Nom demandeur</th>
+                        <th>Departement</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
+                <?php
+                    
+                    $sql="Select * from `formation`";
+                    $result=mysqli_query($conn,$sql);
+                    if ($result) {
+                        
+                        while ($row=mysqli_fetch_assoc($result)) {
+                            $NumDemande = $row['NumDemande'];
+                            $DateDemande = $row['DateDemande'];
+                            $ObjetFormation = $row['ObjetFormation'];
+                            $Demandeur = $row['Demandeur'];
+                            $Departement = $row['Departement'];
+                            
+                            echo '<tr>
+                            <td>'.$NumDemande.'</td>
+                            <td>'.$DateDemande.'</td>
+                            <td>'.$ObjetFormation.'</td>
+                            <td>'.$Demandeur.'</td>
+                            <td>'.$Departement.'</td>
+                            
+                            <td>
                             <a href="#">
                                 <button class="btnconsulter">Consulter</button>
                             </a>
-
-                        </td>
-                    </tr>
+                            </td>
+                        </tr>';
+                        }
+                    }
+                
+                ?>
                 </tbody>
             </table>
         </div>
@@ -54,33 +69,49 @@
             <p>Suivi des demandes des missions à l'étranger</p>
         </div>
         <div class="header_fixed">
-            <table>
+        <table>
                 <thead>
-                    <tr>
-                        <th>Année</th>
-                        <th>Date demande</th>
+                <tr>
                         <th>N° demande</th>
+                        <th>Date demande</th>
+                        <th>Pays</th>
                         <th>Nom demandeur</th>
                         <th>Objet</th>
-                        <th>Etat du demande</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
+                <?php
+                    
+                    $sql="Select * from `etranger`";
+                    $result=mysqli_query($conn,$sql);
+                    if ($result) {
+                        
+                        while ($row=mysqli_fetch_assoc($result)) {
+                            $NumDemande = $row['NumDemande'];
+                            $DateDemande = $row['DateDemande'];
+                            $Pays = $row['Pays'];
+                            $Demandeur = $row['Demandeur'];
+                            $ObjetMission = $row['ObjetMission'];
+                            
+                            echo '<tr>
+                            <td>'.$NumDemande.'</td>
+                            <td>'.$DateDemande.'</td>
+                            <td>'.$Pays.'</td>
+                            <td>'.$Demandeur.'</td>
+                            <td>'.$ObjetMission.'</td>
+                            
+                            <td>
                             <a href="#">
                                 <button class="btnconsulter">Consulter</button>
                             </a>
 
                         </td>
-                    </tr>
+                        </tr>';
+                        }
+                    }
+                
+                ?>
                 </tbody>
             </table>
         </div>

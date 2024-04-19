@@ -10,35 +10,49 @@
                 <p>Mise à jour des demandes de formation</p>
         </div>
             <div class="header_fixed">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>N° demande</th>
-                            <th>Date demande</th>
-                            <th>Objet mission</th>
-                            <th>Période du</th>
-                            <th>Période au</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+            <table>
+                <thead>
+                    <tr>
+                        <th>N° demande</th>
+                        <th>Date demande</th>
+                        <th>Objet formation</th>
+                        <th>Nom demandeur</th>
+                        <th>Departement</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php
+                    
+                    $sql="Select * from `formation`";
+                    $result=mysqli_query($conn,$sql);
+                    if ($result) {
+                        
+                        while ($row=mysqli_fetch_assoc($result)) {
+                            $NumDemande = $row['NumDemande'];
+                            $DateDemande = $row['DateDemande'];
+                            $ObjetFormation = $row['ObjetFormation'];
+                            $Demandeur = $row['Demandeur'];
+                            $Departement = $row['Departement'];
+                            
+                            echo '<tr>
+                            <td>'.$NumDemande.'</td>
+                            <td>'.$DateDemande.'</td>
+                            <td>'.$ObjetFormation.'</td>
+                            <td>'.$Demandeur.'</td>
+                            <td>'.$Departement.'</td>
+                            
                             <td>
-                                <a href="edit_formation.php">
-                                    <button><i class='bx bxs-edit'></i></button>
-                                </a>
-                                <a href="delete_formation.php">
-                                    <button><i class='bx bxs-trash'></i></button>
-                                </a>
+                                <button ><i class="bx bxs-edit"></i></button> 
+                                <button ><i class="bx bxs-trash"></i></button>
                             </td>
-                        </tr>
-                    </tbody>
-                </table>
+                        </tr>';
+                        }
+                    }
+                
+                ?>
+                </tbody>
+            </table>
             </div>
     </div>
     
@@ -53,33 +67,47 @@
             <p>Mise à jour des demandes de formation à l'étranger</p>
         </div>
         <div class="header_fixed">
-            <table>
+        <table>
                 <thead>
                     <tr>
-                        <th>Année</th>
-                        <th>Date demande</th>
                         <th>N° demande</th>
+                        <th>Date demande</th>
+                        <th>Pays</th>
                         <th>Nom demandeur</th>
                         <th>Objet</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <a href="edit_etranger.php">
-                                <button><i class='bx bxs-edit'></i></button>
-                            </a>
-                            <a href="delete_etranger.php">
-                                <button><i class='bx bxs-trash'></i></button>
-                            </a>
-                        </td>
-                    </tr>
+                <?php
+                    
+                    $sql="Select * from `etranger`";
+                    $result=mysqli_query($conn,$sql);
+                    if ($result) {
+                        
+                        while ($row=mysqli_fetch_assoc($result)) {
+                            $NumDemande = $row['NumDemande'];
+                            $DateDemande = $row['DateDemande'];
+                            $Pays = $row['Pays'];
+                            $Demandeur = $row['Demandeur'];
+                            $ObjetMission = $row['ObjetMission'];
+                            
+                            echo '<tr>
+                            <td>'.$NumDemande.'</td>
+                            <td>'.$DateDemande.'</td>
+                            <td>'.$Pays.'</td>
+                            <td>'.$Demandeur.'</td>
+                            <td>'.$ObjetMission.'</td>
+                            
+                            <td>
+                                <button ><i class="bx bxs-edit"></i></button> 
+                                <button ><i class="bx bxs-trash"></i></button>
+                            </td>
+                        </tr>';
+                        }
+                    }
+                
+                ?>
                 </tbody>
             </table>
         </div>

@@ -20,7 +20,7 @@
             <p>Suivi des demandes des missions du terrain</p>
         </div>
         <div class="header_fixed">
-            <table>
+        <table>
                 <thead>
                     <tr>
                         <th>N° demande</th>
@@ -28,13 +28,12 @@
                         <th>Objet mission</th>
                         <th>Période du</th>
                         <th>Période au</th>
-                        <th>Etat du demande</th>
+                        <th>Departement</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                    <tr>
+                     
                     <?php
                     
                     $sql="Select * from `demande_mission`";
@@ -42,32 +41,32 @@
                     if ($result) {
                         
                         while ($row=mysqli_fetch_assoc($result)) {
-                            $nDemande = $row['idDemandeMission'];
-                            $dateDemande = $row['DateDemande'];
-                            $objetMission = $row['ObjetMission'];
-                            $dateDu = $row['DateDu'];
-                            $dateAu = $row['DateAu'];
+                            $NumDemande = $row['NumDemande'];
+                            $DateDemande = $row['DateDemande'];
+                            $ObjetMission = $row['ObjetMission'];
+                            $DateDu = $row['DateDu'];
+                            $DateAu = $row['DateAu'];
+                            $Departement = $row['Departement'];
                             echo '<tr>
-                            <td>'.$nDemande.'</td>
-                            <td>'.$dateDemande.'</td>
-                            <td>'.$objetMission.'</td>
-                            <td>'.$dateDu.'</td>
-                            <td>'.$dateAu.'</td>
-                            <td></td>
+                            <td>'.$NumDemande.'</td>
+                            <td>'.$DateDemande.'</td>
+                            <td>'.$ObjetMission.'</td>
+                            <td>'.$DateDu.'</td>
+                            <td>'.$DateAu.'</td>
+                            <td>'.$Departement.'</td>
                             <td>
                             <a href="#">
-                                <button class="consulter">Consulter</button>
+                            <button class="btnconsulter">Consulter</button>
                             </a>
-
-                        </td>
-                            ';
+                            </td>
+                        </tr>';
                         }
                     }
                 
                 ?>
                         
-                    </tr>
                 </tbody>
+            </table>
             </table>
         </div>
         <!-- <div class="btn-class">
@@ -89,31 +88,47 @@
         <div class="header_fixed">
             <table>
                 <thead>
-                    <tr>
-                        <th>Année</th>
-                        <th>Date demande</th>
+                <tr>
                         <th>N° demande</th>
+                        <th>Date demande</th>
+                        <th>Pays</th>
                         <th>Nom demandeur</th>
                         <th>Objet</th>
-                        <th>Etat du demande</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
+                <?php
+                    
+                    $sql="Select * from `etranger`";
+                    $result=mysqli_query($conn,$sql);
+                    if ($result) {
+                        
+                        while ($row=mysqli_fetch_assoc($result)) {
+                            $NumDemande = $row['NumDemande'];
+                            $DateDemande = $row['DateDemande'];
+                            $Pays = $row['Pays'];
+                            $Demandeur = $row['Demandeur'];
+                            $ObjetMission = $row['ObjetMission'];
+                            
+                            echo '<tr>
+                            <td>'.$NumDemande.'</td>
+                            <td>'.$DateDemande.'</td>
+                            <td>'.$Pays.'</td>
+                            <td>'.$Demandeur.'</td>
+                            <td>'.$ObjetMission.'</td>
+                            
+                            <td>
                             <a href="#">
                                 <button class="btnconsulter">Consulter</button>
                             </a>
 
                         </td>
-                    </tr>
+                        </tr>';
+                        }
+                    }
+                
+                ?>
                 </tbody>
             </table>
         </div>
@@ -132,30 +147,46 @@
             <table>
                 <thead>
                     <tr>
+                    <tr>
                         <th>N° demande</th>
                         <th>Date demande</th>
-                        <th>Objet mission</th>
-                        <th>Période du</th>
-                        <th>Période au</th>
-                        <th>Etat du demande</th>
+                        <th>Point depart</th>
+                        <th>Date depart</th>
+                        <th>Heure depart</th>
                         <th>Action</th>
+                    </tr>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
+                <?php
+                    
+                    $sql="Select * from `courses`";
+                    $result=mysqli_query($conn,$sql);
+                    if ($result) {
+                        
+                        while ($row=mysqli_fetch_assoc($result)) {
+                            $NumDemande = $row['NumDemande'];
+                            $DateDemande = $row['DateDemande'];
+                            $PointDepart = $row['PointDepart'];
+                            $DateDepart = $row['DateDepart'];
+                            $HeureDepart = $row['HeureDepart'];
+                            echo '<tr>
+                            <td>'.$NumDemande.'</td>
+                            <td>'.$DateDemande.'</td>
+                            <td>'.$PointDepart.'</td>
+                            <td>'.$DateDepart.'</td>
+                            <td>'.$HeureDepart.'</td>
+                            <td>
                             <a href="#">
                                 <button class="consulter">Consulter</button>
                             </a>
-
+                           
                         </td>
-                    </tr>
+                            </tr>';
+                        }
+                    }
+                
+                ?>
                 </tbody>
             </table>
         </div>

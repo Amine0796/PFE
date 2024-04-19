@@ -1,93 +1,139 @@
+<?php
+require_once "database.php";
+if(isset($_POST['valider-etrangerF'])){
+    $Direction=$_POST['direction-etranger'];
+    $Departement=$_POST['departement-etranger'];
+    $Demandeur=$_POST['demandeur-etranger']; 
+    $CompteAnalytique=$_POST['compte-analytique-etranger']; 
+    $NumDemande=$_POST['num-demande-etranger'];
+    $DateDemande=$_POST['date-demande-etranger'];
+    $Destinataire=$_POST['destinataire-etranger']; 
+    $DateDu=$_POST['du-etranger'];
+    $DateAu=$_POST['au-etranger'];
+    $NombreDesJours=$_POST['nb-jours-etranger']; 
+    $ObjetMission=$_POST['objet-mission-etranger'] ;
+    $LieuMission=$_POST['lieu-mission-etranger'];
+    $Pays=$_POST['pays-etranger'] ;
+    $CadreMission=$_POST['cadre-mission-etranger'] ;
+    $InformationComplementaire=$_POST['info-complement-etranger'] ;
+    $NomMissionnaires=$_POST['missionnaires-etranger'] ;
+    $SituationVisa=$_POST['situation-visa-etranger'] ;
+    $InformationComplementaireVisa=$_POST['info-visa-etranger'] ;
+    $ObjectifsMission=$_POST['objectifs-mission-etranger'] ;
+    $OpportuniteMission=$_POST['opportunite-etranger'] ;
+ 
+
+    $sql = "INSERT INTO etranger (Direction, Departement, Demandeur, CompteAnalytique, NumDemande, DateDemande, Destinataire, DateDu, DateAu, NombreDesJours, ObjetMission, LieuMission, Pays, CadreMission, InformationComplementaire, NomMissionnaires, SituationVisa, InformationComplementaireVisa, ObjectifsMission, OpportuniteMission) 
+    VALUES ('$Direction', '$Departement', '$Demandeur', '$CompteAnalytique','$NumDemande', '$DateDemande', '$Destinataire', '$DateDu', '$DateAu', '$NombreDesJours', '$ObjetMission', '$LieuMission','$Pays', '$CadreMission', '$InformationComplementaire', '$NomMissionnaires', '$SituationVisa', '$InformationComplementaireVisa', '$ObjectifsMission', '$OpportuniteMission')";
+    
+    $result=mysqli_query($conn,$sql);
+    if($result){
+        echo "<script>alert('Data inserted successfully!');</script>";
+        echo "<script>window.location.replace('chef-formation.php');</script>";
+        exit();
+    }else{
+        echo "<script>alert('Something went wrong');</script>";
+        echo "<script>window.location.replace('chef-formation.php');</script>";
+        exit();
+    }
+
+}
+?>
+
 <div class="content" id="table-etranger">
 <form method="post">
     <p class="header-text">Ajouter une demande à l'étranger</p>
 
         <div class="container-kr">
-            <label for="direction-etrangerF">
+            <label for="direction-etranger">
                 Direction
-                <input type="text" id="direction-etrangerF">
+                <input type="text" name="direction-etranger">
             </label><!-- <br><br> -->
             
-            <label for="departement-etrangerF">
+            <label for="departement-etranger">
                 Département
-                <input type="text" id="departement-etrangerF">
+                <input type="text" name="departement-etranger">
             </label><!-- <br><br> -->
 
-            <label for="demandeur-etrangerF">
+            <label for="demandeur-etranger">
                 Demande effectuée par
-                <input type="text" id="demandeur-etrangerF" value="<?php echo $_SESSION["username"]; ?>">
+                <input type="text" name="demandeur-etranger" value="<?php echo $_SESSION["username"]; ?>">
             </label><!-- <br><br> -->
 
-            <label for="compte-analytique-etrangerF">
+
+            <label for="compte-analytique-etranger">
                 Compte analytique
-                <input type="text" id="compte-analytique-etrangerF">
+                <input type="text" name="compte-analytique-etranger">
             </label><!-- <br><br> -->
 
-            <label for="date-demande-etrangerF">
+            <label>
+            Num Demande 
+            <input type="number" name="num-demande-etranger" value="1" min="1" required>
+            </label>
+
+            <label for="date-demande-etranger">
                 Date de demande
-                <input type="text" id="date-demande-etrangerF">
+                <input type="date" name="date-demande-etranger" value="<?php echo date('Y-m-d'); ?>">
             </label><!-- <br><br> -->
 
-            <label for="destinataire-etrangerF">
+            <label for="destinataire-etranger">
                 Destinataire
-                <input type="text" id="destinataire-etrangerF">
+                <input type="text" name="destinataire-etranger">
             </label>
 
-            <label for="du-etrangerF">
+            <label for="du-etranger">
                 Période de la mission du 
-                <input type="date" id="du-etrangerF">
+                <input type="date" name="du-etranger" value="<?php echo date('Y-m-d'); ?>">
             </label>
 
-            <label for="au-etrangerF">
+            <label for="au-etranger">
                 au
-                <input type="date" id="au-etrangerF">
+                <input type="date" name="au-etranger" value="<?php echo date('Y-m-d'); ?>">
             </label><!-- <br><br> -->
 
-            <label for="n-bjours-etrangerF">
+            <label for="nb-jours-etranger">
                 Nombre des jours
-                <input type="number" id="nb-jours-etrangerF">
+                <input type="number" name="nb-jours-etranger" value="1" min="1">
             </label><!-- <br><br> -->
         
-            <label for="objet-mission-etrangerF">
+            <label for="objet-mission-etranger">
                 Objet de la mission
-                <input type="text" id="objet-mission-etrangerF">
+                <input type="text" name="objet-mission-etranger">
             </label><!-- <br><br> -->
             
             
-            <label for="lieu-mission-etrangerF">
+            <label for="lieu-mission-etranger">
                 Lieu de mission
-                <input type="text" id="lieu-mission-etrangerF">
+                <input type="text" name="lieu-mission-etranger">
             </label>
             
-            <label for="pays-etrangerF">
+            <label for="pays-etranger">
                 Pays
-                <input type="text" id="pays-etrangerF">
+                <input type="text" name="pays-etranger">
             </label>
             
-            <label for="cadre-mission-etrangerF">
+            <label for="cadre-mission-etranger">
                 Cadre de la mission
-                <select id="cadre-mission-etrangerF" >
-                    <option value=""></option>
-                    <option value="contrat">Contrat</option> 
-                    <option value="plan de formation">Plan de formation</option>
-                    <option value="autre">Autre</option>
+                <select name="cadre-mission-etranger" >
+                    <option value="">Contrat</option> 
+                    <option value="">Plan de formation</option>
+                    <option value="">Autre</option>
                 </select><!-- <br><br> -->            
             </label>
             
-            <label for="info-complement-etrangerF">
+            <label for="info-complement-etranger">
                 Information complémentaire <!-- contrat N° if contrat -->
-                <input type="text" id="info-complement-etrangerF">
+                <input type="text" name="info-complement-etranger">
             </label>
             
-            <label for="missionnaires-etrangerF">
+            <label for="missionnaires-etranger">
                 Nom(s) et fonction du (des) missionnaire(s)
-                <input type="text" id="missionnaires-etrangerF">
+                <input type="text" name="missionnaires-etranger">
             </label>
             
-            <label for="situation-visa-etrangerF">
+            <label for="situation-visa-etranger">
                 Situation visa
-                <select id="situation-visa-etrangerF" >
-                    <option value=""></option>
+                <select name="situation-visa-etranger" >
                     <option value="">Obtenue pour tous les missionnaires</option> 
                     <option value="">En cours pour tous les missoinnaires</option>
                     <option value="">En cours pour une partie des missoinnaires</option>
@@ -95,25 +141,25 @@
                 </select><!-- <br><br> -->            
             </label>
             
-            <label for="info-visa-etrangerF">
+            <label for="info-visa-etranger">
                 Information complémentaire visa
-                <input type="text" id="info-visa-etrangerF">
+                <input type="text" name="info-visa-etranger">
             </label>
             
-            <label for="objectifs-mission-etrangerF">
+            <label for="objectifs-mission-etranger">
                 Objectifs de la mission
-                <input type="text" id="objectifs-mission-etrangerF">
+                <input type="text" name="objectifs-mission-etranger">
             </label>
             
-            <label for="opportunite-etrangerF">
+            <label for="opportunite-etranger">
                 Opportunité Mission
-                <input type="text" id="opportunit-etrangerF">
+                <input type="text" name="opportunite-etranger">
             </label>
         </div>
 
         <div class="boutons-kr">
-            <button type="submit" class="btn-etrangerF" name="valider-etrangerF">Valider</button>
-            <button type="submit" class="btn-etrangerF" name="annuler-etrangerF" >Annuler</button>
+            <button type="submit" class="btn-etranger" name="valider-etrangerF">Valider</button>
+            <button type="submit" class="btn-etranger" name="annuler-etrangerF" >Annuler</button>
         </div>
     </form>
 </div>

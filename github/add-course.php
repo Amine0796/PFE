@@ -54,7 +54,7 @@ if(isset($_POST['valider-course'])){
 
             <label>
             Num Demande 
-            <input type="text" name="num-demande-course" required>
+            <input type="number" name="num-demande-course" value="1" min="1" required>
             </label>
 
             <label for="compte-analytique-course">

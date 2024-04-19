@@ -27,12 +27,12 @@
                         <th>Objet mission</th>
                         <th>Période du</th>
                         <th>Période au</th>
-                        <th>Etat du demande</th>
+                        <th>Departement</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                     
                     <?php
                     
                     $sql="Select * from `demande_mission`";
@@ -40,18 +40,19 @@
                     if ($result) {
                         
                         while ($row=mysqli_fetch_assoc($result)) {
-                            $nDemande = $row['NumDemande'];
-                            $dateDemande = $row['DateDemande'];
-                            $objetMission = $row['ObjetMission'];
-                            $dateDu = $row['DateDu'];
-                            $dateAu = $row['DateAu'];
+                            $NumDemande = $row['NumDemande'];
+                            $DateDemande = $row['DateDemande'];
+                            $ObjetMission = $row['ObjetMission'];
+                            $DateDu = $row['DateDu'];
+                            $DateAu = $row['DateAu'];
+                            $Departement = $row['Departement'];
                             echo '<tr>
-                            <td>'.$nDemande.'</td>
-                            <td>'.$dateDemande.'</td>
-                            <td>'.$objetMission.'</td>
-                            <td>'.$dateDu.'</td>
-                            <td>'.$dateAu.'</td>
-                            <td></td>
+                            <td>'.$NumDemande.'</td>
+                            <td>'.$DateDemande.'</td>
+                            <td>'.$ObjetMission.'</td>
+                            <td>'.$DateDu.'</td>
+                            <td>'.$DateAu.'</td>
+                            <td>'.$Departement.'</td>
                             <td>
                                 <button ><i class="bx bxs-edit"></i></button> 
                                 <button id="delete_row_travail"><i class="bx bxs-trash"></i></button>
@@ -61,7 +62,7 @@
                     }
                 
                 ?>
-                        </tr>
+                        
                 </tbody>
             </table>
         </div>
@@ -82,30 +83,44 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Année</th>
-                        <th>Date demande</th>
                         <th>N° demande</th>
+                        <th>Date demande</th>
+                        <th>Pays</th>
                         <th>Nom demandeur</th>
                         <th>Objet</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <a href="edit_etranger.php">
-                                <button><i class='bx bxs-edit'></i></button>
-                            </a>
-                            <a href="delete_etranger.php">
-                                <button><i class='bx bxs-trash'></i></button>
-                            </a>
-                        </td>
-                    </tr>
+                <?php
+                    
+                    $sql="Select * from `etranger`";
+                    $result=mysqli_query($conn,$sql);
+                    if ($result) {
+                        
+                        while ($row=mysqli_fetch_assoc($result)) {
+                            $NumDemande = $row['NumDemande'];
+                            $DateDemande = $row['DateDemande'];
+                            $Pays = $row['Pays'];
+                            $Demandeur = $row['Demandeur'];
+                            $ObjetMission = $row['ObjetMission'];
+                            
+                            echo '<tr>
+                            <td>'.$NumDemande.'</td>
+                            <td>'.$DateDemande.'</td>
+                            <td>'.$Pays.'</td>
+                            <td>'.$Demandeur.'</td>
+                            <td>'.$ObjetMission.'</td>
+                            
+                            <td>
+                                <button ><i class="bx bxs-edit"></i></button> 
+                                <button ><i class="bx bxs-trash"></i></button>
+                            </td>
+                        </tr>';
+                        }
+                    }
+                
+                ?>
                 </tbody>
             </table>
         </div>
@@ -131,28 +146,46 @@
                     <tr>
                         <th>N° demande</th>
                         <th>Date demande</th>
-                        <th>Objet mission</th>
-                        <th>Période du</th>
-                        <th>Période au</th>
+                        <th>Point depart</th>
+                        <th>Date depart</th>
+                        <th>Heure depart</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <a href="edit_course.php">
-                                <button><i class='bx bxs-edit'></i></button>
-                            </a>
-                            <a href="delete_course.php">
-                                <button><i class='bx bxs-trash'></i></button>
-                            </a>
-                        </td>
-                    </tr>
+                    
+                    <?php
+                    
+                    $sql="Select * from `courses`";
+                    $result=mysqli_query($conn,$sql);
+                    if ($result) {
+                        
+                        while ($row=mysqli_fetch_assoc($result)) {
+                            $NumDemande = $row['NumDemande'];
+                            $DateDemande = $row['DateDemande'];
+                            $PointDepart = $row['PointDepart'];
+                            $DateDepart = $row['DateDepart'];
+                            $HeureDepart = $row['HeureDepart'];
+                            echo '<tr>
+                            <td>'.$NumDemande.'</td>
+                            <td>'.$DateDemande.'</td>
+                            <td>'.$PointDepart.'</td>
+                            <td>'.$DateDepart.'</td>
+                            <td>'.$HeureDepart.'</td>
+                            <td>
+                                <a href="edit_course.php">
+                                    <button><i class="bx bxs-edit"></i></button>
+                                </a>
+                                <a href="delete_course.php">
+                                    <button><i class="bx bxs-trash"></i></button>
+                                </a>
+                            </td>
+                            </tr>';
+                        }
+                    }
+                
+                ?>
+
                 </tbody>
             </table>
         </div>

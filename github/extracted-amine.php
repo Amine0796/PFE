@@ -28,7 +28,7 @@
                         if ($result) {
                             
                             while ($row=mysqli_fetch_assoc($result)) {
-                                $nDemande = $row['idDemandeMission'];
+                                $nDemande = $row['NumDemande'];
                                 $dateDemande = $row['DateDemande'];
                                 $objetMission = $row['ObjetMission'];
                                 $dateDu = $row['DateDu'];
