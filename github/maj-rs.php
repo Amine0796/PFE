@@ -52,7 +52,7 @@
                     }
                 
                 ?>
-                        
+                        </tr>
                 </tbody>
             </table>
         </div>

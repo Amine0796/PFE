@@ -53,25 +53,25 @@ if(isset($_POST['valider-travail'])){
     <p class="header-text">Ajouter une demande de mission du terrain</p>
 
     <div class="container-kr">
-        <label for="text1">
+        <label >
             Direction
             <input type="text"  name="direction-travail">
         </label>
                                                 
 
-        <label for="text2">
+        <label >
             Departement 
             <input type="text"  name="departement-travail">
         </label>
 
 
-        <label for="text3">
+        <label >
             Demande Effuctuee Par 
             <input type="text" name="demande-dffuctuee-par-travail" value="<?php echo $_SESSION["username"]; ?>">
         </label>
                                                 
 
-        <label for="text4">
+        <label >
             Compte Analytique
             <input type="text" id="text4" name="compte-analytique-travail">
         </label>
@@ -84,30 +84,30 @@ if(isset($_POST['valider-travail'])){
 
 
 
-        <label for="date1">
+        <label >
             Date Demande 
             <input type="date"  name="date-demande-travail" value="<?php echo date('Y-m-d'); ?>">
         </label>
                                                 
                                                 
-        <label for="text5">
+        <label >
             Destinataire 
             <input type="text"  name="destinataire-travail">
         </label>
                                                 
                                                 
-        <label for="date2">
+        <label>
             Du 
             <input type="date" name="du-travail" value="<?php echo date('Y-m-d'); ?>">
         </label>
 
-        <label for="date3">
+        <label>
             Au
             <input type="date" name="au-travail" value="<?php echo date('Y-m-d'); ?>">
         </label>
                                                 
 
-        <label for="select1">
+        <label>
             Region deroulement mission
             <select id="select1" name="region-deroulement-mission-travail">
                 <option>NORD</option>
@@ -117,24 +117,24 @@ if(isset($_POST['valider-travail'])){
             </select>
         </label>
                                                 
-        <label for="text6">
+        <label >
             lieu de la mission 
             <input type="text" name="lieu-de-la-mission-travail">
         </label>
                                                 
 
-        <label for="text7">
+        <label >
             Itineraire
             <input type="text" name="itineraire-travail">
         </label>
 
-        <label for="text8">
+        <label >
             objet de la mission
             <input type="text" name="objet-de-la-mission-travail">
         </label>
                                                 
 
-        <label for="text9">
+        <label>
             Nom(s) du(des) missionaire(s)
             <input type="text" name="noms-des-missionaires-travail">
         </label>
@@ -181,13 +181,13 @@ if(isset($_POST['valider-travail'])){
             </label>
 
 
-            <label for="text12">
+            <label>
                 Point de depart
                 <input type="text" name="point-de-depart-travail">
             </label>
 
 
-            <label for="text11">
+            <label>
                 Demande hebergement aller
                 <select  name="demande-hebergement-aller-travail">
                     <option>Oui</option> 
@@ -198,7 +198,7 @@ if(isset($_POST['valider-travail'])){
 
 
 
-                                                <label for="text13">
+                                                <label >
                                                     nombre de nuite du trajet - Aller
                                                     <input type="number" name="nombre-de-nuite-du-trajet-aller-travail" value="1">
                                                 </label>
@@ -217,13 +217,13 @@ if(isset($_POST['valider-travail'])){
                                                 </label>
 
 
-                                                <label for="text12">
+                                                <label>
                                                     Point de retour
                                                     <input type="text"  name="point-de-retour-travail">
                                                 </label>
 
 
-                                                <label for="text11">
+                                                <label>
                                                     Demande hebergement Retour
                                                     <select  name="demande-hebergement-retour-travail">
                                                         
@@ -235,7 +235,7 @@ if(isset($_POST['valider-travail'])){
 
 
 
-                                                <label for="text13">
+                                                <label >
                                                     nombre de nuite du trajet - Retour
                                                     <input type="number" id="text13" name="nombre-de-nuite-du-trajet-retour-travail" value="1">
                                                 </label>
