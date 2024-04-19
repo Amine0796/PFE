@@ -1,47 +1,54 @@
 <div class="table content" id="table-maj">
     
-    <div class="table-header">
-            <p>Mise à jour des demandes de formation</p>
+    <div class="navbar-Table-Button">
+        <button onclick="showTable('tableFormation')">Formation</button>
+        <button onclick="showTable('tableFormationEtranger')">Formation à l'étranger</button>
     </div>
-        <div class="header_fixed">
-            <table>
-                <thead>
-                    <tr>
-                        <th>N° demande</th>
-                        <th>Date demande</th>
-                        <th>Objet mission</th>
-                        <th>Période du</th>
-                        <th>Période au</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <a href="edit_formation.php">
-                                <button><i class='bx bxs-edit'></i></button>
-                            </a>
-                            <a href="delete_formation.php">
-                                <button><i class='bx bxs-trash'></i></button>
-                            </a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+
+    <div id="tableFormation" class="tables-container">
+        <div class="table-header">
+                <p>Mise à jour des demandes de formation</p>
         </div>
+            <div class="header_fixed">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>N° demande</th>
+                            <th>Date demande</th>
+                            <th>Objet mission</th>
+                            <th>Période du</th>
+                            <th>Période au</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <a href="edit_formation.php">
+                                    <button><i class='bx bxs-edit'></i></button>
+                                </a>
+                                <a href="delete_formation.php">
+                                    <button><i class='bx bxs-trash'></i></button>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    </div>
+    
         
 
 
         <!-- ********************************************************
              ******************* Etrangerrr *************************
              ******************************************************** -->
-
-
+    <div id="tableFormationEtranger" class="tables-container">
         <div class="table-header">
             <p>Mise à jour des demandes de formation à l'étranger</p>
         </div>
@@ -77,3 +84,6 @@
             </table>
         </div>
     </div>
+        
+</div>
+<script src="tableswitcher.js"></script>

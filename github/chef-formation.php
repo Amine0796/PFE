@@ -17,7 +17,7 @@ include "database.php"
         <!-- <link rel="stylesheet" href="formation.css"> -->
 
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="stylemaj.css">
+        <link rel="stylesheet" href="stylemisejr.css">
         <link rel="stylesheet" href="addstyle.css">
         <link rel="stylesheet" href="suivistyle.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>

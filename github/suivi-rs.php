@@ -1,10 +1,21 @@
 <div class="content" id="table-suivi">
 
+
+<div class="navbar-Table-Button">
+        <button onclick="showTable('suiviTravail')">Mission du terrain</button>
+        <button onclick="showTable('suiviEtranger')">Mission à l'étranger</button>
+        <button onclick="showTable('suiviCourse')">Course</button>
+        <button onclick="showTable('suiviAcheminement')">Acheminement</button>
+</div>
+
+
 <!-- ***********************************
 *****************suivi travail**********
 **************************************** -->
 
-<div class="table" id="table-maj">
+
+<div id="suiviTravail" class="tables-container">
+    <div class="table" id="table-maj">
         <div class="table-header">
             <p>Suivi des demandes des missions du terrain</p>
         </div>
@@ -65,12 +76,14 @@
         </div> -->
     </div>
 
+
+</div>
         <!-- *************************************
 *****************suivi etranger**********
 **************************************** -->
 
-
-        <div class="table-header">
+<div id="suiviEtranger" class="tables-container">
+    <div class="table-header">
             <p>Suivi des demandes des missions à l'étranger</p>
         </div>
         <div class="header_fixed">
@@ -105,11 +118,13 @@
             </table>
         </div>
 
+</div>
+
         <!-- *************************************
 *****************suivi course**********
 **************************************** -->
-
-    <div class="table" id="table-maj">
+<div id="suiviCourse" class="tables-container">
+<div class="table" id="table-maj">
         <div class="table-header">
             <p>Suivi des demandes de course</p>
         </div>
@@ -150,10 +165,12 @@
         </div> -->
     </div>
 
+</div>
+
         <!-- *************************************
 *****************suivi Acheminement**********
 **************************************** -->
-
+<div id="suiviAcheminement" class="tables-container">
     <div class="table" id="table-maj">
         <div class="table-header">
             <p>Suivi des demandes d'acheminement</p>
@@ -194,6 +211,8 @@
         <button id="btn-confirmer">confirmer</button>
         </div> -->
     </div> 
+
+</div>
 
 
 </div>

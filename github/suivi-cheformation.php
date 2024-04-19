@@ -1,10 +1,14 @@
 <div class="content" id="table-suivi">
 
+    <div class="navbar-Table-Button">
+        <button onclick="showTable('suiviFormation')">Formation</button>
+        <button onclick="showTable('suiviFormationEtranger')">Formation à l'étranger</button>
+    </div>
 <!-- *************************************
 *****************suivi formation**********
 **************************************** -->
-
-        <div class="table-header">
+<div id="suiviFormation" class="tables-container">
+    <div class="table-header">
             <p>Suivi des demandes de formation</p>
         </div>
         <div class="header_fixed">
@@ -39,12 +43,14 @@
             </table>
         </div>
 
+
+</div>
         <!-- *************************************
 *****************suivi formation etranger**********
 **************************************** -->
 
-
-        <div class="table-header">
+<div id="suiviFormationEtranger" class="tables-container">
+<div class="table-header">
             <p>Suivi des demandes des missions à l'étranger</p>
         </div>
         <div class="header_fixed">
@@ -79,5 +85,7 @@
             </table>
         </div>
 
+
+</div>
 
 </div>

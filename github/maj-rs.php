@@ -1,12 +1,21 @@
 <div class="table content" id="table-maj">
+
+<div class="navbar-Table-Button">
+        <button onclick="showTable('tableTerrain')">Mission du terrain</button>
+        <button onclick="showTable('tableEtranger')">Mission à l'étranger</button>
+        <button onclick="showTable('tableCourse')">Course</button>
+        <button onclick="showTable('tableAcheminement')">Acheminement</button>
+
+    </div>
+
     <!-- *********************************************************
 ******************************************************************
 ******************************************************************
 *************************** travail ******************************
 ******************************************************************
 ****************************************************************** -->
-
-<div class="table-header">
+<div id="tableTerrain" class="tables-container">
+        <div class="table-header">
             <p>Mise à jour des demande de mission du terrain</p>
         </div>
         <div class="header_fixed">
@@ -57,14 +66,16 @@
             </table>
         </div>
 
+
+</div>
 <!-- *************************************************************
 ******************************************************************
 ******************************************************************
 *************************** etranger *****************************
 ******************************************************************
 ****************************************************************** -->
-
-<div class="table-header">
+<div id="tableEtranger" class="tables-container">
+        <div class="table-header">
             <p>Mise à jour des demandes des mission à l'étranger</p>
         </div>
         <div class="header_fixed">
@@ -99,6 +110,9 @@
             </table>
         </div>
 
+</div>
+
+
 
 
 <!-- *************************************************************
@@ -107,8 +121,8 @@
 *************************** course *******************************
 ******************************************************************
 ****************************************************************** -->
-
-<div class="table-header">
+<div id="tableCourse" class="tables-container">
+    <div class="table-header">
             <p>Mise à jour des demandes de course</p>
         </div>
         <div class="header_fixed">
@@ -142,6 +156,10 @@
                 </tbody>
             </table>
         </div>
+</div>
+
+
+
 
 
 
@@ -151,9 +169,8 @@
 ***************************Acheminement***************************
 ******************************************************************
 ****************************************************************** -->
-
-
-<div class="table-header">
+<div id="tableAcheminement" class="tables-container">
+        <div class="table-header">
             <p>Mise à jour des demandes d'acheminement</p>
         </div>
         <div class="header_fixed">
@@ -190,3 +207,7 @@
 
 
 </div>
+
+
+</div>
+<script src="tableswitcher.js"></script>

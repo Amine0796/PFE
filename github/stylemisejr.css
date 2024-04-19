@@ -7,6 +7,29 @@
   
 }
 
+.navbar-Table-Button{
+    margin-left: 50px;
+    margin-top: 30px;
+
+}
+.navbar-Table-Button button {
+    background-color: #f8b65f;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 1px;
+    font-size: 16px;
+}
+
+.navbar-Table-Button button:hover {
+    background-color: #e2e2e2;
+}
+ 
+.tables-container {
+    display: none;
+}
 
 .table-header{
     text-align: center;
