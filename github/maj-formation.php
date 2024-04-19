@@ -15,7 +15,7 @@
                         <tr>
                             <th>N° demande</th>
                             <th>Date demande</th>
-                            <th>Objet mission</th>
+                            <th>Objet formation</th>
                             <th>Période du</th>
                             <th>Période au</th>
                             <th>Action</th>

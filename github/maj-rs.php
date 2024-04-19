@@ -27,7 +27,6 @@
                         <th>Objet mission</th>
                         <th>Période du</th>
                         <th>Période au</th>
-                        <th>Etat du demande</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -51,7 +50,6 @@
                             <td>'.$objetMission.'</td>
                             <td>'.$dateDu.'</td>
                             <td>'.$dateAu.'</td>
-                            <td></td>
                             <td>
                                 <button ><i class="bx bxs-edit"></i></button> 
                                 <button id="delete_row_travail"><i class="bx bxs-trash"></i></button>
@@ -82,11 +80,17 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Année</th>
+                        <!-- <th>Année</th>
                         <th>Date demande</th>
                         <th>N° demande</th>
                         <th>Nom demandeur</th>
                         <th>Objet</th>
+                        <th>Action</th> -->
+                        <th>N° demande</th>
+                        <th>Date demande</th>
+                        <th>Objet mission</th>
+                        <th>Période du</th>
+                        <th>Période au</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -131,9 +135,9 @@
                     <tr>
                         <th>N° demande</th>
                         <th>Date demande</th>
-                        <th>Objet mission</th>
-                        <th>Période du</th>
-                        <th>Période au</th>
+                        <th>Objet demande</th>
+                        <th>Date du départ</th>
+                        <th>Point du départ</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -180,14 +184,12 @@
                         <th>N° demande</th>
                         <th>Date demande</th>
                         <th>Objet mission</th>
-                        <th>Période du</th>
-                        <th>Période au</th>
+                        <th>Type produit</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
