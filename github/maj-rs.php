@@ -47,12 +47,12 @@
                             $DateAu = $row['DateAu'];
                             $Departement = $row['Departement'];
                             echo '<tr>
-                            <td>'.$NumDemande.'</td>
-                            <td>'.$DateDemande.'</td>
-                            <td>'.$ObjetMission.'</td>
-                            <td>'.$DateDu.'</td>
-                            <td>'.$DateAu.'</td>
-                            <td>'.$Departement.'</td>
+                            <td>'.$nDemande.'</td>
+                            <td>'.$dateDemande.'</td>
+                            <td>'.$objetMission.'</td>
+                            <td>'.$dateDu.'</td>
+                            <td>'.$dateAu.'</td>
+                            <td></td>
                             <td>
                                 <button ><i class="bx bxs-edit"></i></button> 
                                 <button id="delete_row_travail"><i class="bx bxs-trash"></i></button>
@@ -83,11 +83,17 @@
             <table>
                 <thead>
                     <tr>
-                        <th>N° demande</th>
+                        <th>Année</th>
                         <th>Date demande</th>
                         <th>Pays</th>
                         <th>Nom demandeur</th>
                         <th>Objet</th>
+                        <th>Action</th> -->
+                        <th>N° demande</th>
+                        <th>Date demande</th>
+                        <th>Objet mission</th>
+                        <th>Période du</th>
+                        <th>Période au</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -146,9 +152,9 @@
                     <tr>
                         <th>N° demande</th>
                         <th>Date demande</th>
-                        <th>Point depart</th>
-                        <th>Date depart</th>
-                        <th>Heure depart</th>
+                        <th>Objet mission</th>
+                        <th>Période du</th>
+                        <th>Période au</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -213,14 +219,12 @@
                         <th>N° demande</th>
                         <th>Date demande</th>
                         <th>Objet mission</th>
-                        <th>Période du</th>
-                        <th>Période au</th>
+                        <th>Type produit</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
