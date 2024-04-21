@@ -69,7 +69,7 @@ tr:nth-child(even) {
 }
 
 tr:nth-child(odd) {
-    background-color: #edeef1;
+    background-color: #dddddd;
 }
 
 tr:hover td {
@@ -98,4 +98,11 @@ td button:hover{
 
 ::-webkit-scrollbar-thumb {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.btn-dlt-upt{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
 }

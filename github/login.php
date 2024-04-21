@@ -2,21 +2,22 @@
 session_start();
 
 // Check if user is already logged in
-if (isset($_SESSION["user"])) {
-   header("Location: chef-formation.php");
-   exit();
-}
+// if (isset($_SESSION["user"])) {
+//    header("Location: chef-formation.php");
+//    exit();
+// }
 
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['username']) && isset($_POST['password'])) {
     require_once "database.php"; // Include database connection
     
     // Prepare SQL statement to prevent SQL injection
-    $query = "SELECT username, password, poste FROM users WHERE username=? AND password=?";
-    $stmt = $conn->prepare($query);
-    $stmt->bind_param("ss", $_POST['username'], $_POST['password']);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    
+    $query = "SELECT username, password, poste FROM users WHERE username='$username' AND password='$password'";
+    $result = $conn->query($query);
+    
 
     // Check if user exists
     if ($result->num_rows == 0) {
@@ -36,6 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['username']) && isset($
     // Redirect based on user's position
     if ($poste == 'chef-formation') {
         header("Location: chef-formation.php");
+        
         exit();
     } elseif ($poste == 'RS') {
         header("Location: RS.php");

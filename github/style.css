@@ -28,7 +28,7 @@
 }
 body{
   position: relative;
-  /* margin: 0; */
+  margin: 0;
   margin-left: 92px;
   /* padding: 2rem 0 0 6.75rem; */
   font-family: var(--body-font);
@@ -36,6 +36,13 @@ body{
   transition: .5s;
   
 }
+
+/* la couleur quand je clique */
+.nav__link.active {
+  background-color: var(--first-color);
+  /* Ajoutez d'autres styles selon vos besoins */
+}
+
 h1{
   margin: 0;
 }
