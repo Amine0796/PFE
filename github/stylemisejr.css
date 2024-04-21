@@ -69,7 +69,7 @@ tr:nth-child(even) {
 }
 
 tr:nth-child(odd) {
-    background-color: #edeef1;
+    background-color: #dddddd;
 }
 
 tr:hover td {

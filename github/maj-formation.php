@@ -43,8 +43,10 @@
                             <td>'.$Departement.'</td>
                             
                             <td>
+                            <form action="delete_row.php" method="post">
                                 <button ><i class="bx bxs-edit"></i></button> 
-                                <button ><i class="bx bxs-trash"></i></button>
+                                <button name="delete-formation" ><i class="bx bxs-trash"></i></button>
+                            </form>
                             </td>
                         </tr>';
                         }

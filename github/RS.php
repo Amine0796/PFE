@@ -193,7 +193,7 @@ include "database.php"
         
         <!-- ===== MAIN JS ===== -->
         <script src="showMenu.js"></script>
-        <script src="affiche-contenu-travail.js"></script>
+        <script src="affiche-contenu-rs.js"></script>
     </body>
 </html>
 
