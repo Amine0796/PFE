@@ -37,6 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['username']) && isset($
     // Redirect based on user's position
     if ($poste == 'chef-formation') {
         header("Location: chef-formation.php");
+        
         exit();
     } elseif ($poste == 'RS') {
         header("Location: RS.php");

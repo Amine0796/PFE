@@ -24,6 +24,7 @@ include "database.php"
         <title>Dashboard</title>
     </head>
     <body id="body-pd">
+    
         <div class="l-navbar" id="navbar">
             <nav class="nav">
                 <div>
@@ -48,7 +49,7 @@ include "database.php"
                 <!-- *******NAV LISTTTTTT********* -->
                     </div>
                     <div class="nav__list">
-                        <a  class="nav__link active " id="maj" >
+                        <a  class="nav__link" id="maj" >
                             <img src="../images/file.png" alt="">
                             <!-- <ion-icon name="home-outline" class="nav__icon"></ion-icon> -->
                             <span class="nav__name" >Mise a jour</span>
@@ -89,7 +90,7 @@ include "database.php"
         </div>
         
 
-        <div class="sonatrach-img">
+        <div class="sonatrach-img content" id="home-content">
             <img src="../images/sonatrach-img.jpg" alt="" class="bg-dlab" id="sonatrach-img">
         </div>
         
@@ -166,11 +167,13 @@ include "database.php"
 <!--  -->
 
         <!-- ===== IONICONS ===== -->
-        <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
         <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
         
         <!-- ===== MAIN JS ===== -->
         <script src="showMenu.js"></script>
         <script src="affiche-contenu-formation1.js"></script>
+        
     </body>
 </html>

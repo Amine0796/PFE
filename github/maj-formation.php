@@ -1,3 +1,4 @@
+
 <div class="table content" id="table-maj">
     
     <div class="navbar-Table-Button">
@@ -23,12 +24,15 @@
                 </thead>
                 <tbody>
                 <?php
-                    
                     $sql="Select * from `formation`";
                     $result=mysqli_query($conn,$sql);
                     if ($result) {
                         
                         while ($row=mysqli_fetch_assoc($result)) {
+                            
+                            $id = $row['id'];
+                            $_SESSION['id'] = $id;
+                            
                             $NumDemande = $row['NumDemande'];
                             $DateDemande = $row['DateDemande'];
                             $ObjetFormation = $row['ObjetFormation'];
@@ -43,9 +47,11 @@
                             <td>'.$Departement.'</td>
                             
                             <td>
-                            <form action="delete_row.php" method="post">
+                            <form action="delete_update.php" method="post">
+                            <div class="btn-dlt-upt">
                                 <button ><i class="bx bxs-edit"></i></button> 
                                 <button name="delete-formation" ><i class="bx bxs-trash"></i></button>
+                                </div>
                             </form>
                             </td>
                         </tr>';
