@@ -3,15 +3,16 @@ session_start();
 
 include 'database.php';
 
-if(isset($_POST['delete-formation'])){
-    $id=$_SESSION['id'];
-    $sql="delete from `formation` where id =$id";
+
+if(isset($_POST['delete-etranger-rs'])){
+    $idRSE=$_SESSION['idRSE'];
+    $sql="delete from `etranger` where id =$idRSE";
     $result=mysqli_query($conn,$sql);
     if($result){
         // echo "delete successfull";
-        header('location:chef-formation.php');
+        header('location:RS.php');
     }else {
-        echo "id is $id";
+        echo "id is $idRSE";
         echo "<br>";
         die(mysqli_error($conn));
     }

@@ -40,6 +40,9 @@
                     if ($result) {
                         
                         while ($row=mysqli_fetch_assoc($result)) {
+                            $idT = $row['id'];
+                            $_SESSION['$idT'] = $idT;
+
                             $NumDemande = $row['NumDemande'];
                             $DateDemande = $row['DateDemande'];
                             $ObjetMission = $row['ObjetMission'];
@@ -54,8 +57,12 @@
                             <td>'.$DateAu.'</td>
                             <td>'.$Departement.'</td>
                             <td>
+                            <form action="delete_update_travail_rs.php" method="post">
+                            <div class="btn-dlt-upt-rs">
                                 <button ><i class="bx bxs-edit"></i></button> 
-                                <button id="delete_row_travail"><i class="bx bxs-trash"></i></button>
+                                <button name="delete-travail-rs" ><i class="bx bxs-trash"></i></button>
+                                </div>
+                            </form>
                             </td>
                         </tr>';
                         }
@@ -99,6 +106,9 @@
                     if ($result) {
                         
                         while ($row=mysqli_fetch_assoc($result)) {
+                            $idRSE = $row['id'];
+                            $_SESSION['idRSE'] = $idRSE;
+
                             $NumDemande = $row['NumDemande'];
                             $DateDemande = $row['DateDemande'];
                             $Pays = $row['Pays'];
@@ -113,8 +123,12 @@
                             <td>'.$ObjetMission.'</td>
                             
                             <td>
+                            <form action="delete_update_etranger_rs.php" method="post">
+                            <div class="btn-dlt-upt-rs">
                                 <button ><i class="bx bxs-edit"></i></button> 
-                                <button ><i class="bx bxs-trash"></i></button>
+                                <button name="delete-etranger-rs" ><i class="bx bxs-trash"></i></button>
+                                </div>
+                            </form>
                             </td>
                         </tr>';
                         }
@@ -161,6 +175,9 @@
                     if ($result) {
                         
                         while ($row=mysqli_fetch_assoc($result)) {
+                            $idC = $row['id'];
+                            $_SESSION['idC'] = $idC;
+
                             $NumDemande = $row['NumDemande'];
                             $DateDemande = $row['DateDemande'];
                             $PointDepart = $row['PointDepart'];
@@ -173,12 +190,12 @@
                             <td>'.$DateDepart.'</td>
                             <td>'.$HeureDepart.'</td>
                             <td>
-                                <a href="edit_course.php">
-                                    <button><i class="bx bxs-edit"></i></button>
-                                </a>
-                                <a href="delete_course.php">
-                                    <button><i class="bx bxs-trash"></i></button>
-                                </a>
+                            <form action="delete_update_course_rs.php" method="post">
+                            <div class="btn-dlt-upt-rs">
+                                <button ><i class="bx bxs-edit"></i></button> 
+                                <button name="delete-course-rs" ><i class="bx bxs-trash"></i></button>
+                                </div>
+                            </form>
                             </td>
                             </tr>';
                         }

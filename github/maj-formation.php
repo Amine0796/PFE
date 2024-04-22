@@ -2,8 +2,8 @@
 <div class="table content" id="table-maj">
     
     <div class="navbar-Table-Button">
-        <button onclick="showTable('tableFormation')">Formation</button>
-        <button onclick="showTable('tableFormationEtranger')">Formation à l'étranger</button>
+        <button onclick="showTable('tableFormation')" id="formation-btn-maj">Formation</button>
+        <button onclick="showTable('tableFormationEtranger')" id="">Formation à l'étranger</button>
     </div>
 
     <div id="tableFormation" class="tables-container">
@@ -30,8 +30,8 @@
                         
                         while ($row=mysqli_fetch_assoc($result)) {
                             
-                            $id = $row['id'];
-                            $_SESSION['id'] = $id;
+                            $idF = $row['id'];
+                            $_SESSION['idF'] = $idF;
                             
                             $NumDemande = $row['NumDemande'];
                             $DateDemande = $row['DateDemande'];
@@ -47,7 +47,7 @@
                             <td>'.$Departement.'</td>
                             
                             <td>
-                            <form action="delete_update.php" method="post">
+                            <form action="delete_update_formation.php" method="post">
                             <div class="btn-dlt-upt">
                                 <button ><i class="bx bxs-edit"></i></button> 
                                 <button name="delete-formation" ><i class="bx bxs-trash"></i></button>
@@ -94,6 +94,9 @@
                     if ($result) {
                         
                         while ($row=mysqli_fetch_assoc($result)) {
+                            $idFE = $row['id'];
+                            $_SESSION['idFE'] = $idFE;
+
                             $NumDemande = $row['NumDemande'];
                             $DateDemande = $row['DateDemande'];
                             $Pays = $row['Pays'];
@@ -108,8 +111,12 @@
                             <td>'.$ObjetMission.'</td>
                             
                             <td>
+                            <form action="delete_update_etranger_formation.php" method="post">
+                            <div class="btn-dlt-upt">
                                 <button ><i class="bx bxs-edit"></i></button> 
-                                <button ><i class="bx bxs-trash"></i></button>
+                                <button name="delete-etranger-formation" ><i class="bx bxs-trash"></i></button>
+                                </div>
+                            </form>
                             </td>
                         </tr>';
                         }
