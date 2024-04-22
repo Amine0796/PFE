@@ -53,123 +53,130 @@ if(isset($_POST['valider-travail'])){
     <p class="header-text">Ajouter une demande de mission du terrain</p>
 
     <div class="container-kr">
-        <label >
-            Direction
-            <input type="text"  name="direction-travail">
-        </label>
-                                                
+        <!-- <div class="fixed-form-head"> -->
+            <label >
+                Direction
+                <input type="text"  name="direction-travail" readonly>
+            </label>
+                                                    
 
-        <label >
-            Departement 
-            <input type="text"  name="departement-travail">
-        </label>
-
-
-        <label >
-            Demande Effuctuee Par 
-            <input type="text" name="demande-dffuctuee-par-travail" value="<?php echo $_SESSION["username"]; ?>">
-        </label>
-                                                
-
-        <label >
-            Compte Analytique
-            <input type="text" id="text4" name="compte-analytique-travail">
-        </label>
-                                                
-
-        <label>
-            Num Demande 
-            <input type="number" name="num-demande-travail" value="1" min="1" required>
-        </label>
+            <label >
+                Département 
+                <input type="text"  name="departement-travail" readonly>
+            </label>
 
 
+            <label >
+                Demande effuctuée par 
+                <input type="text" name="demande-dffuctuee-par-travail" value="<?php echo $_SESSION["username"]; ?>" readonly>
+            </label>
+                                                    
 
-        <label >
-            Date Demande 
-            <input type="date"  name="date-demande-travail" value="<?php echo date('Y-m-d'); ?>">
-        </label>
-                                                
-                                                
-        <label >
-            Destinataire 
-            <input type="text"  name="destinataire-travail">
-        </label>
-                                                
-                                                
-        <label>
-            Du 
-            <input type="date" name="du-travail" value="<?php echo date('Y-m-d'); ?>">
-        </label>
+            <label >
+                Compte Analytique
+                <input type="text" id="text4" name="compte-analytique-travail" readonly>
+            </label>
+                                                    
 
-        <label>
-            Au
-            <input type="date" name="au-travail" value="<?php echo date('Y-m-d'); ?>">
-        </label>
-                                                
-
-        <label>
-            Region deroulement mission
-            <select id="select1" name="region-deroulement-mission-travail">
-                <option>NORD</option>
-                <option>SUD</option>
-                <option>EST</option>
-                <option>OUEST</option>
-            </select>
-        </label>
-                                                
-        <label >
-            lieu de la mission 
-            <input type="text" name="lieu-de-la-mission-travail">
-        </label>
-                                                
-
-        <label >
-            Itineraire
-            <input type="text" name="itineraire-travail">
-        </label>
-
-        <label >
-            objet de la mission
-            <input type="text" name="objet-de-la-mission-travail">
-        </label>
-                                                
-
-        <label>
-            Nom(s) du(des) missionaire(s)
-            <input type="text" name="noms-des-missionaires-travail">
-        </label>
-                                                
+            <label>
+                Num Demande 
+                <input type="number" name="num-demande-travail" value="1" min="1" required>
+            </label>
 
 
-        <label >
-            Moyen de Transport aller 
-            <select  name="moyen-de-transport-aller-travail">
-                <option>Avion</option>
-                <option>Vehicule</option>
-            </select>
-        </label>
-                                                
+
+            <label >
+                Date Demande 
+                <input type="date"  name="date-demande-travail" value="<?php echo date('Y-m-d'); ?>" readonly>
+            </label>
+
+        
+
+        <!-- </div> -->
+        
+                                            
+        <!-- <div class="secondformdiv"> -->
+
+            <label >
+                Destinataire 
+                <input type="text"  name="destinataire-travail" readonly>
+            </label>
+            
+            <label>
+                Du 
+                <input type="date" name="du-travail" value="<?php echo date('Y-m-d'); ?>">
+            </label>
+
+            <label>
+                Au
+                <input type="date" name="au-travail" value="<?php echo date('Y-m-d'); ?>">
+            </label>
+                                                    
+
+            <label>
+                Region deroulement mission
+                <select id="select1" name="region-deroulement-mission-travail">
+                    <option>NORD</option>
+                    <option>SUD</option>
+                    <option>EST</option>
+                    <option>OUEST</option>
+                </select>
+            </label>
+                                                    
+            <label >
+                lieu de la mission 
+                <input type="text" name="lieu-de-la-mission-travail">
+            </label>
+                                                    
+
+            <label >
+                Itineraire
+                <input type="text" name="itineraire-travail">
+            </label>
+
+            <label >
+                objet de la mission
+                <input type="text" name="objet-de-la-mission-travail">
+            </label>
+                                                    
+
+            <label>
+                Nom(s) du(des) missionaire(s)
+                <input type="text" name="noms-des-missionaires-travail">
+            </label>
 
 
-        <label >
-            Moyen de transport retour 
-            <select  name="moyen-de-transport-retour-travail">
-                <option>Avion</option>
-                <option>Vehicule</option>
-            </select>
-        </label>
-                                                
+            <label >
+                Moyen de Transport aller 
+                <select  name="moyen-de-transport-aller-travail">
+                    <option>Avion</option>
+                    <option>Vehicule</option>
+                </select>
+            </label>
+                
+            <label >
+                Moyen de transport retour 
+                <select  name="moyen-de-transport-retour-travail">
+                    <option>Avion</option>
+                    <option>Vehicule</option>
+                </select>
+            </label>
+                                                    
 
-        <label >
-            Demande hebergement
-            <select  name="demande-hebergement-travail">
-                <!-- <option></option>  -->
-                <option>Oui</option> 
-                <option>Non</option>
-            </select>
-        </label>
-                                                
-
+            <label >
+                Demande hebergement
+                <select  name="demande-hebergement-travail">
+                    <!-- <option></option>  -->
+                    <option>Oui</option> 
+                    <option>Non</option>
+                </select>
+            </label>
+        <!-- </div> -->
+        
+    <!-- </div> -->
+                                   
+    <fieldset>
+        <legend>aller</legend>
         <div class="aller">
             <label for="text10">
                 Demande Vehicule service aller 
@@ -196,96 +203,93 @@ if(isset($_POST['valider-travail'])){
             </label>
 
 
+            <label >
+                nombre de nuite du trajet - Aller
+                <input type="number" name="nombre-de-nuite-du-trajet-aller-travail" value="1">
+            </label>
+        </div>
+
+    </fieldset>
 
 
-                                                <label >
-                                                    nombre de nuite du trajet - Aller
-                                                    <input type="number" name="nombre-de-nuite-du-trajet-aller-travail" value="1">
-                                                </label>
-                                            </div>
+    <fieldset>
+        <legend>aller</legend>
+
+        <div class="retour">
+            <label for="text10">
+                Demande Vehicule service Retour 
+                <select  name="demande-vehicule-service-retour-travail">
+                    <option>Oui</option> 
+                    <option>Non</option>
+                </select>
+            </label>
+
+            <label>
+                Point de retour
+                <input type="text"  name="point-de-retour-travail">
+            </label>
+
+            <label>
+                Demande hebergement Retour
+                <select  name="demande-hebergement-retour-travail">
+                                                                
+                    <option>Oui</option> 
+                    <option>Non</option>
+                </select>
+            </label>
+
+            <label >
+                nombre de nuite du trajet - Retour
+                <input type="number" id="text13" name="nombre-de-nuite-du-trajet-retour-travail" value="1" min="1" >
+            </label>
+        </div>
+    </fieldset>
 
 
-
-                                            <div class="retour">
-                                                <label for="text10">
-                                                    Demande Vehicule service Retour 
-                                                    <select  name="demande-vehicule-service-retour-travail">
+    <div class="observation-travail">
+        <label for="besoin-autorisation-transport-produits-dangereux-travail">
+            Besoin Autorisation Transport Produits Dangereux
+            <select  name="besoin-autorisation-transport-produits-dangereux-travail">
                                                         
-                                                        <option>Oui</option> 
-                                                        <option>Non</option>
-                                                    </select>
-                                                </label>
+                <option>Oui</option> 
+                <option>Non</option>
+            </select>
+        </label>
+
+        <label for="type-produits-travail">
+            Type Produits
+            <input type="text" name="type-produits-travail">
+        </label>
+
+        <label for="demande-acheminement-du-materiel-travail">
+            Demande Acheminement du materiel
+            <select  name="demande-acheminement-du-materiel-travail">
+                
+                <option>Oui</option> 
+                <option>Non</option>
+            </select>
+        </label>
+
+        <label for="type-acheminement-du-materiel-travail">
+            Type Acheminement du materiel
+            <input type="text" name="type-acheminement-du-materiel-travail">
+        </label>
 
 
-                                                <label>
-                                                    Point de retour
-                                                    <input type="text"  name="point-de-retour-travail">
-                                                </label>
+        <label for="observation-travail">
+            Observation
+            <input type="text" name="observation-travail">
+        </label>
 
+    </div>
+</div>
 
-                                                <label>
-                                                    Demande hebergement Retour
-                                                    <select  name="demande-hebergement-retour-travail">
-                                                        
-                                                        <option>Oui</option> 
-                                                        <option>Non</option>
-                                                    </select>
-                                                </label>
+    <div class="boutons-kr">
+        <button type="submit" class="btn-travail" name="valider-travail">Valider</button>
 
+        <button type="submit" class="btn-travail" name="annuler-travail" >Annuler</button>
+    </div>
+<!-- </div> -->
+</form>
 
-
-
-                                                <label >
-                                                    nombre de nuite du trajet - Retour
-                                                    <input type="number" id="text13" name="nombre-de-nuite-du-trajet-retour-travail" value="1" min="1" >
-                                                </label>
-                                            </div>
-
-
-
-                                            <div class="observation-travail">
-                                                <label for="besoin-autorisation-transport-produits-dangereux-travail">
-                                                    Besoin Autorisation Transport Produits Dangereux
-                                                    <select  name="besoin-autorisation-transport-produits-dangereux-travail">
-                                                        
-                                                        <option>Oui</option> 
-                                                        <option>Non</option>
-                                                    </select>
-                                                </label>
-
-                                                <label for="type-produits-travail">
-                                                    Type Produits
-                                                    <input type="text" name="type-produits-travail">
-                                                </label>
-
-                                                <label for="demande-acheminement-du-materiel-travail">
-                                                    Demande Acheminement du materiel
-                                                    <select  name="demande-acheminement-du-materiel-travail">
-                                                        
-                                                        <option>Oui</option> 
-                                                        <option>Non</option>
-                                                    </select>
-                                                </label>
-
-                                                <label for="type-acheminement-du-materiel-travail">
-                                                    Type Acheminement du materiel
-                                                    <input type="text" name="type-acheminement-du-materiel-travail">
-                                                </label>
-
-
-                                                <label for="observation-travail">
-                                                    Observation
-                                                    <input type="text" name="observation-travail">
-                                                </label>
-
-                                            </div>
-
-                                            <div class="boutons-kr">
-                                                <button type="submit" class="btn-travail" name="valider-travail">Valider</button>
-
-                                                <button type="submit" class="btn-travail" name="annuler-travail" >Annuler</button>
-                                            </div>
-                                        </div>
-                                    </form>
-
-                                </div>
+</div>

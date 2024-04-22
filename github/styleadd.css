@@ -20,23 +20,35 @@ form{
 .container-kr{
     /* display: block; */
     /* justify-content: center; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+
     align-content: baseline;
     min-height: 100vh;
     position: relative;
-    width: 900px;
+    width: 1000px;
     border-radius: 30px;
-    border:#ffffff solid 1px;
+    border:#630e0e solid 1px;
     padding: 40px;
+    margin: 50px;
 }
-.container-kr label{
+/* .fixed-form-head , .secondformdiv, .aller, .retour, .observation-travail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    text-align:left;
+
+} */
+/* .container-kr label{
     display: block;
     margin: 10px;
-}
+} */
 .container-kr input, select{
     flex-direction: column;
     margin: 10px 0;
     position: relative;
-    width: 300px; 
+    width: 400px; 
     border: 1px solid #ccc; 
     border-radius: 5px; 
     outline: none; 
