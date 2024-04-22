@@ -103,12 +103,12 @@ if(isset($_POST['valider-travail'])){
             </label>
             
             <label>
-                Du 
+                Date début           
                 <input type="date" name="du-travail" value="<?php echo date('Y-m-d'); ?>">
             </label>
 
             <label>
-                Au
+                Date fin          
                 <input type="date" name="au-travail" value="<?php echo date('Y-m-d'); ?>">
             </label>
                                                     
@@ -166,7 +166,7 @@ if(isset($_POST['valider-travail'])){
             <label >
                 Demande hebergement
                 <select  name="demande-hebergement-travail">
-                    <!-- <option></option>  -->
+                    <!-- <option> </option>  -->
                     <option>Oui</option> 
                     <option>Non</option>
                 </select>
@@ -176,7 +176,7 @@ if(isset($_POST['valider-travail'])){
     <!-- </div> -->
                                    
     <fieldset>
-        <legend>aller</legend>
+        <legend>Aller</legend>
         <div class="aller">
             <label for="text10">
                 Demande Vehicule service aller 
@@ -213,7 +213,7 @@ if(isset($_POST['valider-travail'])){
 
 
     <fieldset>
-        <legend>aller</legend>
+        <legend>Retour</legend>
 
         <div class="retour">
             <label for="text10">
@@ -254,7 +254,7 @@ if(isset($_POST['valider-travail'])){
                 <option>Oui</option> 
                 <option>Non</option>
             </select>
-        </label>
+        </label><br>
 
         <label for="type-produits-travail">
             Type Produits
@@ -268,7 +268,7 @@ if(isset($_POST['valider-travail'])){
                 <option>Oui</option> 
                 <option>Non</option>
             </select>
-        </label>
+        </label><br>
 
         <label for="type-acheminement-du-materiel-travail">
             Type Acheminement du materiel

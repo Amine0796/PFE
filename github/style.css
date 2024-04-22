@@ -80,6 +80,7 @@ a{
   
 }
 .nav__brand{
+  height: 100px;
   display: grid;
   grid-template-columns: max-content max-content;
   justify-content: space-between;

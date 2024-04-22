@@ -67,8 +67,8 @@ if(isset($_POST['valider-etrangerF'])){
             </label><!-- <br><br> -->
 
             <label>
-            Num Demande 
-            <input type="number" name="num-demande-etranger" value="1" min="1" required>
+                Num Demande 
+                <input type="number" name="num-demande-etranger" value="1" min="1" required>
             </label>
 
             <label for="date-demande-etranger">
@@ -82,12 +82,12 @@ if(isset($_POST['valider-etrangerF'])){
             </label>
 
             <label for="du-etranger">
-                Période de la mission du 
+                Date début           
                 <input type="date" name="du-etranger" value="<?php echo date('Y-m-d'); ?>">
             </label>
 
             <label for="au-etranger">
-                au
+                Date fin
                 <input type="date" name="au-etranger" value="<?php echo date('Y-m-d'); ?>">
             </label><!-- <br><br> -->
 
@@ -108,7 +108,7 @@ if(isset($_POST['valider-etrangerF'])){
             </label>
             
             <label for="pays-etranger">
-                Pays
+                Pays de formation  
                 <input type="text" name="pays-etranger">
             </label>
             

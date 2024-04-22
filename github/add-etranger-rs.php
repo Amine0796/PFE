@@ -82,12 +82,12 @@ if(isset($_POST['valider-etranger-rs'])){
             </label>
 
             <label for="du-etranger">
-                Période de la mission du 
+                Date début           
                 <input type="date" name="du-etranger" value="<?php echo date('Y-m-d'); ?>">
             </label>
 
             <label for="au-etranger">
-                au
+                Date fin
                 <input type="date" name="au-etranger" value="<?php echo date('Y-m-d'); ?>">
             </label><!-- <br><br> -->
 
@@ -101,14 +101,13 @@ if(isset($_POST['valider-etranger-rs'])){
                 <input type="text" name="objet-mission-etranger">
             </label><!-- <br><br> -->
             
-            
             <label for="lieu-mission-etranger">
                 Lieu de mission
                 <input type="text" name="lieu-mission-etranger">
             </label>
             
             <label for="pays-etranger">
-                Pays
+                Pays de mission
                 <input type="text" name="pays-etranger">
             </label>
             

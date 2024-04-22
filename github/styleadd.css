@@ -8,6 +8,7 @@ form{
 
 }
 .header-text{
+    margin-top: 50px;
     text-align: center;
     font-size: large;
 }
@@ -24,14 +25,14 @@ form{
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
 
-    align-content: baseline;
+    /* align-content: baseline; */
     min-height: 100vh;
     position: relative;
     width: 1000px;
     border-radius: 30px;
     border:#630e0e solid 1px;
     padding: 40px;
-    margin: 50px;
+    margin: 80px;
 }
 /* .fixed-form-head , .secondformdiv, .aller, .retour, .observation-travail {
     display: grid;
@@ -55,10 +56,11 @@ form{
 }
 
 .boutons-kr{
-    display: flex;
+   display: flex;
    justify-content: center;
    gap: 50px;
    align-items: center;
+   padding-bottom: 50px;
 }
 
 .boutons-kr button{

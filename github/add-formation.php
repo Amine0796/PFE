@@ -186,8 +186,7 @@ if(isset($_POST['valider-formation'])){
                     </label>
                </div>
             </fieldset>
-        
-        
+            
             <fieldset>
                 <legend>Véhicule</legend>
                 <div class="vehicule">
@@ -212,11 +211,10 @@ if(isset($_POST['valider-formation'])){
                 <input type="text" name="observation-formation">
             </label>
 
-
-            <div class="boutons-kr">
+        </div>
+        <div class="boutons-kr">
             <button type="submit" class="btn-formation" name="valider-formation">Valider</button>
             <button type="submit" class="btn-formation" name="annuler-formation" >Annuler</button>
-</div>
         </div>
     </form>
 </div>
