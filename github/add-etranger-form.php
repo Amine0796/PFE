@@ -21,10 +21,11 @@ if(isset($_POST['valider-etrangerF'])){
     $InformationComplementaireVisa=$_POST['info-visa-etranger'] ;
     $ObjectifsMission=$_POST['objectifs-mission-etranger'] ;
     $OpportuniteMission=$_POST['opportunite-etranger'] ;
+    $Etat=$_POST['etat-etranger-form'];
  
 
-    $sql = "INSERT INTO etranger (Direction, Departement, Demandeur, CompteAnalytique, NumDemande, DateDemande, Destinataire, DateDu, DateAu, NombreDesJours, ObjetMission, LieuMission, Pays, CadreMission, InformationComplementaire, NomMissionnaires, SituationVisa, InformationComplementaireVisa, ObjectifsMission, OpportuniteMission) 
-    VALUES ('$Direction', '$Departement', '$Demandeur', '$CompteAnalytique','$NumDemande', '$DateDemande', '$Destinataire', '$DateDu', '$DateAu', '$NombreDesJours', '$ObjetMission', '$LieuMission','$Pays', '$CadreMission', '$InformationComplementaire', '$NomMissionnaires', '$SituationVisa', '$InformationComplementaireVisa', '$ObjectifsMission', '$OpportuniteMission')";
+    $sql = "INSERT INTO etranger (Direction, Departement, Demandeur, CompteAnalytique, NumDemande, DateDemande, Destinataire, DateDu, DateAu, NombreDesJours, ObjetMission, LieuMission, Pays, CadreMission, InformationComplementaire, NomMissionnaires, SituationVisa, InformationComplementaireVisa, ObjectifsMission, OpportuniteMission, Etat) 
+    VALUES ('$Direction', '$Departement', '$Demandeur', '$CompteAnalytique','$NumDemande', '$DateDemande', '$Destinataire', '$DateDu', '$DateAu', '$NombreDesJours', '$ObjetMission', '$LieuMission','$Pays', '$CadreMission', '$InformationComplementaire', '$NomMissionnaires', '$SituationVisa', '$InformationComplementaireVisa', '$ObjectifsMission', '$OpportuniteMission', '$Etat')";
     
     $result=mysqli_query($conn,$sql);
     if($result){
@@ -155,7 +156,12 @@ if(isset($_POST['valider-etrangerF'])){
                 Opportunité Mission
                 <input type="text" name="opportunite-etranger">
             </label>
+
+            <input type="hidden"  name="etat-etranger-form" readonly value="NON TRAITE" hidden>
+
+
         </div>
+
 
         <div class="boutons-kr">
             <button type="submit" class="btn-etranger" name="valider-etrangerF">Valider</button>

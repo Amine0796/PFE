@@ -14,10 +14,11 @@ if(isset($_POST['valider-course'])){
     $DateDepart=$_POST['date-depart-course'];
     $HeureDepart=$_POST['heure-depart-course'] ;
     $PointDepart=$_POST['point-depart-course'] ;
+    $Etat=$_POST['etat-course'];
    
 
-    $sql = "INSERT INTO courses (Direction, Departement, Demandeur, CompteAnalytique, NumDemande, DateDemande, Destinataire, Destination, ObjetCourse, NomMissionnaires, DateDepart, HeureDepart, PointDepart) 
-    VALUES ('$Direction', '$Departement', '$Demandeur', '$CompteAnalytique','$NumDemande', '$DateDemande', '$Destinataire', '$Destination', '$ObjetCourse', '$NomMissionnaires', '$DateDepart', '$HeureDepart', '$PointDepart')";
+    $sql = "INSERT INTO courses (Direction, Departement, Demandeur, CompteAnalytique, NumDemande, DateDemande, Destinataire, Destination, ObjetCourse, NomMissionnaires, DateDepart, HeureDepart, PointDepart, Etat) 
+    VALUES ('$Direction', '$Departement', '$Demandeur', '$CompteAnalytique','$NumDemande', '$DateDemande', '$Destinataire', '$Destination', '$ObjetCourse', '$NomMissionnaires', '$DateDepart', '$HeureDepart', '$PointDepart', '$Etat')";
     
     $result=mysqli_query($conn,$sql);
     if($result){
@@ -101,8 +102,13 @@ if(isset($_POST['valider-course'])){
                 Point du départ
                 <input type="text" name="point-depart-course">
             </label>
+
+            <input type="hidden"  name="etat-course" readonly value="NON TRAITE" hidden>
+
         </div>
         
+        
+
         <div class="boutons-kr">
             <button type="submit" class="btn-course" name="valider-course">Valider</button>
             <button type="submit" class="btn-course" name="annuler-course" >Annuler</button>

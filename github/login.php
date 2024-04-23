@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['username']) && isset($
 
     // Check if user exists
     if ($result->num_rows == 0) {
-        echo "<div style='margin-top:5px; margin-left: 560px;'><table width='560' border='0'><tr><td colspan='1'></td><td><center><font color='red' face='verdana' size='2'><b>Login ou Mot de passe erroné...<br>Veuillez recommencer</b></font></center></td><td></td></tr></table></div>";
+        echo "Password or username invalid";
         include('login.html');
         exit();
     }
@@ -37,11 +37,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['username']) && isset($
     // Redirect based on user's position
     if ($poste == 'chef-formation') {
         header("Location: chef-formation.php");
-        
+
         exit();
     } elseif ($poste == 'RS') {
         header("Location: RS.php");
         exit();
+    }elseif ($poste == 'relex') {
+        header("Location: relex.php");
     }
 }
 ?>

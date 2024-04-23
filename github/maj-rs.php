@@ -35,7 +35,7 @@
                      
                     <?php
                     
-                    $sql="Select * from `demande_mission`";
+                    $sql="Select * from `travail`";
                     $result=mysqli_query($conn,$sql);
                     if ($result) {
                         
