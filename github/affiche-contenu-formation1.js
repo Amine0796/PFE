@@ -59,7 +59,7 @@ window.onload = function() {
 };
 
 
-function connexionReussie() {
-    // Appel de la fonction afficheContenu avec l'ID du div de la page d'accueil
-    afficherContenu('home-content');
-}
+// function connexionReussie() {
+//     // Appel de la fonction afficheContenu avec l'ID du div de la page d'accueil
+//     afficherContenu('home-content');
+// }

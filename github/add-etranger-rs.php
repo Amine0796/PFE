@@ -21,10 +21,11 @@ if(isset($_POST['valider-etranger-rs'])){
     $InformationComplementaireVisa=$_POST['info-visa-etranger'] ;
     $ObjectifsMission=$_POST['objectifs-mission-etranger'] ;
     $OpportuniteMission=$_POST['opportunite-etranger'] ;
+    $Etat=$_POST['etat-etranger-rs'];
  
 
-    $sql = "INSERT INTO etranger (Direction, Departement, Demandeur, CompteAnalytique, NumDemande, DateDemande, Destinataire, DateDu, DateAu, NombreDesJours, ObjetMission, LieuMission, Pays, CadreMission, InformationComplementaire, NomMissionnaires, SituationVisa, InformationComplementaireVisa, ObjectifsMission, OpportuniteMission) 
-    VALUES ('$Direction', '$Departement', '$Demandeur', '$CompteAnalytique','$NumDemande', '$DateDemande', '$Destinataire', '$DateDu', '$DateAu', '$NombreDesJours', '$ObjetMission', '$LieuMission','$Pays', '$CadreMission', '$InformationComplementaire', '$NomMissionnaires', '$SituationVisa', '$InformationComplementaireVisa', '$ObjectifsMission', '$OpportuniteMission')";
+    $sql = "INSERT INTO etranger (Direction, Departement, Demandeur, CompteAnalytique, NumDemande, DateDemande, Destinataire, DateDu, DateAu, NombreDesJours, ObjetMission, LieuMission, Pays, CadreMission, InformationComplementaire, NomMissionnaires, SituationVisa, InformationComplementaireVisa, ObjectifsMission, OpportuniteMission, Etat) 
+    VALUES ('$Direction', '$Departement', '$Demandeur', '$CompteAnalytique','$NumDemande', '$DateDemande', '$Destinataire', '$DateDu', '$DateAu', '$NombreDesJours', '$ObjetMission', '$LieuMission','$Pays', '$CadreMission', '$InformationComplementaire', '$NomMissionnaires', '$SituationVisa', '$InformationComplementaireVisa', '$ObjectifsMission', '$OpportuniteMission', '$Etat')";
     
     $result=mysqli_query($conn,$sql);
     if($result){
@@ -78,7 +79,7 @@ if(isset($_POST['valider-etranger-rs'])){
 
             <label for="destinataire-etranger">
                 Destinataire
-                <input type="text" name="destinataire-etranger">
+                <input type="text" name="destinataire-etranger" value="RELEX">
             </label>
 
             <label for="du-etranger">
@@ -154,7 +155,12 @@ if(isset($_POST['valider-etranger-rs'])){
                 Opportunité Mission
                 <input type="text" name="opportunite-etranger">
             </label>
+
+            <input type="hidden"  name="etat-etranger-rs" readonly value="NON TRAITE" hidden>
+
+
         </div>
+
 
         <div class="boutons-kr">
             <button type="submit" class="btn-etranger" name="valider-etranger-rs">Valider</button>

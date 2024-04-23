@@ -31,9 +31,10 @@ if(isset($_POST['valider-travail'])){
     $DemandeAcheminementMateriel=$_POST['demande-acheminement-du-materiel-travail'] ;
     $TypeAcheminementMateriel=$_POST['type-acheminement-du-materiel-travail'] ;
     $Observation=$_POST['observation-travail'] ;
+    $Etat=$_POST['etat-travail'];
 
-    $sql = "INSERT INTO demande_mission (Direction, Departement, Demandeur, CompteAnalytique, NumDemande, DateDemande, Destinataire, DateDu, DateAu, RegionDeroulementMission, LieuMission, Itineraire, ObjetMission, NomMissionnaires, MoyenTransportAller, MoyenTransportRetour, DemandeHebergement, DemandeVehiculeServiceAller, DemandeVehiculeServiceRetour, PointDepart, DemandeHebergementAller, NombreNuitesTrajetAller, PointRetour, DemandeHebergementRetour, NombreNuitesTrajetRetour, BesoinAutorisationTransportProduitsDangereux, TypeProduits, DemandeAcheminementMateriel, TypeAcheminementMateriel, Observation) 
-    VALUES ('$Direction', '$Departement', '$Demandeur', '$CompteAnalytique','$NumDemande', '$DateDemande', '$Destinataire', '$DateDu', '$DateAu', '$RegionDeroulementMission', '$LieuMission', '$Itineraire', '$ObjetMission', '$NomMissionnaires', '$MoyenTransportAller', '$MoyenTransportRetour', '$DemandeHebergement', '$DemandeVehiculeServiceAller', '$DemandeVehiculeServiceRetour', '$PointDepart', '$DemandeHebergementAller', '$NombreNuitesTrajetAller', '$PointRetour', '$DemandeHebergementRetour', '$NombreNuitesTrajetRetour', '$BesoinAutorisationTransportProduitsDangereux', '$TypeProduits', '$DemandeAcheminementMateriel', '$TypeAcheminementMateriel', '$Observation')";
+    $sql = "INSERT INTO travail (Direction, Departement, Demandeur, CompteAnalytique, NumDemande, DateDemande, Destinataire, DateDu, DateAu, RegionDeroulementMission, LieuMission, Itineraire, ObjetMission, NomMissionnaires, MoyenTransportAller, MoyenTransportRetour, DemandeHebergement, DemandeVehiculeServiceAller, DemandeVehiculeServiceRetour, PointDepart, DemandeHebergementAller, NombreNuitesTrajetAller, PointRetour, DemandeHebergementRetour, NombreNuitesTrajetRetour, BesoinAutorisationTransportProduitsDangereux, TypeProduits, DemandeAcheminementMateriel, TypeAcheminementMateriel, Observation, Etat) 
+    VALUES ('$Direction', '$Departement', '$Demandeur', '$CompteAnalytique','$NumDemande', '$DateDemande', '$Destinataire', '$DateDu', '$DateAu', '$RegionDeroulementMission', '$LieuMission', '$Itineraire', '$ObjetMission', '$NomMissionnaires', '$MoyenTransportAller', '$MoyenTransportRetour', '$DemandeHebergement', '$DemandeVehiculeServiceAller', '$DemandeVehiculeServiceRetour', '$PointDepart', '$DemandeHebergementAller', '$NombreNuitesTrajetAller', '$PointRetour', '$DemandeHebergementRetour', '$NombreNuitesTrajetRetour', '$BesoinAutorisationTransportProduitsDangereux', '$TypeProduits', '$DemandeAcheminementMateriel', '$TypeAcheminementMateriel', '$Observation', '$Etat')";
     
     $result=mysqli_query($conn,$sql);
     if($result){
@@ -99,7 +100,7 @@ if(isset($_POST['valider-travail'])){
 
             <label >
                 Destinataire 
-                <input type="text"  name="destinataire-travail" readonly>
+                <input type="text"  name="destinataire-travail" readonly value="RELEX">
             </label>
             
             <label>
@@ -281,7 +282,12 @@ if(isset($_POST['valider-travail'])){
             <input type="text" name="observation-travail">
         </label>
 
+        <input type="hidden"  name="etat-travail" readonly value="NON TRAITE" hidden>
+
     </div>
+
+ 
+            
 </div>
 
     <div class="boutons-kr">
@@ -289,6 +295,7 @@ if(isset($_POST['valider-travail'])){
 
         <button type="submit" class="btn-travail" name="annuler-travail" >Annuler</button>
     </div>
+
 <!-- </div> -->
 </form>
 

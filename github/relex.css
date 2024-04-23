@@ -1,0 +1,96 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+ 
+.notification-relex{
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    /* margin: 100px 200px; */
+    width: 300px;
+    border-radius: 5%;
+}
+.btn-not{
+    display: flex;
+    justify-content: space-around ;
+    /* margin-left: 30px; */
+    gap: 50px;
+    align-items: center;
+}
+
+
+
+.btn-notification {
+    padding: 10px 20px; /* Espace intérieur du bouton */
+    border: none; /* Supprimer la bordure */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur de souris sur le bouton */
+    font-size: 16px; /* Taille de la police */
+    transition: background-color 0.3s ease; /* Transition en douceur pour le changement de couleur */
+}
+
+.primary {
+    background-color: #008CBA; /* Couleur de fond du bouton principal */
+    color: white; /* Couleur du texte */
+}
+
+.secondary {
+    background-color: #008CBA; /* Couleur de fond du bouton secondaire */
+    color: white; /* Couleur du texte */
+}
+
+/* Effet de survol pour les boutons */
+.btn-notification:hover {
+    opacity: 0.8; /* Réduire légèrement l'opacité lors du survol */
+}
+
+.logout-btn{
+    height: 20px;
+    width: 20px;
+}
+
+#table-mission-non-traite {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#table-mission-non-traite th,
+#table-mission-non-traite td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#table-mission-non-traite th {
+    background-color: #f2f2f2;
+}
+
+.tr-mission-non-traite:hover {
+    background-color: #f2f2f2;
+}
+
+.td-mission-non-traite:hover {
+    background-color: #e6e6e6;
+}
+
+.td-mission-non-traite a {
+    color: #333;
+    text-decoration: none;
+}
+
+.td-mission-non-traite a:hover {
+    color: #007bff;
+}
+
+

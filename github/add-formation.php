@@ -26,9 +26,10 @@ if(isset($_POST['valider-formation'])){
     $DemandeVehiculeLieuFormation=$_POST['demande-vehicule-formation'] ;
     $PointDepartVehicule=$_POST['point-depart-vehicule-formation'] ;
     $Observations=$_POST['observation-formation'] ;
+    $Etat=$_POST['etat-formation'];
  
-    $sql = "INSERT INTO Formation (Direction, Departement, Demandeur, CompteAnalytique, NumDemande, DateDemande, Destinataire, DateDu, DateAu, RegionDeroulementFormation, LieuFormation, Itineraire, ObjetFormation, DemandeHebergement, DemandeBilletterie, OrganismeFormateur, NomMissionnaires, MoyenTransportAller, MoyenTransportRetour, DemandeVehiculeServiceAeroport, PointDepartAvion, DemandeVehiculeLieuFormation, PointDepartVehicule, Observations) 
-    VALUES ('$Direction', '$Departement', '$Demandeur', '$CompteAnalytique','$NumDemande', '$DateDemande', '$Destinataire', '$DateDu', '$DateAu', '$RegionDeroulementFormation', '$LieuFormation', '$Itineraire', '$ObjetFormation', '$DemandeHebergement', '$DemandeBilletterie', '$OrganismeFormateur', '$NomMissionnaires', '$MoyenTransportAller', '$MoyenTransportRetour', '$DemandeVehiculeServiceAeroport', '$PointDepartAvion', '$DemandeVehiculeLieuFormation', '$PointDepartVehicule', '$Observations')";
+    $sql = "INSERT INTO Formation (Direction, Departement, Demandeur, CompteAnalytique, NumDemande, DateDemande, Destinataire, DateDu, DateAu, RegionDeroulementFormation, LieuFormation, Itineraire, ObjetFormation, DemandeHebergement, DemandeBilletterie, OrganismeFormateur, NomMissionnaires, MoyenTransportAller, MoyenTransportRetour, DemandeVehiculeServiceAeroport, PointDepartAvion, DemandeVehiculeLieuFormation, PointDepartVehicule, Observations, Etat) 
+    VALUES ('$Direction', '$Departement', '$Demandeur', '$CompteAnalytique','$NumDemande', '$DateDemande', '$Destinataire', '$DateDu', '$DateAu', '$RegionDeroulementFormation', '$LieuFormation', '$Itineraire', '$ObjetFormation', '$DemandeHebergement', '$DemandeBilletterie', '$OrganismeFormateur', '$NomMissionnaires', '$MoyenTransportAller', '$MoyenTransportRetour', '$DemandeVehiculeServiceAeroport', '$PointDepartAvion', '$DemandeVehiculeLieuFormation', '$PointDepartVehicule', '$Observations', '$Etat')";
     
     $result=mysqli_query($conn,$sql);
     if($result){
@@ -81,7 +82,7 @@ if(isset($_POST['valider-formation'])){
 
             <label for="destinataire-formation">
                 Destinataire
-                <input type="text" name="destinataire-formation">
+                <input type="text" name="destinataire-formation" value="RELEX">
             </label>
 
             <label for="du-formation">
@@ -211,7 +212,11 @@ if(isset($_POST['valider-formation'])){
                 <input type="text" name="observation-formation">
             </label>
 
+            <input type="hidden"  name="etat-formation" readonly value="NON TRAITE" hidden>
+
         </div>
+
+
         <div class="boutons-kr">
             <button type="submit" class="btn-formation" name="valider-formation">Valider</button>
             <button type="submit" class="btn-formation" name="annuler-formation" >Annuler</button>
