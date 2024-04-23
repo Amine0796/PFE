@@ -99,7 +99,7 @@ if(isset($_POST['valider-travail'])){
 
             <label >
                 Destinataire 
-                <input type="text"  name="destinataire-travail" readonly>
+                <input type="text"  name="destinataire-travail" value="RELEX" readonly>
             </label>
             
             <label>
@@ -163,14 +163,7 @@ if(isset($_POST['valider-travail'])){
             </label>
                                                     
 
-            <label >
-                Demande hebergement
-                <select  name="demande-hebergement-travail">
-                    <!-- <option> </option>  -->
-                    <option>Oui</option> 
-                    <option>Non</option>
-                </select>
-            </label>
+            
         <!-- </div> -->
         
     <!-- </div> -->
@@ -205,7 +198,7 @@ if(isset($_POST['valider-travail'])){
 
             <label >
                 nombre de nuite du trajet - Aller
-                <input type="number" name="nombre-de-nuite-du-trajet-aller-travail" value="1">
+                <input type="number" name="nombre-de-nuite-du-trajet-aller-travail" value="0" min="0">
             </label>
         </div>
 
@@ -240,14 +233,22 @@ if(isset($_POST['valider-travail'])){
 
             <label >
                 nombre de nuite du trajet - Retour
-                <input type="number" id="text13" name="nombre-de-nuite-du-trajet-retour-travail" value="1" min="1" >
+                <input type="number" id="text13" name="nombre-de-nuite-du-trajet-retour-travail" value="0" min="0" >
             </label>
         </div>
     </fieldset>
 
+    <label >
+                Demande hebergement
+                <select  name="demande-hebergement-travail">
+                    <!-- <option> </option>  -->
+                    <option>Oui</option> 
+                    <option>Non</option>
+                </select>
+    </label>
 
     <div class="observation-travail">
-        <label for="besoin-autorisation-transport-produits-dangereux-travail">
+        <!-- <label for="besoin-autorisation-transport-produits-dangereux-travail">
             Besoin Autorisation Transport Produits Dangereux
             <select  name="besoin-autorisation-transport-produits-dangereux-travail">
                                                         
@@ -274,7 +275,7 @@ if(isset($_POST['valider-travail'])){
             Type Acheminement du materiel
             <input type="text" name="type-acheminement-du-materiel-travail">
         </label>
-
+ -->
 
         <label for="observation-travail">
             Observation

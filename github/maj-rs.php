@@ -1,4 +1,4 @@
-<div class="table content" id="table-maj">
+<div class="table content" id="table-maj-rs">
 
 <div class="navbar-Table-Button">
         <button onclick="showTable('tableTerrain')">Mission du terrain</button>

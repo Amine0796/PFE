@@ -81,27 +81,27 @@ if(isset($_POST['valider-formation'])){
 
             <label for="destinataire-formation">
                 Destinataire
-                <input type="text" name="destinataire-formation">
+                <input type="text" name="destinataire-formation" value="RELEX">
             </label>
 
             <label for="du-formation">
-                Période de la mission du 
+                Date début 
                 <input type="date" name="du-formation" value="<?php echo date('Y-m-d'); ?>">
             </label>
 
             
             <label for="au-formation">
-                au
+                Date fin
                 <input type="date" name="au-formation" value="<?php echo date('Y-m-d'); ?>">
             </label><!-- <br><br> -->
 
             <label for="region-deroulement-formation">
                 Région deroulement formation
                 <select name="region-deroulement-formation" >
-                    <option value="">NORD</option>
-                    <option value="">SUD</option>
-                    <option value="">EST</option>
-                    <option value="">OUEST</option>
+                    <option value="nord">NORD</option>
+                    <option value="sud">SUD</option>
+                    <option value="est">EST</option>
+                    <option value="ouest">OUEST</option>
                 </select><!-- <br><br> -->
             </label>
             

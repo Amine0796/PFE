@@ -1,5 +1,5 @@
 
-<div class="table content" id="table-maj">
+<div class="table content" id="table-maj-formation">
     
     <div class="navbar-Table-Button">
         <button onclick="showTable('tableFormation')" id="formation-btn-maj">Formation</button>

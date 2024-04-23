@@ -69,7 +69,7 @@ if(isset($_POST['valider-course'])){
 
             <label for="destinataire-course">
                 Destinataire
-                <input type="text" name="destinataire-course">
+                <input type="text" name="destinataire-course" value="RELEX">
             </label>
 
             <label for="destination-course">

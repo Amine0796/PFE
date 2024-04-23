@@ -78,7 +78,7 @@ if(isset($_POST['valider-etranger-rs'])){
 
             <label for="destinataire-etranger">
                 Destinataire
-                <input type="text" name="destinataire-etranger">
+                <input type="text" name="destinataire-etranger" value="RELEX">
             </label>
 
             <label for="du-etranger">

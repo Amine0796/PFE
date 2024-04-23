@@ -78,7 +78,7 @@ if(isset($_POST['valider-etrangerF'])){
 
             <label for="destinataire-etranger">
                 Destinataire
-                <input type="text" name="destinataire-etranger">
+                <input type="text" name="destinataire-etranger" value="RELEX">
             </label>
 
             <label for="du-etranger">
@@ -93,7 +93,7 @@ if(isset($_POST['valider-etrangerF'])){
 
             <label for="nb-jours-etranger">
                 Nombre des jours
-                <input type="number" name="nb-jours-etranger" value="1" min="1">
+                <input type="number" name="nb-jours-etranger" value="0" min="0">
             </label><!-- <br><br> -->
         
             <label for="objet-mission-etranger">

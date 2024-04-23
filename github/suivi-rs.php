@@ -15,7 +15,6 @@
 
 
 <div id="suiviTravail" class="tables-container">
-    <div class="table" id="table-maj">
         <div class="table-header">
             <p>Suivi des demandes des missions du terrain</p>
         </div>
@@ -68,12 +67,11 @@
                 </tbody>
             </table>
             </table>
-        </div>
         <!-- <div class="btn-class">
         <button id="btn-retour">Retour</button>
         <button id="btn-confirmer">confirmer</button>
         </div> -->
-    </div>
+        </div>
 
 
 </div>
