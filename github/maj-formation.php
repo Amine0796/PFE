@@ -30,8 +30,7 @@
                         
                         while ($row=mysqli_fetch_assoc($result)) {
                             
-                            $idF = $row['id'];
-                            $_SESSION['idF'] = $idF;
+                            
                             
                             $NumDemande = $row['NumDemande'];
                             $DateDemande = $row['DateDemande'];
@@ -47,7 +46,7 @@
                             <td>'.$Departement.'</td>
                             
                             <td>
-                            <form action="delete_update_formation.php" method="post">
+                            <form action="delete_update_formation.php?idF='.$row["id"].'" method="post">
                             <div class="btn-dlt-upt">
                                 <button ><i class="bx bxs-edit"></i></button> 
                                 <button name="delete-formation" ><i class="bx bxs-trash"></i></button>
@@ -94,8 +93,7 @@
                     if ($result) {
                         
                         while ($row=mysqli_fetch_assoc($result)) {
-                            $idFE = $row['id'];
-                            $_SESSION['idFE'] = $idFE;
+                          
 
                             $NumDemande = $row['NumDemande'];
                             $DateDemande = $row['DateDemande'];
@@ -111,7 +109,7 @@
                             <td>'.$ObjetMission.'</td>
                             
                             <td>
-                            <form action="delete_update_etranger_formation.php" method="post">
+                            <form action="delete_update_etranger_formation.php?idRSF='.$row["id"].'" method="post">
                             <div class="btn-dlt-upt">
                                 <button ><i class="bx bxs-edit"></i></button> 
                                 <button name="delete-etranger-formation" ><i class="bx bxs-trash"></i></button>

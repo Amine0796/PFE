@@ -5,7 +5,7 @@ include 'database.php';
 
 
 if(isset($_POST['delete-travail-rs'])){
-    $idT=$_SESSION['$idT'];
+    $idT=$_GET['idT'];
     $sql="delete from `travail` where id =$idT";
     $result=mysqli_query($conn,$sql);
     if($result){

@@ -1,11 +1,37 @@
 <div class="traiter-formation" id="traitement-formation-box">
+<?php
+require_once 'database.php';
 
+// 
+
+// Récupérer l'ID depuis la requête GET
+if(1) {
+    
+
+    // Exécuter la requête SQL SELECT pour récupérer les détails de l'enregistrement correspondant à cet ID
+    $sql = "SELECT * FROM formation WHERE NumDemande = 1";
+    $resultat = $conn->query($sql);
+
+    // Vérifier s'il y a des résultats
+    if ($resultat->num_rows > 0) {
+        // Récupérer les détails de l'enregistrement et les afficher
+        $row = $resultat->fetch_assoc();
+        $_SESSION['direction']=$row["Direction"];
+        // Affiche les autres champs selon tes besoins
+    } else {
+        echo "Aucun enregistrement trouvé pour cet ID.";
+    }
+} else {
+    echo "Aucun ID spécifié.";
+}
+
+?>
 <form method="post">
     <p class="header-text">Ajouter une demande de formation</p>
         <div class="container-kr">
             <label for="direction-formation-relex">
                 Direction
-                <input type="text" name="direction-formation-relex" readonly>
+                <input type="text" name="direction-formation-relex" value="<?php echo $_SESSION['direction']; ?>" readonly>
             </label><!-- <br><br> -->
             
             <label for="departement-formation-relex">
@@ -15,7 +41,7 @@
 
             <label for="demande-dffuctuee-par-formation-relex">
                 Demande effectuée par
-                <input type="text" name="demande-dffuctuee-par-formation-relex" value="<?php echo $_SESSION["username"]; ?>" readonly>
+                <input type="text" name="demande-dffuctuee-par-formation-relex" readonly>
             </label><!-- <br><br> -->
 
             <label for="compte-analytique-formation-relex">
@@ -317,6 +343,8 @@
                     </label>
                     
             </fieldset>
+            <button>Valider</button>
+            <button>Annuler</button>
             </form>
 
 	</div>

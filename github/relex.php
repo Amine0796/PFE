@@ -20,7 +20,7 @@ if (!isset($_SESSION["username"]) || !isset($_SESSION["password"])) {
     <link rel="stylesheet" href="relex.css">
 
 </head>
-<body>
+<body id="body-pd">
 
  <!-- sidebar -->
 
@@ -210,10 +210,9 @@ if ($result1->num_rows > 0)
         <!-- ===== MAIN JS ===== -->
         <script src="showMenu.js"></script>
         <script src="affiche-contenu-rs.js"></script>
-
+        <script src="relex.js"></script>
 
 
 </body>
-<script src="relex.js"></script>
 </html>
 
