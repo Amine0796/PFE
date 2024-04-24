@@ -40,17 +40,17 @@ if(isset($_POST['valider-course'])){
         <div class="container-kr">
             <label for="direction-course">
                 Direction
-                <input type="text" name="direction-course">
+                <input type="text" name="direction-course" readonly>
             </label><!-- <br><br> -->
             
             <label for="departement-course">
                 Département
-                <input type="text" name="departement-course">
+                <input type="text" name="departement-course" readonly>
             </label><!-- <br><br> -->
 
             <label for="demandeur-course">
                 Demande effectuée par
-                <input type="text" name="demandeur-course" value="<?php echo $_SESSION["username"]; ?>">
+                <input type="text" name="demandeur-course" value="<?php echo $_SESSION["username"]; ?>" readonly>
             </label><!-- <br><br> -->
 
             <label>
@@ -60,17 +60,17 @@ if(isset($_POST['valider-course'])){
 
             <label for="compte-analytique-course">
                 Compte analytique
-                <input type="text" name="compte-analytique-course">
+                <input type="text" name="compte-analytique-course" readonly>
             </label><!-- <br><br> -->
 
             <label for="date-demande-course">
                 Date de demande
-                <input type="date" name="date-demande-course" value="<?php echo date('Y-m-d'); ?>">
+                <input type="date" name="date-demande-course" value="<?php echo date('Y-m-d'); ?>" readonly>
             </label><!-- <br><br> -->
 
             <label for="destinataire-course">
                 Destinataire
-                <input type="text" name="destinataire-course" value="RELEX">
+                <input type="text" name="destinataire-course" value="RELEX" readonly>
             </label>
 
             <label for="destination-course">

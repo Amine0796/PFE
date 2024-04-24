@@ -8,12 +8,13 @@
 }
 
 .navbar-Table-Button{
-    margin-left: 50px;
+    margin-left: 70px;
     margin-top: 30px;
-
+    display: flex;
+    justify-content: left;
 }
 .navbar-Table-Button button {
-    background-color: #f8b65f;
+    background-color: #e88a1a;
     color: rgb(0, 0, 0);
     padding: 10px 20px;
     border: none;
@@ -24,10 +25,13 @@
 }
 
 .navbar-Table-Button button:hover {
-    background-color: #e2e2e2;
+    background-color: #f0a958;
 }
  
-.tables-container {
+/* .tables-container {
+    display: none;
+} */
+#tableFormationEtranger,#tableEtranger, #tableCourse,#suiviFormationEtranger, #suiviEtranger ,#suiviCourse {
     display: none;
 }
 
@@ -36,7 +40,7 @@
     font-size: large;
 }
 
-table {
+.header_fixed table {
     width: 100%;
     border-collapse: collapse;
 
@@ -60,22 +64,22 @@ table {
 
 
 }
-th,
-td {
+.header_fixed th,
+.header_fixed td {
     border-bottom: 1px solid #dddddd;
     padding: 10px 20px;
     font-size: 14px;
     border: 0.5px solid rgb(202, 200, 199);
 }
-tr:nth-child(even) {
+.header_fixed tr:nth-child(even) {
     background-color: #dddddd;
 }
 
-tr:nth-child(odd) {
+.header_fixed tr:nth-child(odd) {
     background-color: #dddddd;
 }
 
-tr:hover td {
+.header_fixed tr:hover td {
     color: #a0c7b2;
     background-color: #ffffff;
 }

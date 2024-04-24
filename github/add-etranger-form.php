@@ -48,23 +48,23 @@ if(isset($_POST['valider-etrangerF'])){
         <div class="container-kr">
             <label for="direction-etranger">
                 Direction
-                <input type="text" name="direction-etranger">
+                <input type="text" name="direction-etranger" readonly>
             </label><!-- <br><br> -->
             
             <label for="departement-etranger">
                 Département
-                <input type="text" name="departement-etranger">
+                <input type="text" name="departement-etranger" readonly>
             </label><!-- <br><br> -->
 
             <label for="demandeur-etranger">
                 Demande effectuée par
-                <input type="text" name="demandeur-etranger" value="<?php echo $_SESSION["username"]; ?>">
+                <input type="text" name="demandeur-etranger" value="<?php echo $_SESSION["username"]; ?>" readonly>
             </label><!-- <br><br> -->
 
 
             <label for="compte-analytique-etranger">
                 Compte analytique
-                <input type="text" name="compte-analytique-etranger">
+                <input type="text" name="compte-analytique-etranger" readonly>
             </label><!-- <br><br> -->
 
             <label>
@@ -74,12 +74,12 @@ if(isset($_POST['valider-etrangerF'])){
 
             <label for="date-demande-etranger">
                 Date de demande
-                <input type="date" name="date-demande-etranger" value="<?php echo date('Y-m-d'); ?>">
+                <input type="date" name="date-demande-etranger" value="<?php echo date('Y-m-d'); ?>" readonly>
             </label><!-- <br><br> -->
 
             <label for="destinataire-etranger">
                 Destinataire
-                <input type="text" name="destinataire-etranger" value="RELEX">
+                <input type="text" name="destinataire-etranger" value="RELEX" readonly>
             </label>
 
             <label for="du-etranger">

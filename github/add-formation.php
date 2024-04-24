@@ -52,22 +52,22 @@ if(isset($_POST['valider-formation'])){
         <div class="container-kr">
             <label for="direction-formation">
                 Direction
-                <input type="text" name="direction-formation">
+                <input type="text" name="direction-formation" readonly>
             </label><!-- <br><br> -->
             
             <label for="departement-formation">
                 Département
-                <input type="text" name="departement-formation">
+                <input type="text" name="departement-formation" readonly>
             </label><!-- <br><br> -->
 
             <label for="demande-dffuctuee-par-formation">
                 Demande effectuée par
-                <input type="text" name="demande-dffuctuee-par-formation" value="<?php echo $_SESSION["username"]; ?>">
+                <input type="text" name="demande-dffuctuee-par-formation" value="<?php echo $_SESSION["username"]; ?>" readonly>
             </label><!-- <br><br> -->
 
             <label for="compte-analytique-formation">
                 Compte analytique
-                <input type="text" name="compte-analytique-formation">
+                <input type="text" name="compte-analytique-formation" readonly>
             </label><!-- <br><br> -->
 
             <label>
@@ -77,12 +77,12 @@ if(isset($_POST['valider-formation'])){
 
             <label for="date-demande-formation">
                 Date de demande
-                <input type="date" name="date-demande-formation" value="<?php echo date('Y-m-d'); ?>">
+                <input type="date" name="date-demande-formation" value="<?php echo date('Y-m-d'); ?>" readonly>
             </label><!-- <br><br> -->
 
             <label for="destinataire-formation">
                 Destinataire
-                <input type="text" name="destinataire-formation" value="RELEX">
+                <input type="text" name="destinataire-formation" value="RELEX" readonly>
             </label>
 
             <label for="du-formation">
@@ -137,11 +137,6 @@ if(isset($_POST['valider-formation'])){
                     <option value="">Oui</option> 
                     <option value="">Non</option>
                 </select><!-- <br><br> -->
-            </label>
-
-            <label for="organisme-formateur">
-                Organisme formateur
-                <input type="text" name="organisme-formateur">
             </label>
 
             <label for="noms-missionaires-formation">
@@ -206,6 +201,12 @@ if(isset($_POST['valider-formation'])){
                     </label>
                 </div>
             </fieldset>
+
+            <label for="organisme-formateur">
+                Organisme formateur
+                <input type="text" name="organisme-formateur">
+            </label>
+
 
             <label for="observation-formation">
                 Observations

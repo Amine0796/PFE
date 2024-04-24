@@ -1,10 +1,10 @@
-<div class="table content" id="table-maj-rs">
+<div class="table content" id="table-maj">
 
 <div class="navbar-Table-Button">
         <button onclick="showTable('tableTerrain')">Mission du terrain</button>
         <button onclick="showTable('tableEtranger')">Mission à l'étranger</button>
         <button onclick="showTable('tableCourse')">Course</button>
-        <button onclick="showTable('tableAcheminement')">Acheminement</button>
+        <!-- <button onclick="showTable('tableAcheminement')">Acheminement</button> -->
 
     </div>
 
@@ -219,7 +219,7 @@
 ***************************Acheminement***************************
 ******************************************************************
 ****************************************************************** -->
-<div id="tableAcheminement" class="tables-container">
+<!-- <div id="tableAcheminement" class="tables-container">
         <div class="table-header">
             <p>Mise à jour des demandes d'acheminement</p>
         </div>
@@ -257,7 +257,7 @@
 
 
 </div>
-
+ -->
 
 </div>
 <script src="tableswitcher.js"></script>

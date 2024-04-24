@@ -7,10 +7,12 @@ form{
     flex-direction: column;
 
 }
-.header-text{
+.header-text, .table-header{
     margin-top: 50px;
     text-align: center;
-    font-size: large;
+    font-size:25px;
+    /* color:#222831; */
+    color: #b55400;
 }
 #table-formation, #table-etranger {
     width: 100%;
@@ -30,9 +32,15 @@ form{
     position: relative;
     width: 1000px;
     border-radius: 30px;
-    border:#630e0e solid 1px;
+    /* background: #FAF8F8; */
+    background: #eeeeee;
     padding: 40px;
-    margin: 80px;
+    margin-top: 40px;
+    margin-left: 80px;
+    box-shadow: 2px 2px 15px 2px rgba(0, 0, 0, 0.1),
+    -2px 0px 15px 2px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+
 }
 /* .fixed-form-head , .secondformdiv, .aller, .retour, .observation-travail {
     display: grid;
@@ -47,30 +55,35 @@ form{
 } */
 .container-kr input, select{
     flex-direction: column;
-    margin: 10px 0;
+    margin: 0;
+    padding: 4px;
     position: relative;
     width: 400px; 
+    font-size: 15px;
     border: 1px solid #ccc; 
     border-radius: 5px; 
     outline: none; 
+    height: 30px;
 }
 
 .boutons-kr{
    display: flex;
-   justify-content: center;
+   justify-content: right;
    gap: 50px;
    align-items: center;
    padding-bottom: 50px;
+   margin-top: 30px;
+   margin-right: 150px;
 }
 
 .boutons-kr button{
     padding: 10px 20px; 
-    background-color: #c27904; 
+    background-color: #393e46; 
     color: #fff; 
     border: none; 
     border-radius: 5px;
     cursor: pointer; 
 }
-.boutons-kr button{
+.boutons-kr button:hover{
     background-color: rgb(179, 87, 0);
 }

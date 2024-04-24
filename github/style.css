@@ -7,7 +7,7 @@
 
   /*===== Colores =====*/
   --first-color: #FFE4B5;
-  --bg-color: orange;
+  --bg-color: #b55400;
   --sub-color: #B6CEFC;
   --white-color: #FFF;
   
@@ -64,7 +64,9 @@ a{
   height: 100vh;
   background-color: var(--bg-color);
   color: var(--white-color);
-  padding: 1.5rem 1.5rem 2rem;
+  /* padding: 1.5rem 1.5rem 2rem; */
+  padding: 1rem 1.5rem 1rem;
+
   transition: .5s;
   z-index: var(--z-fixed);
 }
@@ -80,11 +82,12 @@ a{
   
 }
 .nav__brand{
-  height: 100px;
+  /* height: 100px; */
+  height: 80px;
   display: grid;
   grid-template-columns: max-content max-content;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
   margin-bottom: 2rem;
 }
 .nav__toggle{
@@ -179,8 +182,9 @@ img{
 } */
 
 
-.logout-btn{
-background-color: red;}
+/* .logout-btn{
+background-color: red;
+} */
 
 
 
@@ -194,6 +198,7 @@ width: 100%;
 background-color: rgb(126, 52, 115);
 } 
  .sonatrach-img{
+  /* position: relative; */
   margin: 0;
   padding: 0;
   height: 100%;

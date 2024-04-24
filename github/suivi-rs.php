@@ -5,7 +5,7 @@
         <button onclick="showTable('suiviTravail')">Mission du terrain</button>
         <button onclick="showTable('suiviEtranger')">Mission à l'étranger</button>
         <button onclick="showTable('suiviCourse')">Course</button>
-        <button onclick="showTable('suiviAcheminement')">Acheminement</button>
+        <!-- <button onclick="showTable('suiviAcheminement')">Acheminement</button> -->
 </div>
 
 
@@ -199,7 +199,7 @@
         <!-- *************************************
 *****************suivi Acheminement**********
 **************************************** -->
-<div id="suiviAcheminement" class="tables-container">
+<!-- <div id="suiviAcheminement" class="tables-container">
     <div class="table" id="table-maj">
         <div class="table-header">
             <p>Suivi des demandes d'acheminement</p>
@@ -234,7 +234,7 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
+        </div> -->
         <!-- <div class="btn-class">
         <button id="btn-retour">Retour</button>
         <button id="btn-confirmer">confirmer</button>

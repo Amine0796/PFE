@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="relex-formation.css">
+    <link rel="stylesheet" href="stylemisejr.css">
+    <link rel="stylesheet" href="styleadd.css">
+
     <title>Demandes</title>
 </head>
 <body>
 <div id="tableFormation" class="tables-container">
 <div class="table-header">
-        <p>Mise à jour des demandes de formation</p>
+        <p>Traitement des demandes de formation</p>
 </div>
     <div class="header_fixed">
     <table>
@@ -53,10 +56,12 @@
         ?>
         </tbody>
     </table>
+    </div>
+    
     <a href="relex.php">
     <button id="retour-table-demande">Retour</button>
     </a>
-    </div>
+
 </div>
 
 <!--*******************                    ************************ -->
