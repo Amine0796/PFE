@@ -18,7 +18,7 @@ tr:nth-child(even) {
 } */
 
 /* Style de survol (hover) */
-tr:hover {
+td:hover {
     background-color: #f5f5f5;
     cursor: pointer;
 }

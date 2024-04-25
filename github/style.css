@@ -87,8 +87,9 @@ a{
   display: grid;
   grid-template-columns: max-content max-content;
   justify-content: space-between;
-  /* align-items: center; */
+  align-items: center;
   margin-bottom: 2rem;
+
 }
 .nav__toggle{
   font-size: 1.25rem;
