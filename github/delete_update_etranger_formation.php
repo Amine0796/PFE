@@ -5,7 +5,7 @@ include 'database.php';
 
 
 if(isset($_POST['delete-etranger-formation'])){
-    $idFE=$_SESSION['idFE'];
+    $idFE=$_GET["idRSF"];
     $sql="delete from `etranger` where id =$idFE";
     $result=mysqli_query($conn,$sql);
     if($result){

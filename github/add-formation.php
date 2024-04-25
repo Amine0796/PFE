@@ -27,7 +27,10 @@ if(isset($_POST['valider-formation'])){
     $PointDepartVehicule=$_POST['point-depart-vehicule-formation'] ;
     $Observations=$_POST['observation-formation'] ;
     $Etat=$_POST['etat-formation'];
+
+
  
+
     $sql = "INSERT INTO Formation (Direction, Departement, Demandeur, CompteAnalytique, NumDemande, DateDemande, Destinataire, DateDu, DateAu, RegionDeroulementFormation, LieuFormation, Itineraire, ObjetFormation, DemandeHebergement, DemandeBilletterie, OrganismeFormateur, NomMissionnaires, MoyenTransportAller, MoyenTransportRetour, DemandeVehiculeServiceAeroport, PointDepartAvion, DemandeVehiculeLieuFormation, PointDepartVehicule, Observations, Etat) 
     VALUES ('$Direction', '$Departement', '$Demandeur', '$CompteAnalytique','$NumDemande', '$DateDemande', '$Destinataire', '$DateDu', '$DateAu', '$RegionDeroulementFormation', '$LieuFormation', '$Itineraire', '$ObjetFormation', '$DemandeHebergement', '$DemandeBilletterie', '$OrganismeFormateur', '$NomMissionnaires', '$MoyenTransportAller', '$MoyenTransportRetour', '$DemandeVehiculeServiceAeroport', '$PointDepartAvion', '$DemandeVehiculeLieuFormation', '$PointDepartVehicule', '$Observations', '$Etat')";
     
@@ -52,7 +55,7 @@ if(isset($_POST['valider-formation'])){
         <div class="container-kr">
             <label for="direction-formation">
                 Direction
-                <input type="text" name="direction-formation" readonly>
+                <input type="text" name="direction-formation">
             </label><!-- <br><br> -->
             
             <label for="departement-formation">

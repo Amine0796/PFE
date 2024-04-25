@@ -40,8 +40,7 @@
                     if ($result) {
                         
                         while ($row=mysqli_fetch_assoc($result)) {
-                            $idT = $row['id'];
-                            $_SESSION['$idT'] = $idT;
+                           
 
                             $NumDemande = $row['NumDemande'];
                             $DateDemande = $row['DateDemande'];
@@ -57,7 +56,7 @@
                             <td>'.$DateAu.'</td>
                             <td>'.$Departement.'</td>
                             <td>
-                            <form action="delete_update_travail_rs.php" method="post">
+                            <form action="delete_update_travail_rs.php?idT='.$row["id"].'" method="post">
                             <div class="btn-dlt-upt-rs">
                                 <button ><i class="bx bxs-edit"></i></button> 
                                 <button name="delete-travail-rs" ><i class="bx bxs-trash"></i></button>
@@ -106,8 +105,8 @@
                     if ($result) {
                         
                         while ($row=mysqli_fetch_assoc($result)) {
-                            $idRSE = $row['id'];
-                            $_SESSION['idRSE'] = $idRSE;
+                            
+                            
 
                             $NumDemande = $row['NumDemande'];
                             $DateDemande = $row['DateDemande'];
@@ -123,7 +122,7 @@
                             <td>'.$ObjetMission.'</td>
                             
                             <td>
-                            <form action="delete_update_etranger_rs.php" method="post">
+                            <form action="delete_update_etranger_rs.php?idRSE='.$row["id"].'" method="post">
                             <div class="btn-dlt-upt-rs">
                                 <button ><i class="bx bxs-edit"></i></button> 
                                 <button name="delete-etranger-rs" ><i class="bx bxs-trash"></i></button>
@@ -175,8 +174,7 @@
                     if ($result) {
                         
                         while ($row=mysqli_fetch_assoc($result)) {
-                            $idC = $row['id'];
-                            $_SESSION['idC'] = $idC;
+                            
 
                             $NumDemande = $row['NumDemande'];
                             $DateDemande = $row['DateDemande'];
@@ -190,7 +188,7 @@
                             <td>'.$DateDepart.'</td>
                             <td>'.$HeureDepart.'</td>
                             <td>
-                            <form action="delete_update_course_rs.php" method="post">
+                            <form action="delete_update_course_rs.php?idC='.$row["id"].'" method="post">
                             <div class="btn-dlt-upt-rs">
                                 <button ><i class="bx bxs-edit"></i></button> 
                                 <button name="delete-course-rs" ><i class="bx bxs-trash"></i></button>

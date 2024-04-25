@@ -1,11 +1,11 @@
 <div class="traiter-formation" id="traitement-formation-box">
-
+    
 <form method="post">
     <p class="header-text">Ajouter une demande de formation</p>
         <div class="container-kr">
             <label for="direction-formation-relex">
                 Direction
-                <input type="text" name="direction-formation-relex" readonly>
+                <input type="text" name="direction-formation-relex" value="<?php echo $_SESSION['direction']; ?>" readonly>
             </label><!-- <br><br> -->
             
             <label for="departement-formation-relex">
@@ -15,7 +15,7 @@
 
             <label for="demande-dffuctuee-par-formation-relex">
                 Demande effectuée par
-                <input type="text" name="demande-dffuctuee-par-formation-relex" value="<?php echo $_SESSION["username"]; ?>" readonly>
+                <input type="text" name="demande-dffuctuee-par-formation-relex" readonly>
             </label><!-- <br><br> -->
 
             <label for="compte-analytique-formation-relex">
@@ -317,6 +317,8 @@
                     </label>
                     
             </fieldset>
+            <button>Valider</button>
+            <button>Annuler</button>
             </form>
 
 	</div>

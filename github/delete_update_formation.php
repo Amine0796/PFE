@@ -4,7 +4,7 @@ session_start();
 include 'database.php';
 
 if(isset($_POST['delete-formation'])){
-    $idF=$_SESSION['idF'];
+    $idF= $_GET["idF"];
     $sql="delete from `formation` where id =$idF";
     $result=mysqli_query($conn,$sql);
     if($result){

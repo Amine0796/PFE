@@ -20,7 +20,7 @@ if (!isset($_SESSION["username"]) || !isset($_SESSION["password"])) {
     <link rel="stylesheet" href="relex.css">
 
 </head>
-<body>
+<body id="body-pd">
 
  <!-- sidebar -->
 
@@ -57,11 +57,7 @@ if (!isset($_SESSION["username"]) || !isset($_SESSION["password"])) {
                         </a>
 
 
-                        <a  class="nav__link" id="maj" >
-                            <img src="../images/file.png" alt="">
-                            <!-- <ion-icon name="home-outline" class="nav__icon"></ion-icon> -->
-                            <span class="nav__name" >Mise a jour</span>
-                        </a>
+                        
                         
 
                         <a  class="nav__link" id="formation">
@@ -82,11 +78,7 @@ if (!isset($_SESSION["username"]) || !isset($_SESSION["password"])) {
                             <span class="nav__name">Courses</span>
                         </a>
 
-                        <a  class="nav__link dashboard-item" id="suivi">
-                            <img src="../images/schedule.png" alt="">
-                            <!-- <ion-icon name="pie-chart-outline" class="nav__icon"></ion-icon> -->
-                            <span class="nav__name">Suivi des demandes</span>
-                        </a>
+                      
                         
                         <a href="logout.php" class="nav__link logout-btn">
                             <img src="../images/se-deconnecter.png" alt="">
@@ -156,6 +148,58 @@ if ($result1->num_rows > 0)
     
         
 </div>
+<?php
+                    $sql_formation = "SELECT COUNT(*) AS totalDemandesF FROM `formation`";
+                    $result_formation = mysqli_query($conn, $sql_formation);
+
+                    if ($result_formation) {
+                        $row = mysqli_fetch_assoc($result_formation);
+                        $totalDemandesF = $row['totalDemandesF'];
+                        
+                        $_SESSION['totalDemandesF'] = $totalDemandesF;
+                        
+                    } else {
+                        echo "Erreur lors de la récupération du nombre total de demandes.";
+                    }
+
+                    $sql_course = "SELECT COUNT(*) AS totalDemandesC FROM `courses`";
+                    $result = mysqli_query($conn, $sql_course);
+
+                    if ($result) {
+                        $row = mysqli_fetch_assoc($result);
+                        $totalDemandesC = $row['totalDemandesC'];
+                        
+                        $_SESSION['totalDemandesC'] = $totalDemandesC;
+                        
+                    } else {
+                        echo "Erreur lors de la récupération du nombre total de demandes.";
+                    }
+
+                    $sql_etranger = "SELECT COUNT(*) AS totalDemandesE FROM `etranger`";
+                    $result_etranger = mysqli_query($conn, $sql_etranger);
+
+                    if ($result_etranger) {
+                        $row = mysqli_fetch_assoc($result_etranger);
+                        $totalDemandesE = $row['totalDemandesE'];
+                        
+                        $_SESSION['totalDemandesE'] = $totalDemandesE;
+                        
+                    } else {
+                        echo "Erreur lors de la récupération du nombre total de demandes.";
+                    }
+                    
+
+                    $sql_travail = "SELECT COUNT(*) AS totalDemandesT FROM `travail`";
+                    $result_travail = mysqli_query($conn, $sql_travail);
+
+                    if ($result_travail) {
+                        $row_travail = mysqli_fetch_assoc($result_travail);
+                        $_SESSION['totalDemandesT'] = $row_travail['totalDemandesT'];
+                    } else {
+                        echo "Erreur lors de la récupération du nombre total de demandes de travail.";
+                    }
+
+                ?>
 
 <!-- tableau des mission -->
 <div class="mission-non-traite" id="table-mission">
@@ -163,43 +207,35 @@ if ($result1->num_rows > 0)
         <thead>
             <tr>
                 <th>Table Name</th>
+                <th>Nombre</th> <!-- Nouvelle colonne ajoutée -->
             </tr>
         </thead>
         <tbody>
             <tr class="tr-mission-non-traite" id="tr-travail">
-                <td class="td-mission-non-traite" id="td-travail"><a href="view_table.php?table=travail">Travail</a></td>
+                <td class="td-mission-non-traite" id="td-travail">Travail</td>
+                <td><?php echo $_SESSION['totalDemandesT'];?></td> 
             </tr>
             <tr class="tr-mission-non-traite" id="tr-etranger">
-                <td class="td-mission-non-traite" id="td-etranger"><a href="view_table.php?table=etranger">Etranger</a></td>
+                <td class="td-mission-non-traite" id="td-etranger">Etranger</td>
+                <td><?php echo $_SESSION['totalDemandesE'];?></td> 
             </tr>
             <tr class="tr-mission-non-traite" id="tr-courses">
-                <td class="td-mission-non-traite" id="td-courses"><a href="view_table.php?table=courses">Courses</a></td>
+                <td class="td-mission-non-traite" id="td-courses">Courses</td>
+                <td><?php echo $_SESSION['totalDemandesC'];?></td>
             </tr>
             <tr class="tr-mission-non-traite" id="tr-formation">
-                <td class="td-mission-non-traite" id="td-formation"><a href="relex-formation.php?table=formation">Formation</a></td>
+                <td class="td-mission-non-traite" id="td-formation">Formation</td>
+                <td><?php echo $_SESSION['totalDemandesF'];?></td> 
             </tr>
         </tbody>
-        
-
-
-        <!-- <tr class="tr-mission-non-traite" id="tr-travail">
-            <td class="td-mission-non-traite" id="td-travail"><a href="view_table.php?table=travail">Travail</a></td>
-        </tr>
-        <tr class="tr-mission-non-traite" id="tr-etranger">
-            <td class="td-mission-non-traite" id="td-etranger"><a href="view_table.php?table=etranger">Etranger</a></td>
-        </tr>
-        <tr class="tr-mission-non-traite" id="tr-courses">
-            <td class="td-mission-non-traite" id="td-courses"><a href="view_table.php?table=courses">Courses</a></td>
-        </tr>
-        <tr class="tr-mission-non-traite" id="tr-formation">
-            <td class="td-mission-non-traite" id="td-formation"><a href="relex-formation.php?table=formation">Formation</a></td>
-        </tr> -->
     </table>
 </div>
 
-
-
 <!-- liste des demandes non traite -->
+
+<?php require_once 'relex-formation.php'; ?>
+
+
 
 
         <!-- ===== IONICONS ===== -->
@@ -210,10 +246,9 @@ if ($result1->num_rows > 0)
         <!-- ===== MAIN JS ===== -->
         <script src="showMenu.js"></script>
         <script src="affiche-contenu-rs.js"></script>
-
+        <script src="relex.js"></script>
 
 
 </body>
-<script src="relex.js"></script>
 </html>
 
