@@ -39,4 +39,10 @@ trFormation1.addEventListener("click",function(){
     tableFormationRelex.style.display = 'block';
 })
 
-
+let home1 = document.getElementById("home")
+home1.addEventListener('click',function () {
+    let tableFormationRelex = document.getElementById("tableFormation-relex")
+    tableFormationRelex.style.display = 'none';
+    let Notification = document.getElementById("notification-relex");
+    Notification.style.display='block'
+})
