@@ -2,7 +2,8 @@
 session_start();
 if (!isset($_SESSION["username"]) || !isset($_SESSION["password"])) {
     header("Location: login.html");
-    exit();}
+    exit();
+}
 // if (isset($_SESSION["user"])) {
 //    header("Location: login.html");
 // }

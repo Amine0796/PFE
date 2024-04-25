@@ -35,15 +35,18 @@
     display: none;
 }
 
-.table-header{
+.header-text, .table-header{
+    margin-top: 50px;
     text-align: center;
-    font-size: large;
+    font-size:25px;
+    /* color:#222831; */
+    color: #b55400;
 }
 
 .header_fixed table {
     width: 100%;
     border-collapse: collapse;
-
+    /* height: 500px; */
 }
 .header_fixed {
     max-height: 100vh;
