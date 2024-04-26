@@ -1,7 +1,7 @@
+<link rel="stylesheet" href="stylemisejr.css">
+<link rel="stylesheet" href="relex-formation.css">
     <div id="tableFormation-relex" class="tables-container">
 
-        <link rel="stylesheet" href="stylemisejr.css">
-        <link rel="stylesheet" href="relex-formation.css">
 
         <div class="table-header">
             <p>Traitement des demandes de formation</p>
@@ -53,12 +53,13 @@
                         ?>
                     </tbody>
                 </table>
+                <a href="relex.php">
+        <button id="retour-table-demande">Retour</button>
+        </a>
             </div>
         
         
-        <a href="relex.php">
-        <button id="retour-table-demande">Retour</button>
-        </a>
+        
 
     </div>
 
