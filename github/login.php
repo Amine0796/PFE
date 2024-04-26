@@ -18,13 +18,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['username']) && isset($
     $query = "SELECT username, password, poste FROM users WHERE username='$username' AND password='$password'";
     $result = $conn->query($query);
     
+?>
+    <!-- // Check if user exists -->
+    <div class="commentlogin">
+    <?php
 
-    // Check if user exists
     if ($result->num_rows == 0) {
         echo "Password or username invalid";
         include('login.html');
         exit();
     }
+    ?>
+    </div>
+    
+<?php
 
     // Fetch user data
     $row = $result->fetch_assoc();
