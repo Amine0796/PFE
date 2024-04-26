@@ -176,7 +176,7 @@
                             <td>'.$HeureDepart.'</td>
                             <td>
                             <a href="#">
-                                <button class="consulter">Consulter</button>
+                                <button class="btnconsulter">Consulter</button>
                             </a>
                            
                         </td>

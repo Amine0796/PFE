@@ -5,6 +5,8 @@
     border: none; 
     border-radius: 10px;
     cursor: pointer;
+    align-items: center;
+
 }
 .btnconsulter:hover{
     background-color: rgb(250, 198, 150);
