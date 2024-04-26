@@ -22,7 +22,7 @@ tr:nth-child(even) {
 
 #retour-table-demande {
     margin-top: 20px;
-    margin-left:800px ;
+    /* margin-left:00px ; */
     padding: 10px 20px; 
     background-color: #393e46; 
     color: #fff; 
@@ -32,4 +32,7 @@ tr:nth-child(even) {
 }
 #retour-table-demande:hover{
     background-color: rgb(179, 87, 0);
+    transition: 0.1s;
 }
+
+

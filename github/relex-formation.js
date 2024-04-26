@@ -8,17 +8,31 @@ trFormation.shift();
 let contenuFenetre = document.getElementById("traitement-formation-box");
 contenuFenetre.style.display = "none"
 
+let divDemandeFormation = document.getElementById("table-demande-formation-relex")
+
+let btnAnnulerPopupFormation = document.getElementById("btn-Annuler-popup-formation")
+
+// let btnValiderPopupFormation = document.getElementById("btn-Valider-popup-formation")
+
+btnAnnulerPopupFormation.addEventListener("click",function () {
+    contenuFenetre.style.display="none"
+    divDemandeFormation.style.display="block"
+})
+
+function openPopup() {
+    contenuFenetre.style.display = "block";
+    divDemandeFormation.style.display = 'none'
+  }
+
+let popupFormation = document.getElementById("popupformation")
+
 trFormation.forEach(function(tr) {
     tr.addEventListener("click", function() {
          
-        let nouvelleFenetre = window.open("", "_blank", "width=2000,height=2000");
         
-        contenuFenetre = document.getElementById("traitement-formation-box").innerHTML;
+        openPopup()
     
-        nouvelleFenetre.document.write(contenuFenetre);
+        
     });
 });
 
-// function setNumDemandeSession(NumDemande) {
-//     window.location.href = "relex-formation.php?NumDemande=" + NumDemande;
-// }
