@@ -53,13 +53,14 @@
                         ?>
                     </tbody>
                 </table>
-                <a href="relex.php">
-        <button id="retour-table-demande">Retour</button>
-        </a>
+           
             </div>
         
         
-        
+            <a href="relex.php">
+        <button id="retour-table-demande">Retour</button>
+        </a>
+
 
     </div>
 

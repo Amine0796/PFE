@@ -149,64 +149,64 @@ if ($result1->num_rows > 0)
         
 </div>
 <?php
-                    $sql_formation = "SELECT COUNT(*) AS totalDemandesF FROM `formation`";
-                    $result_formation = mysqli_query($conn, $sql_formation);
+        $sql_formation = "SELECT COUNT(*) AS totalDemandesF FROM `formation`";
+        $result_formation = mysqli_query($conn, $sql_formation);
 
-                    if ($result_formation) {
-                        $row = mysqli_fetch_assoc($result_formation);
-                        $totalDemandesF = $row['totalDemandesF'];
-                        
-                        $_SESSION['totalDemandesF'] = $totalDemandesF;
-                        
-                    } else {
-                        echo "Erreur lors de la récupération du nombre total de demandes.";
-                    }
+        if ($result_formation) {
+            $row = mysqli_fetch_assoc($result_formation);
+            $totalDemandesF = $row['totalDemandesF'];
+            
+            $_SESSION['totalDemandesF'] = $totalDemandesF;
+            
+        } else {
+            echo "Erreur lors de la récupération du nombre total de demandes.";
+        }
 
-                    $sql_course = "SELECT COUNT(*) AS totalDemandesC FROM `courses`";
-                    $result = mysqli_query($conn, $sql_course);
+        $sql_course = "SELECT COUNT(*) AS totalDemandesC FROM `courses`";
+        $result = mysqli_query($conn, $sql_course);
 
-                    if ($result) {
-                        $row = mysqli_fetch_assoc($result);
-                        $totalDemandesC = $row['totalDemandesC'];
-                        
-                        $_SESSION['totalDemandesC'] = $totalDemandesC;
-                        
-                    } else {
-                        echo "Erreur lors de la récupération du nombre total de demandes.";
-                    }
+        if ($result) {
+            $row = mysqli_fetch_assoc($result);
+            $totalDemandesC = $row['totalDemandesC'];
+            
+            $_SESSION['totalDemandesC'] = $totalDemandesC;
+            
+        } else {
+            echo "Erreur lors de la récupération du nombre total de demandes.";
+        }
 
-                    $sql_etranger = "SELECT COUNT(*) AS totalDemandesE FROM `etranger`";
-                    $result_etranger = mysqli_query($conn, $sql_etranger);
+        $sql_etranger = "SELECT COUNT(*) AS totalDemandesE FROM `etranger`";
+        $result_etranger = mysqli_query($conn, $sql_etranger);
 
-                    if ($result_etranger) {
-                        $row = mysqli_fetch_assoc($result_etranger);
-                        $totalDemandesE = $row['totalDemandesE'];
-                        
-                        $_SESSION['totalDemandesE'] = $totalDemandesE;
-                        
-                    } else {
-                        echo "Erreur lors de la récupération du nombre total de demandes.";
-                    }
-                    
+        if ($result_etranger) {
+            $row = mysqli_fetch_assoc($result_etranger);
+            $totalDemandesE = $row['totalDemandesE'];
+            
+            $_SESSION['totalDemandesE'] = $totalDemandesE;
+            
+        } else {
+            echo "Erreur lors de la récupération du nombre total de demandes.";
+        }
+        
 
-                    $sql_travail = "SELECT COUNT(*) AS totalDemandesT FROM `travail`";
-                    $result_travail = mysqli_query($conn, $sql_travail);
+        $sql_travail = "SELECT COUNT(*) AS totalDemandesT FROM `travail`";
+        $result_travail = mysqli_query($conn, $sql_travail);
 
-                    if ($result_travail) {
-                        $row_travail = mysqli_fetch_assoc($result_travail);
-                        $_SESSION['totalDemandesT'] = $row_travail['totalDemandesT'];
-                    } else {
-                        echo "Erreur lors de la récupération du nombre total de demandes de travail.";
-                    }
+        if ($result_travail) {
+            $row_travail = mysqli_fetch_assoc($result_travail);
+            $_SESSION['totalDemandesT'] = $row_travail['totalDemandesT'];
+        } else {
+            echo "Erreur lors de la récupération du nombre total de demandes de travail.";
+        }
 
-                ?>
+?>
 
 <!-- tableau des mission -->
 <div class="mission-non-traite" id="table-mission">
     <table id="table-mission-non-traite">
         <thead>
             <tr>
-                <th>Table Name</th>
+                <th>Type demande</th>
                 <th>Nombre</th> <!-- Nouvelle colonne ajoutée -->
             </tr>
         </thead>
