@@ -237,6 +237,9 @@ if ($result1->num_rows > 0)
 
 <?php require_once 'relex-course.php'; ?>
 
+<?php require_once 'relex-etranger.php'; ?>
+
+
 
 
         <!-- ===== IONICONS ===== -->
