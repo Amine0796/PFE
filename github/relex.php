@@ -239,6 +239,8 @@ if ($result1->num_rows > 0)
 
 <?php require_once 'relex-etranger.php'; ?>
 
+<?php require_once 'relex-travail.php'; ?>
+
 
 
 

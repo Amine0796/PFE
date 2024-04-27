@@ -12,6 +12,9 @@ tableCourseRelex.style.display = 'none';
 let tableEtrangerRelex = document.getElementById('tableEtranger-relex');
 tableEtrangerRelex.style.display = 'none';
 
+let tableTravailRelex = document.getElementById('tableTravail-relex');
+tableTravailRelex.style.display = 'none';
+
 
 let tableMission = document.getElementById('table-mission');
 
@@ -62,6 +65,13 @@ trEtranger1.addEventListener("click",function(){
     tableEtrangerRelex.style.display = 'block';
 })
 
+// click in tr course il m'affich table des demandes
+
+let trTravail1 = document.getElementById("tr-travail")
+trTravail1.addEventListener("click",function(){
+    tableMission.style.display = 'none';
+    tableTravailRelex.style.display = 'block';
+})
 
 
 
@@ -77,6 +87,9 @@ home1.addEventListener('click',function () {
 
     let tableEtrangerRelex = document.getElementById("tableEtranger-relex")
     tableEtrangerRelex.style.display = 'none';
+
+    let tableTravailRelex = document.getElementById("tableTravail-relex")
+    tableTravailRelex.style.display = 'none';
 
     let Notification = document.getElementById("notification-relex");
     Notification.style.display='block'
