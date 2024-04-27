@@ -219,7 +219,7 @@ if ($result1->num_rows > 0)
                 <td class="td-mission-non-traite" id="td-etranger">Etranger</td>
                 <td><?php echo $_SESSION['totalDemandesE'];?></td> 
             </tr>
-            <tr class="tr-mission-non-traite" id="tr-courses">
+            <tr class="tr-mission-non-traite" id="tr-course">
                 <td class="td-mission-non-traite" id="td-courses">Courses</td>
                 <td><?php echo $_SESSION['totalDemandesC'];?></td>
             </tr>
@@ -235,6 +235,7 @@ if ($result1->num_rows > 0)
 
 <?php require_once 'relex-formation.php'; ?>
 
+<?php require_once 'relex-course.php'; ?>
 
 
 

@@ -1,10 +1,10 @@
-<div class="traiter-formation" id="traitement-formation-box">
+<div class="traiter-course" id="traitement-course-box">
 
-    <div class="popup" id="popupformation">
-        <!-- <div class="traiter-formation" id="traitement-formation-box"> -->
+    <div class="popup" id="popupcourse">
+        <!-- <div class="traiter-course" id="traitement-course-box"> -->
             <?php
 
-            $sql = "SELECT Demandeur FROM formation WHERE NumDemande = 5";
+            $sql = "SELECT Demandeur FROM courses WHERE NumDemande = 5";
             // Execute query
             $result = $conn->query($sql);
             
@@ -340,8 +340,8 @@
                         </div>
                     
                         <div class="boutons-relex">
-                            <button type="button" id="btn-valider-popup-formation">Valider</button>
-                            <button type="button" id="btn-Annuler-popup-formation">Annuler</button>
+                            <button type="button" id="btn-valider-popup-course">Valider</button>
+                            <button type="button" id="btn-Annuler-popup-course">Annuler</button>
                         </div>
                     </div>
             </form>
