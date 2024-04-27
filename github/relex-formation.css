@@ -37,7 +37,7 @@ tr:nth-child(even) {
 /* ****************************************************************
 *******************formulaire du traitement ********************
 **************************************************************** */
-.traiter-formation, .traiter-course, .traiter-etranger{
+.traiter-formation, .traiter-course, .traiter-etranger, .traiter-travail{
     font-size: 13px;
     font-weight: bold;
     margin-left: 100px;

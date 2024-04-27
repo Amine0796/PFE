@@ -20,95 +20,95 @@
                 <p class="header-text">Traiter une demande à l'étranger</p>
                     <div class="container-relex">
                         <div class="mini-container">
-                            <label for="direction-etranger">
+                            <label for="direction-etranger-relex">
                                 Direction
-                                <input type="text" name="direction-etranger" readonly>
+                                <input type="text" name="direction-etranger-relex" readonly>
                             </label><!-- <br><br> -->
                             
-                            <label for="departement-etranger">
+                            <label for="departement-etranger-relex">
                                 Département
-                                <input type="text" name="departement-etranger" readonly>
+                                <input type="text" name="departement-etranger-relex" readonly>
                             </label><!-- <br><br> -->
 
-                            <label for="demandeur-etranger">
+                            <label for="demandeur-etranger-relex">
                                 Demande effectuée par
-                                <input type="text" name="demandeur-etranger" value="<?php echo $_SESSION["username"]; ?>" readonly>
+                                <input type="text" name="demandeur-etranger-relex" value="<?php echo $_SESSION["username"]; ?>" readonly>
                             </label><!-- <br><br> -->
 
 
-                            <label for="compte-analytique-etranger">
+                            <label for="compte-analytique-etranger-relex">
                                 Compte analytique
-                                <input type="text" name="compte-analytique-etranger" readonly>
+                                <input type="text" name="compte-analytique-etranger-relex" readonly>
                             </label><!-- <br><br> -->
 
-                            <label>
+                            <label for="num-demande-etranger-relex">
                                 Num Demande 
-                                <input type="number" name="num-demande-etranger" value="1" min="1" required>
+                                <input type="number" name="num-demande-etranger-relex" value="1" min="1" required>
                             </label>
 
-                            <label for="date-demande-etranger">
+                            <label for="date-demande-etranger-relex">
                                 Date de demande
-                                <input type="date" name="date-demande-etranger" value="<?php echo date('Y-m-d'); ?>" readonly>
+                                <input type="date" name="date-demande-etranger-relex" value="<?php echo date('Y-m-d'); ?>" readonly>
                             </label><!-- <br><br> -->
 
-                            <label for="destinataire-etranger">
+                            <label for="destinataire-etranger-relex">
                                 Destinataire
-                                <input type="text" name="destinataire-etranger" value="RELEX" readonly>
+                                <input type="text" name="destinataire-etranger-relex" value="RELEX" readonly>
                             </label>
 
-                            <label for="du-etranger">
+                            <label for="du-etranger-relex">
                                 Date début           
-                                <input type="date" name="du-etranger" value="<?php echo date('Y-m-d'); ?>">
+                                <input type="date" name="du-etranger-relex" value="<?php echo date('Y-m-d'); ?>">
                             </label>
 
-                            <label for="au-etranger">
+                            <label for="au-etranger-relex">
                                 Date fin
-                                <input type="date" name="au-etranger" value="<?php echo date('Y-m-d'); ?>">
+                                <input type="date" name="au-etranger-relex" value="<?php echo date('Y-m-d'); ?>">
                             </label><!-- <br><br> -->
 
-                            <label for="nb-jours-etranger">
+                            <label for="nb-jours-etranger-relex">
                                 Nombre des jours
-                                <input type="number" name="nb-jours-etranger" value="0" min="0">
+                                <input type="number" name="nb-jours-etranger-relex" value="0" min="0">
                             </label><!-- <br><br> -->
                         
-                            <label for="objet-mission-etranger">
+                            <label for="objet-mission-etranger-relex">
                                 Objet de la mission
-                                <input type="text" name="objet-mission-etranger">
+                                <input type="text" name="objet-mission-etranger-relex">
                             </label><!-- <br><br> -->
                             
                             
-                            <label for="lieu-mission-etranger">
+                            <label for="lieu-mission-etranger-relex">
                                 Lieu de mission
-                                <input type="text" name="lieu-mission-etranger">
+                                <input type="text" name="lieu-mission-etranger-relex">
                             </label>
                             
-                            <label for="pays-etranger">
+                            <label for="pays-etranger-relex">
                                 Pays de formation  
-                                <input type="text" name="pays-etranger">
+                                <input type="text" name="pays-etranger-relex">
                             </label>
                             
-                            <label for="cadre-mission-etranger">
+                            <label for="cadre-mission-etranger-relex">
                                 Cadre de la mission
-                                <select name="cadre-mission-etranger" >
-                                    <option value="">Contrat</option> 
-                                    <option value="">Plan de formation</option>
-                                    <option value="">Autre</option>
+                                <select name="cadre-mission-etranger-relex" >
+                                    <option value="contrat">Contrat</option> 
+                                    <option value="plan de formation">Plan de formation</option>
+                                    <option value="autre">Autre</option>
                                 </select><!-- <br><br> -->            
                             </label>
                             
-                            <label for="info-complement-etranger">
+                            <label for="info-complement-etranger-relex">
                                 Information complémentaire <!-- contrat N° if contrat -->
-                                <input type="text" name="info-complement-etranger">
+                                <input type="text" name="info-complement-etranger-relex">
                             </label>
                             
-                            <label for="missionnaires-etranger">
+                            <label for="missionnaires-etranger-relex">
                                 Nom(s) et fonction du (des) missionnaire(s)
-                                <input type="text" name="missionnaires-etranger">
+                                <input type="text" name="missionnaires-etranger-relex">
                             </label>
                             
-                            <label for="situation-visa-etranger">
+                            <label for="situation-visa-etranger-relex">
                                 Situation visa
-                                <select name="situation-visa-etranger" >
+                                <select name="situation-visa-etranger-relex" >
                                     <option value="Obtenue pour tous les missionnaires">Obtenue pour tous</option> 
                                     <option value="En cours pour tous les missoinnaires">En cours pour tous</option>
                                     <option value="En cours pour une partie des missoinnaires">En cours pour une partie</option>
@@ -116,19 +116,19 @@
                                 </select><!-- <br><br> -->            
                             </label>
                             
-                            <label for="info-visa-etranger">
+                            <label for="info-visa-etranger-relex">
                                 Information complémentaire visa
-                                <input type="text" name="info-visa-etranger">
+                                <input type="text" name="info-visa-etranger-relex">
                             </label>
                             
-                            <label for="objectifs-mission-etranger">
+                            <label for="objectifs-mission-etranger-relex">
                                 Objectifs de la mission
-                                <input type="text" name="objectifs-mission-etranger">
+                                <input type="text" name="objectifs-mission-etranger-relex">
                             </label>
                             
-                            <label for="opportunite-etranger">
+                            <label for="opportunite-etranger-relex">
                                 Opportunité Mission
-                                <input type="text" name="opportunite-etranger">
+                                <input type="text" name="opportunite-etranger-relex">
                             </label>
 
                             <input type="hidden"  name="etat-etranger-form" readonly value="NON TRAITE" hidden>

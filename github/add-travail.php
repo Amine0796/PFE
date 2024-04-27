@@ -117,10 +117,10 @@ if(isset($_POST['valider-travail'])){
             <label>
                 Region deroulement mission
                 <select id="select1" name="region-deroulement-mission-travail">
-                    <option>NORD</option>
-                    <option>SUD</option>
-                    <option>EST</option>
-                    <option>OUEST</option>
+                    <option value="nord">NORD</option>
+                    <option value="sud">SUD</option>
+                    <option value="est">EST</option>
+                    <option value="ouest">OUEST</option>
                 </select>
             </label>
                                                     

@@ -17,77 +17,77 @@
             }
             ?>
             <form method="post">
-                <p class="header-text">Traiter une demande de formation</p>
+                <p class="header-text">Traiter une demande de course</p>
                     <div class="container-relex">
                         <div class="mini-container">
-                        <label for="direction-course">
-                Direction
-                <input type="text" name="direction-course" readonly>
-            </label><!-- <br><br> -->
-            
-            <label for="departement-course">
-                Département
-                <input type="text" name="departement-course" readonly>
-            </label><!-- <br><br> -->
+                            <label for="direction-course-relex">
+                                Direction
+                                <input type="text" name="direction-course-relex" readonly>
+                            </label><!-- <br><br> -->
+                            
+                            <label for="departement-course-relex">
+                                Département
+                                <input type="text" name="departement-course-relex" readonly>
+                            </label><!-- <br><br> -->
 
-            <label for="demandeur-course">
-                Demande effectuée par
-                <input type="text" name="demandeur-course" value="<?php echo $_SESSION["username"]; ?>" readonly>
-            </label><!-- <br><br> -->
+                            <label for="demandeur-course-relex">
+                                Demande effectuée par
+                                <input type="text" name="demandeur-course-relex" value="<?php echo $_SESSION["username"]; ?>" readonly>
+                            </label><!-- <br><br> -->
 
-            <label>
-                Num Demande 
-                <input type="number" name="num-demande-course" value="1" min="1" required>
-            </label>
+                            <label for="num-demande-course-relex">
+                                Num Demande 
+                                <input type="number" name="num-demande-course-relex" value="1" min="1" required>
+                            </label>
 
-            <label for="compte-analytique-course">
-                Compte analytique
-                <input type="text" name="compte-analytique-course" readonly>
-            </label><!-- <br><br> -->
+                            <label for="compte-analytique-course-relex">
+                                Compte analytique
+                                <input type="text" name="compte-analytique-course-relex" readonly>
+                            </label><!-- <br><br> -->
 
-            <label for="date-demande-course">
-                Date de demande
-                <input type="date" name="date-demande-course" value="<?php echo date('Y-m-d'); ?>" readonly>
-            </label><!-- <br><br> -->
+                            <label for="date-demande-course-relex">
+                                Date de demande
+                                <input type="date" name="date-demande-course-relex" value="<?php echo date('Y-m-d'); ?>" readonly>
+                            </label><!-- <br><br> -->
 
-            <label for="destinataire-course">
-                Destinataire
-                <input type="text" name="destinataire-course" value="RELEX" readonly>
-            </label>
+                            <label for="destinataire-course-relex">
+                                Destinataire
+                                <input type="text" name="destinataire-course-relex" value="RELEX" readonly>
+                            </label>
 
-            <label for="destination-course">
-                Destination
-                <input type="text" name="destination-course">
-            </label>
+                            <label for="destination-course-relex">
+                                Destination
+                                <input type="text" name="destination-course-relex">
+                            </label>
 
-            <label for="objet-demande-course">
-                Objet de la demande
-                <input type="text" name="objet-demande-course">
-            </label><!-- <br><br> -->
-
-
-            <label for="date-depart-course">
-                Date du départ
-                <input type="date" name="date-depart-course" value="<?php echo date('Y-m-d'); ?>">
-            </label><!-- <br><br> -->
-
-            <label for="heure-depart-course">
-                Heure du départ
-                <input type="text" name="heure-depart-course">
-            </label><!-- <br><br> -->
-
-            <label for="point-depart-course">
-                Point du départ
-                <input type="text" name="point-depart-course">
-            </label>
-            
-            <label for="missionnaires-course">
-                Nom(s) du(des) missionnaire(s)
-                <input type="text" name="missionnaires-course">
-            </label>
+                            <label for="objet-demande-course-relex">
+                                Objet de la demande
+                                <input type="text" name="objet-demande-course-relex">
+                            </label><!-- <br><br> -->
 
 
-            <input type="hidden"  name="etat-course" readonly value="NON TRAITE" hidden>
+                            <label for="date-depart-course-relex">
+                                Date du départ
+                                <input type="date" name="date-depart-course-relex" value="<?php echo date('Y-m-d'); ?>">
+                            </label><!-- <br><br> -->
+
+                            <label for="heure-depart-course-relex">
+                                Heure du départ
+                                <input type="text" name="heure-depart-course-relex">
+                            </label><!-- <br><br> -->
+
+                            <label for="point-depart-course-relex">
+                                Point du départ
+                                <input type="text" name="point-depart-course-relex">
+                            </label>
+                            
+                            <label for="missionnaires-course-relex">
+                                Nom(s) du(des) missionnaire(s)
+                                <input type="text" name="missionnaires-course-relex">
+                            </label>
+
+
+                            <input type="hidden"  name="etat-course" readonly value="NON TRAITE" hidden>
 
                         </div>
 
