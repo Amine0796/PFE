@@ -17,174 +17,122 @@
             }
             ?>
             <form method="post">
-                <p class="header-text">Traiter une demande de formation</p>
+                <p class="header-text">Traiter une demande à l'étranger</p>
                     <div class="container-relex">
                         <div class="mini-container">
-                            <label for="direction-formation-relex">
+                            <label for="direction-etranger">
                                 Direction
-                                <input type="text" name="direction-formation-relex" id="direction-formation-relex" value="<?php echo $_SESSION["demandeur"]?>" >
+                                <input type="text" name="direction-etranger" readonly>
                             </label><!-- <br><br> -->
                             
-                            <label for="departement-formation-relex">
+                            <label for="departement-etranger">
                                 Département
-                                <input type="text" name="departement-formation-relex" readonly>
+                                <input type="text" name="departement-etranger" readonly>
                             </label><!-- <br><br> -->
 
-                            <label for="demande-dffuctuee-par-formation-relex">
+                            <label for="demandeur-etranger">
                                 Demande effectuée par
-                                <input type="text" name="demande-dffuctuee-par-formation-relex" readonly>
+                                <input type="text" name="demandeur-etranger" value="<?php echo $_SESSION["username"]; ?>" readonly>
                             </label><!-- <br><br> -->
 
-                            <label for="compte-analytique-formation-relex">
+
+                            <label for="compte-analytique-etranger">
                                 Compte analytique
-                                <input type="text" name="compte-analytique-formation-relex" readonly>
+                                <input type="text" name="compte-analytique-etranger" readonly>
                             </label><!-- <br><br> -->
 
-                            <label for="num-demande-formation-relex">
+                            <label>
                                 Num Demande 
-                                <input type="number" name="num-demande-formation-relex" value="1" min="1" required>
+                                <input type="number" name="num-demande-etranger" value="1" min="1" required>
                             </label>
 
-                            <label for="date-demande-formation-relex">
+                            <label for="date-demande-etranger">
                                 Date de demande
-                                <input type="date" name="date-demande-formation-relex" value="<?php echo date('Y-m-d'); ?>" readonly>
+                                <input type="date" name="date-demande-etranger" value="<?php echo date('Y-m-d'); ?>" readonly>
                             </label><!-- <br><br> -->
 
-                            <label for="destinataire-formation-relex">
+                            <label for="destinataire-etranger">
                                 Destinataire
-                                <input type="text" name="destinataire-formation-relex" value="RELEX" readonly>
+                                <input type="text" name="destinataire-etranger" value="RELEX" readonly>
                             </label>
 
-                            <label for="du-formation-relex">
-                                Date début 
-                                <input type="date" name="du-formation-relex" value="<?php echo date('Y-m-d'); ?>" readonly>
+                            <label for="du-etranger">
+                                Date début           
+                                <input type="date" name="du-etranger" value="<?php echo date('Y-m-d'); ?>">
                             </label>
 
-                            
-                            <label for="au-formation-relex">
+                            <label for="au-etranger">
                                 Date fin
-                                <input type="date" name="au-formation-relex" value="<?php echo date('Y-m-d'); ?>" readonly>
+                                <input type="date" name="au-etranger" value="<?php echo date('Y-m-d'); ?>">
                             </label><!-- <br><br> -->
 
-                            <label for="region-deroulement-formation-relex">
-                                Région deroulement formation
-                                <select name="region-deroulement-formation-relex"  >
-                                    <option value="nord">NORD</option>
-                                    <option value="sud">SUD</option>
-                                    <option value="est">EST</option>
-                                    <option value="ouest">OUEST</option>
-                                </select><!-- <br><br> -->
-                            </label>
-                            
-                    
-                            <label for="lieu-formation-relex">
-                                lieu de la formation 
-                                <input type="text" name="lieu-formation-relex" readonly >
-                            </label>
-                            
-                    
-                            <label for="itineraire-formation-relex">
-                                Itineraire
-                                <input type="text" name="itineraire-formation-relex" readonly>
-                            </label>
-                    
-                            <label for="objet-formation-relex">
-                                Objet de la formation
-                                <input type="text" name="objet-formation-relex" readonly>
-                            </label>
-                            
-                            <label for="demande-hebergement-formation-relex">
-                                Demande hébergement
-                                <select name="demande-hebergement-formation-relex"  readonly>
-                                    <option >Oui</option> 
-                                    <option >Non</option>
-                                </select><!-- <br><br> -->
-                            </label>
-
-                            <label for="demande-billet-formation-relex">
-                                Demande billetterie
-                                <select name="demande-billet-formation-relex"  readonly>
-                                    <option >Oui</option> 
-                                    <option >Non</option>
-                                </select><!-- <br><br> -->
-                            </label>
-
-                            <label for="noms-missionaires-formation-relex">
-                                Nom(s) du(des) missionnaire(s)
-                                <input type="text" name="noms-missionaires-formation-relex" readonly>
-                            </label>
-                            
-
-                            <label for="moyen-de-transport-aller-formation-relex">
-                                Moyen de Transport aller 
-                                <select name="moyen-transport-aller-formation-relex" >
-                                    <option value="avion">Avion</option>
-                                    <option value="vehicule">Vehicule</option>
-                                </select><!-- <br><br> -->
-                            </label>
-                            
-
-                            <label for="moyen-de-transport-retour-formation-relex">
-                                Moyen de transport retour 
-                                <select name="moyen-transport-retour-formation-relex">
-                                    <option value="avion">Avion</option>
-                                    <option value="vehicule">Vehicule</option>
-                                </select><!-- <br><br> -->
-                            </label>
-                        <!-- </div> -->
-                            
-
-                        <fieldset>
-                        <legend>Avion</legend>
-                        <div class="avion">
-                                <label for="demande-vehicule-vers-aeroport-formation-relex">
-                                    Demande Vehicule service vers l'aéroport 
-                                    <select name="demande-vehicule-aeroport-formation-relex">
-                                        <!-- <option ></option> -->
-                                        <option value="oui">Oui</option> 
-                                        <option value="non">Non</option>
-                                    </select><!-- <br><br> -->
-                                </label>
-                            
-                
-                                <label for="point-de-depart-avion-formation-relex">
-                                    Point du départ
-                                    <input type="text" name="point-depart-avion-formation-relex" readonly>
-                                </label>
-                        </div>
-                        </fieldset>
+                            <label for="nb-jours-etranger">
+                                Nombre des jours
+                                <input type="number" name="nb-jours-etranger" value="0" min="0">
+                            </label><!-- <br><br> -->
                         
-                        <fieldset>
-                            <legend>Véhicule</legend>
-                            <div class="vehicule">
-                                <label for="demande-vehicule-vers-formation-relex">
-                                    Demande Vehicule vers lieu de formation 
-                                    <select name="demande-vehicule-formation-relex">
-                                        <!-- <option ></option> -->
-                                        <option >Oui</option> 
-                                        <option >Non</option>
-                                    </select><!-- <br><br> -->
-                                </label>
+                            <label for="objet-mission-etranger">
+                                Objet de la mission
+                                <input type="text" name="objet-mission-etranger">
+                            </label><!-- <br><br> -->
                             
-                                <label for="point-de-depart-vehicule-formation-relex">
-                                    Point du départ
-                                    <input type="text" name="point-depart-vehicule-formation-relex" readonly>
-                                </label>
-                            </div>
-                        </fieldset>
+                            
+                            <label for="lieu-mission-etranger">
+                                Lieu de mission
+                                <input type="text" name="lieu-mission-etranger">
+                            </label>
+                            
+                            <label for="pays-etranger">
+                                Pays de formation  
+                                <input type="text" name="pays-etranger">
+                            </label>
+                            
+                            <label for="cadre-mission-etranger">
+                                Cadre de la mission
+                                <select name="cadre-mission-etranger" >
+                                    <option value="">Contrat</option> 
+                                    <option value="">Plan de formation</option>
+                                    <option value="">Autre</option>
+                                </select><!-- <br><br> -->            
+                            </label>
+                            
+                            <label for="info-complement-etranger">
+                                Information complémentaire <!-- contrat N° if contrat -->
+                                <input type="text" name="info-complement-etranger">
+                            </label>
+                            
+                            <label for="missionnaires-etranger">
+                                Nom(s) et fonction du (des) missionnaire(s)
+                                <input type="text" name="missionnaires-etranger">
+                            </label>
+                            
+                            <label for="situation-visa-etranger">
+                                Situation visa
+                                <select name="situation-visa-etranger" >
+                                    <option value="Obtenue pour tous les missionnaires">Obtenue pour tous</option> 
+                                    <option value="En cours pour tous les missoinnaires">En cours pour tous</option>
+                                    <option value="En cours pour une partie des missoinnaires">En cours pour une partie</option>
+                                    <option value="Autres">Autres</option>
+                                </select><!-- <br><br> -->            
+                            </label>
+                            
+                            <label for="info-visa-etranger">
+                                Information complémentaire visa
+                                <input type="text" name="info-visa-etranger">
+                            </label>
+                            
+                            <label for="objectifs-mission-etranger">
+                                Objectifs de la mission
+                                <input type="text" name="objectifs-mission-etranger">
+                            </label>
+                            
+                            <label for="opportunite-etranger">
+                                Opportunité Mission
+                                <input type="text" name="opportunite-etranger">
+                            </label>
 
-                        <label for="organisme-formateur-relex">
-                            Organisme formateur
-                            <input type="text" name="organisme-formateur-relex" readonly>
-                        </label>
+                            <input type="hidden"  name="etat-etranger-form" readonly value="NON TRAITE" hidden>
 
-
-                        <label for="observation-formation-relex">
-                            Observations
-                            <input type="text" name="observation-formation-relex" readonly>
-                        </label>
-
-                        <input type="hidden"  name="etat-formation" readonly value="NON TRAITE" hidden>
 
                         </div>
 
@@ -192,74 +140,74 @@
                             <fieldset>
                                 <legend>Hotellerie</legend>
                                     <!-- <p>Hotellerie</p> -->
-                                    <label for="num-bc-formation">
+                                    <label for="num-bc-etranger">
                                         N° BC 
-                                        <input type="number" name="num-bc-formation">
+                                        <input type="number" name="num-bc-etranger">
                                     </label>
 
-                                    <label for="date-bc-hotel-formation">
+                                    <label for="date-bc-hotel-etranger">
                                         Date BC 
-                                        <input type="date" name="date-bc-hotel-formation">
+                                        <input type="date" name="date-bc-hotel-etranger">
                                     </label>
 
 
-                                    <label for="region-hotel-formation">
+                                    <label for="region-hotel-etranger">
                                         Région 
-                                        <input type="text" name="region-hotel-formation">
+                                        <input type="text" name="region-hotel-etranger">
                                     </label>
 
 
-                                    <label for="nom-hotel-formation">
+                                    <label for="nom-hotel-etranger">
                                         Nom hotel 
-                                        <input type="text" name="nom-hotel-formation">
+                                        <input type="text" name="nom-hotel-etranger">
                                     </label>
 
 
-                                    <label for="objet-bc-hotel-formation">
+                                    <label for="objet-bc-hotel-etranger">
                                         Objet BC 
-                                        <input type="number" name="objet-bc-formation">
+                                        <input type="number" name="objet-bc-etranger">
                                     </label>
 
-                                    <label for="sejour-du-formation">
+                                    <label for="sejour-du-etranger">
                                         Séjour du 
-                                        <input type="date" name="sejour-du-formation">
+                                        <input type="date" name="sejour-du-etranger">
                                     </label>
 
 
-                                    <label for="sejour-au-formation">
+                                    <label for="sejour-au-etranger">
                                         Au
-                                        <input type="date" name="sejour-au-formation">
+                                        <input type="date" name="sejour-au-etranger">
                                     </label>
 
-                                    <label for="nb-nuit-formation">
+                                    <label for="nb-nuit-etranger">
                                         Nombre de nuitée  
-                                        <input type="number" name="nb-nuit-formation">
+                                        <input type="number" name="nb-nuit-etranger">
                                     </label>
 
-                                    <label for="nom-missionnaire-hotel-formation">
+                                    <label for="nom-missionnaire-hotel-etranger">
                                         Nom missionnaire  
-                                        <input type="text" name="nom-missionnaire-hotel-formation">
+                                        <input type="text" name="nom-missionnaire-hotel-etranger">
                                     </label>
 
-                                    <label for="compte-analytique-hotel-formation">
+                                    <label for="compte-analytique-hotel-etranger">
                                         Compte analytique  
-                                        <input type="text" name="compte-analytique-hotel-formation">
+                                        <input type="text" name="compte-analytique-hotel-etranger">
                                     </label>
 
 
-                                    <label for="chambre-formation">
+                                    <label for="chambre-etranger">
                                         Chambre
-                                        <input type="radio" name="chambre-formation" value="double"> Double
-                                        <input type="radio" name="chambre-formation" value="single"> Single
+                                        <input type="radio" name="chambre-etranger" value="double"> Double
+                                        <input type="radio" name="chambre-etranger" value="single"> Single
                                     </label>
 
 
-                                    <label for="restauration-formation">
+                                    <label for="restauration-etranger">
                                         Réstaurant
-                                        <input type="checkbox" name="restauration-formation" value="petit dejeuner"> Petit Déjeuner
-                                        <input type="checkbox" name="restauration-formation" value="dejeuner"> Déjeuner
-                                        <input type="checkbox" name="restauration-formation" value="diner"> Diner
-                                        <input type="checkbox" name="restauration-formation" value="boissons non alcoolisées"> boissons non alcoolisées incluses
+                                        <input type="checkbox" name="restauration-etranger" value="petit dejeuner"> Petit Déjeuner
+                                        <input type="checkbox" name="restauration-etranger" value="dejeuner"> Déjeuner
+                                        <input type="checkbox" name="restauration-etranger" value="diner"> Diner
+                                        <input type="checkbox" name="restauration-etranger" value="boissons non alcoolisées"> boissons non alcoolisées incluses
                                     </label>
 
                             </fieldset>
@@ -268,72 +216,76 @@
                                 <legend>billetterie</legend>
                                 <!-- <p>Billetterie</p> -->
 
-                                    <label for="compagnie-formation">
+                                    <label for="compagnie-etranger">
+                                    <!-- <fieldset> -->
+                                        <!-- <legend>Compagnies</legend> -->
                                         Compagnies
-                                        <input type="radio" name="compagnie-formation" value="air algerie"> Air Algérie
-                                        <input type="radio" name="compagnie-formation" value="tassili"> Tassili
+                                        <input type="radio" name="compagnie-etranger" value="air algerie"> Air Algérie
+                                        <input type="radio" name="compagnie-etranger" value="tassili"> Tassili
                                     </label>
-                                    <label for="ref-bc-formation">
+                                    <!-- </fieldset> -->
+                                    <label for="ref-bc-etranger">
                                         Réf. BC 
-                                        <input type="number" name="ref-bc-formation">
+                                        <input type="number" name="ref-bc-etranger">
                                     </label>
 
-                                    <label for="date-bc-billet-formation">
+                                    <label for="date-bc-billet-etranger">
                                         Date BC 
-                                        <input type="date" name="date-bc-billet-formation">
+                                        <input type="date" name="date-bc-billet-etranger">
                                     </label>
 
 
-                                    <label for="region-Billet-formation">
+                                    <label for="region-Billet-etranger">
                                         Région de Destination
-                                        <input type="text" name="region-Billet-formation">
+                                        <input type="text" name="region-Billet-etranger">
                                     </label>
 
 
-                                    <label for="type-trajet-formation">
+                                    <label for="type-trajet-etranger">
                                         Type trajet 
-                                        <input type="text" name="type-trajet-formation">
+                                        <input type="text" name="type-trajet-etranger">
                                     </label>
 
 
-                                    <label for="trajet-formation">
+                                    <label for="trajet-etranger">
                                         Trajet 
-                                        <input type="text" name="trajet-formation">
+                                        <input type="text" name="trajet-etranger">
                                     </label>
 
-                                    <label for="classe-billet-formation">
+                                    <label for="classe-billet-etranger">
                                         Classe 
-                                        <select name="classe-billet-formation" id="classe-billet-formation">
+                                        <select name="classe-billet-etranger" id="classe-billet-etranger">
                                             <option value="economy">ECONOMY</option>
-                                            <option value="first classe">FIRST CLASSE</option>
+                                            <option value="business class">BUSINESS CLASS</option>
+                                            <option value="first class">FIRST CLASS</option>
                                         </select>
                                     </label>
 
 
-                                    <label for="objet-bc-billet-formation">
+                                    <label for="objet-bc-billet-etranger">
                                         Objet BC
-                                        <input type="text" name="objet-bc-billet-formation">
+                                        <input type="text" name="objet-bc-billet-etranger">
                                     </label>
 
-                                    <label for="date-depart-billet-formation">
+                                    <label for="date-depart-billet-etranger">
                                         Date départ  
-                                        <input type="date" name="date-depart-billet-formation">
+                                        <input type="date" name="date-depart-billet-etranger">
                                     </label>
 
-                                    <label for="date-retour-billet-formation">
+                                    <label for="date-retour-billet-etranger">
                                         Date retour  
-                                        <input type="date" name="date-retour-billet-formation">
+                                        <input type="date" name="date-retour-billet-etranger">
                                     </label>
 
 
-                                    <label for="nom-missionnaire-billet-formation">
+                                    <label for="nom-missionnaire-billet-etranger">
                                         Nom missionnaire  
-                                        <input type="text" name="nom-missionnaire-billet-formation">
+                                        <input type="text" name="nom-missionnaire-billet-etranger">
                                     </label>
 
-                                    <label for="compte-analytique-billet-formation">
+                                    <label for="compte-analytique-billet-etranger">
                                         Compte analytique  
-                                        <input type="text" name="compte-analytique-billet-formation">
+                                        <input type="text" name="compte-analytique-billet-etranger">
                                     </label>
                                     
                             </fieldset>

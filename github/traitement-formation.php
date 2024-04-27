@@ -161,8 +161,8 @@
                                     Demande Vehicule vers lieu de formation 
                                     <select name="demande-vehicule-formation-relex">
                                         <!-- <option ></option> -->
-                                        <option >Oui</option> 
-                                        <option >Non</option>
+                                        <option value="oui">Oui</option> 
+                                        <option value="non">Non</option>
                                     </select><!-- <br><br> -->
                                 </label>
                             
@@ -305,7 +305,8 @@
                                         Classe 
                                         <select name="classe-billet-formation" id="classe-billet-formation">
                                             <option value="economy">ECONOMY</option>
-                                            <option value="first classe">FIRST CLASSE</option>
+                                            <option value="business class">BUSINESS CLASS</option>
+                                            <option value="first class">FIRST CLASS</option>
                                         </select>
                                     </label>
 
