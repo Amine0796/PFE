@@ -95,74 +95,74 @@
                             <fieldset>
                                 <legend>Hotellerie</legend>
                                     <!-- <p>Hotellerie</p> -->
-                                    <label for="num-bc-formation">
+                                    <label for="num-bc-course">
                                         N° BC 
-                                        <input type="number" name="num-bc-formation">
+                                        <input type="number" name="num-bc-course">
                                     </label>
 
-                                    <label for="date-bc-hotel-formation">
+                                    <label for="date-bc-hotel-course">
                                         Date BC 
-                                        <input type="date" name="date-bc-hotel-formation">
+                                        <input type="date" name="date-bc-hotel-course">
                                     </label>
 
 
-                                    <label for="region-hotel-formation">
+                                    <label for="region-hotel-course">
                                         Région 
-                                        <input type="text" name="region-hotel-formation">
+                                        <input type="text" name="region-hotel-course">
                                     </label>
 
 
-                                    <label for="nom-hotel-formation">
+                                    <label for="nom-hotel-course">
                                         Nom hotel 
-                                        <input type="text" name="nom-hotel-formation">
+                                        <input type="text" name="nom-hotel-course">
                                     </label>
 
 
-                                    <label for="objet-bc-hotel-formation">
+                                    <label for="objet-bc-hotel-course">
                                         Objet BC 
-                                        <input type="number" name="objet-bc-formation">
+                                        <input type="number" name="objet-bc-course">
                                     </label>
 
-                                    <label for="sejour-du-formation">
+                                    <label for="sejour-du-course">
                                         Séjour du 
-                                        <input type="date" name="sejour-du-formation">
+                                        <input type="date" name="sejour-du-course">
                                     </label>
 
 
-                                    <label for="sejour-au-formation">
+                                    <label for="sejour-au-course">
                                         Au
-                                        <input type="date" name="sejour-au-formation">
+                                        <input type="date" name="sejour-au-course">
                                     </label>
 
-                                    <label for="nb-nuit-formation">
+                                    <label for="nb-nuit-course">
                                         Nombre de nuitée  
-                                        <input type="number" name="nb-nuit-formation">
+                                        <input type="number" name="nb-nuit-course">
                                     </label>
 
-                                    <label for="nom-missionnaire-hotel-formation">
+                                    <label for="nom-missionnaire-hotel-course">
                                         Nom missionnaire  
-                                        <input type="text" name="nom-missionnaire-hotel-formation">
+                                        <input type="text" name="nom-missionnaire-hotel-course">
                                     </label>
 
-                                    <label for="compte-analytique-hotel-formation">
+                                    <label for="compte-analytique-hotel-course">
                                         Compte analytique  
-                                        <input type="text" name="compte-analytique-hotel-formation">
+                                        <input type="text" name="compte-analytique-hotel-course">
                                     </label>
 
 
-                                    <label for="chambre-formation">
+                                    <label for="chambre-course">
                                         Chambre
-                                        <input type="radio" name="chambre-formation" value="double"> Double
-                                        <input type="radio" name="chambre-formation" value="single"> Single
+                                        <input type="radio" name="chambre-course" value="double"> Double
+                                        <input type="radio" name="chambre-course" value="single"> Single
                                     </label>
 
 
-                                    <label for="restauration-formation">
+                                    <label for="restauration-course">
                                         Réstaurant
-                                        <input type="checkbox" name="restauration-formation" value="petit dejeuner"> Petit Déjeuner
-                                        <input type="checkbox" name="restauration-formation" value="dejeuner"> Déjeuner
-                                        <input type="checkbox" name="restauration-formation" value="diner"> Diner
-                                        <input type="checkbox" name="restauration-formation" value="boissons non alcoolisées"> boissons non alcoolisées incluses
+                                        <input type="checkbox" name="restauration-course" value="petit dejeuner"> Petit Déjeuner
+                                        <input type="checkbox" name="restauration-course" value="dejeuner"> Déjeuner
+                                        <input type="checkbox" name="restauration-course" value="diner"> Diner
+                                        <input type="checkbox" name="restauration-course" value="boissons non alcoolisées"> boissons non alcoolisées incluses
                                     </label>
 
                             </fieldset>
@@ -171,72 +171,73 @@
                                 <legend>billetterie</legend>
                                 <!-- <p>Billetterie</p> -->
 
-                                    <label for="compagnie-formation">
+                                    <label for="compagnie-course">
                                         Compagnies
-                                        <input type="radio" name="compagnie-formation" value="air algerie"> Air Algérie
-                                        <input type="radio" name="compagnie-formation" value="tassili"> Tassili
+                                        <input type="radio" name="compagnie-course" value="air algerie"> Air Algérie
+                                        <input type="radio" name="compagnie-course" value="tassili"> Tassili
                                     </label>
-                                    <label for="ref-bc-formation">
+                                    <label for="ref-bc-course">
                                         Réf. BC 
-                                        <input type="number" name="ref-bc-formation">
+                                        <input type="number" name="ref-bc-course">
                                     </label>
 
-                                    <label for="date-bc-billet-formation">
+                                    <label for="date-bc-billet-course">
                                         Date BC 
-                                        <input type="date" name="date-bc-billet-formation">
+                                        <input type="date" name="date-bc-billet-course">
                                     </label>
 
 
-                                    <label for="region-Billet-formation">
+                                    <label for="region-Billet-course">
                                         Région de Destination
-                                        <input type="text" name="region-Billet-formation">
+                                        <input type="text" name="region-Billet-course">
                                     </label>
 
 
-                                    <label for="type-trajet-formation">
+                                    <label for="type-trajet-course">
                                         Type trajet 
-                                        <input type="text" name="type-trajet-formation">
+                                        <input type="text" name="type-trajet-course">
                                     </label>
 
 
-                                    <label for="trajet-formation">
+                                    <label for="trajet-course">
                                         Trajet 
-                                        <input type="text" name="trajet-formation">
+                                        <input type="text" name="trajet-course">
                                     </label>
 
-                                    <label for="classe-billet-formation">
+                                    <label for="classe-billet-course">
                                         Classe 
-                                        <select name="classe-billet-formation" id="classe-billet-formation">
+                                        <select name="classe-billet-course" id="classe-billet-course">
                                             <option value="economy">ECONOMY</option>
-                                            <option value="first classe">FIRST CLASSE</option>
+                                            <option value="business class">BUSINESS CLASS</option>
+                                            <option value="first class">FIRST CLASS</option>
                                         </select>
                                     </label>
 
 
-                                    <label for="objet-bc-billet-formation">
+                                    <label for="objet-bc-billet-course">
                                         Objet BC
-                                        <input type="text" name="objet-bc-billet-formation">
+                                        <input type="text" name="objet-bc-billet-course">
                                     </label>
 
-                                    <label for="date-depart-billet-formation">
+                                    <label for="date-depart-billet-course">
                                         Date départ  
-                                        <input type="date" name="date-depart-billet-formation">
+                                        <input type="date" name="date-depart-billet-course">
                                     </label>
 
-                                    <label for="date-retour-billet-formation">
+                                    <label for="date-retour-billet-course">
                                         Date retour  
-                                        <input type="date" name="date-retour-billet-formation">
+                                        <input type="date" name="date-retour-billet-course">
                                     </label>
 
 
-                                    <label for="nom-missionnaire-billet-formation">
+                                    <label for="nom-missionnaire-billet-course">
                                         Nom missionnaire  
-                                        <input type="text" name="nom-missionnaire-billet-formation">
+                                        <input type="text" name="nom-missionnaire-billet-course">
                                     </label>
 
-                                    <label for="compte-analytique-billet-formation">
+                                    <label for="compte-analytique-billet-course">
                                         Compte analytique  
-                                        <input type="text" name="compte-analytique-billet-formation">
+                                        <input type="text" name="compte-analytique-billet-course">
                                     </label>
                                     
                             </fieldset>
