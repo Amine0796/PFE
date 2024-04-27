@@ -134,96 +134,97 @@
                         
                     <!-- </div> -->
                                                 
-                    <fieldset>
-                        <legend>Aller</legend>
-                        <div class="aller">
-                            <label for="text10">
-                                Demande Vehicule service aller 
-                                <select  name="demande-vehicule-service-aller-travail">
-                                    <!-- <option></option>  -->
-                                    <option>Oui</option> 
-                                    <option>Non</option>
-                                </select>
-                            </label>
+                        <fieldset>
+                            <legend>Aller</legend>
+                            <div class="aller">
+                                <label for="text10">
+                                    Demande Vehicule service aller 
+                                    <select  name="demande-vehicule-service-aller-travail">
+                                        <!-- <option></option>  -->
+                                        <option value="oui">Oui</option> 
+                                        <option value="non">Non</option>
+                                    </select>
+                                </label>
 
 
-                            <label>
-                                Point de depart
-                                <input type="text" name="point-de-depart-travail">
-                            </label>
+                                <label>
+                                    Point de depart
+                                    <input type="text" name="point-de-depart-travail">
+                                </label>
 
 
-                            <label>
-                                Demande hebergement aller
-                                <select  name="demande-hebergement-aller-travail">
-                                    <option>Oui</option> 
-                                    <option>Non</option>
-                                </select>
-                            </label>
+                                <label>
+                                    Demande hebergement aller
+                                    <select  name="demande-hebergement-aller-travail">
+                                        <option value="oui">Oui</option> 
+                                        <option value="non">Non</option>
+                                    </select>
+                                </label>
 
 
-                            <label >
-                                nombre de nuite du trajet - Aller
-                                <input type="number" name="nombre-de-nuite-du-trajet-aller-travail" value="0" min="0">
-                            </label>
-                        </div>
+                                <label >
+                                    nombre de nuite du trajet - Aller
+                                    <input type="number" name="nombre-de-nuite-du-trajet-aller-travail" value="0" min="0">
+                                </label>
+                            </div>
 
-                    </fieldset>
+                        </fieldset>
 
 
-                    <fieldset>
-                        <legend>Retour</legend>
+                        <fieldset>
+                            <legend>Retour</legend>
 
-                        <div class="retour">
-                            <label for="text10">
-                                Demande Vehicule service Retour 
-                                <select  name="demande-vehicule-service-retour-travail">
-                                    <option>Oui</option> 
-                                    <option>Non</option>
-                                </select>
-                            </label>
+                            <div class="retour">
+                                <label for="text10">
+                                    Demande Vehicule service Retour 
+                                    <select  name="demande-vehicule-service-retour-travail">
+                                        <option value="oui">Oui</option> 
+                                        <option value="non">Non</option>
+                                    </select>
+                                </label>
 
-                            <label>
-                                Point de retour
-                                <input type="text"  name="point-de-retour-travail">
-                            </label>
+                                <label>
+                                    Point de retour
+                                    <input type="text"  name="point-de-retour-travail">
+                                </label>
 
-                            <label>
-                                Demande hebergement Retour
-                                <select  name="demande-hebergement-retour-travail">
-                                                                                
-                                    <option>Oui</option> 
-                                    <option>Non</option>
-                                </select>
-                            </label>
+                                <label>
+                                    Demande hebergement Retour
+                                    <select  name="demande-hebergement-retour-travail">
+                                                                                    
+                                        <option>Oui</option> 
+                                        <option>Non</option>
+                                    </select>
+                                </label>
 
-                            <label >
-                                nombre de nuite du trajet - Retour
-                                <input type="number" id="text13" name="nombre-de-nuite-du-trajet-retour-travail" value="0" min="0" >
-                            </label>
-                        </div>
-                    </fieldset>
+                                <label >
+                                    nombre de nuite du trajet - Retour
+                                    <input type="number" id="text13" name="nombre-de-nuite-du-trajet-retour-travail" value="0" min="0" >
+                                </label>
+                            </div>
+                        </fieldset>
 
-                    <label >
-                                Demande hebergement
-                                <select  name="demande-hebergement-travail">
-                                    <!-- <option> </option>  -->
-                                    <option>Oui</option> 
-                                    <option>Non</option>
-                                </select>
-                    </label>
-
-                    <div class="observation-travail">
-                    
-                        <label for="observation-travail">
-                            Observation
-                            <input type="text" name="observation-travail">
+                        <label >
+                                    Demande hebergement
+                                    <select  name="demande-hebergement-travail">
+                                        <!-- <option> </option>  -->
+                                        <option value="oui">Oui</option> 
+                                        <option value="non">Non</option>
+                                    </select>
                         </label>
 
-                        <input type="hidden"  name="etat-travail" readonly value="NON TRAITE" hidden>
+                        <div class="observation-travail">
+                        
+                            <label for="observation-travail">
+                                Observation
+                                <input type="text" name="observation-travail">
+                            </label>
+
+                            <input type="hidden"  name="etat-travail" readonly value="NON TRAITE" hidden>
 
 
                         </div>
+                    </div>
 
                         <div class="mini-container-relex">
                             <fieldset>
