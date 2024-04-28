@@ -13,6 +13,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 
 </head>
+<script>
+    function togglePasswordVisibility() {
+        var passwordField = document.getElementById("password");
+        var checkbox = document.getElementById("showpwd");
+    
+        if (checkbox.checked) {
+            passwordField.type = "text";
+        } else {
+            passwordField.type = "password";
+        }
+    }
+    </script>
 <body>
 <div class="container">
     <div class="box">
@@ -28,15 +40,15 @@
                 <input type="text" class="input-field"  name="username" placeholder="Nom d'utilisateur" required>
                 <i class='bx bx-user'></i>
             </div>
-            <div class="input-box">
+            <div class="input-box divpwd">
                 <label for="pwd">Mot de passe</label>
-                <input type="password" class="input-field"  name="password" placeholder="Mot de passe" required>
+                <input type="password" class="input-field" id="password"  name="password" placeholder="Mot de passe" required>
                 <i class='bx bx-lock-alt'></i>
             </div>
-            <!-- <div class="showpass">
-                <input type="checkbox" id="showpwd">
+            <div class="showpass checkpwd">
+                <input type="checkbox" id="showpwd" onclick="togglePasswordVisibility()">
                 <label for="showpwd">Afficher le mot de passe</label>
-            </div> -->
+            </div>
             <div class="input-box">
                 <input type="submit" class="input-submit" value="Se connecter" name="se-connecter">
             </div>

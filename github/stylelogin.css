@@ -98,3 +98,11 @@ input{
 /* .commentlogin{
     display: flex;
 } */
+
+.divpwd{
+    margin-bottom: -13px;
+}
+
+.checkpwd{
+    margin-bottom: -23px;
+}
