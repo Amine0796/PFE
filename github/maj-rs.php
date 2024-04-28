@@ -58,7 +58,7 @@
                             <td>
                             <form action="delete_update_travail_rs.php?idT='.$row["id"].'" method="post">
                             <div class="btn-dlt-upt-rs">
-                                <button ><i class="bx bxs-edit"></i></button> 
+                                <button name="update-travail-rs" ><i class="bx bxs-edit"></i></button> 
                                 <button name="delete-travail-rs" ><i class="bx bxs-trash"></i></button>
                                 </div>
                             </form>
@@ -124,7 +124,7 @@
                             <td>
                             <form action="delete_update_etranger_rs.php?idRSE='.$row["id"].'" method="post">
                             <div class="btn-dlt-upt-rs">
-                                <button ><i class="bx bxs-edit"></i></button> 
+                                <button name="update-etranger-rs" ><i class="bx bxs-edit"></i></button> 
                                 <button name="delete-etranger-rs" ><i class="bx bxs-trash"></i></button>
                                 </div>
                             </form>
@@ -190,7 +190,7 @@
                             <td>
                             <form action="delete_update_course_rs.php?idC='.$row["id"].'" method="post">
                             <div class="btn-dlt-upt-rs">
-                                <button ><i class="bx bxs-edit"></i></button> 
+                                <button name="update-course-rs" ><i class="bx bxs-edit"></i></button> 
                                 <button name="delete-course-rs" ><i class="bx bxs-trash"></i></button>
                                 </div>
                             </form>
@@ -206,56 +206,6 @@
         </div>
 </div>
 
-
-
-
-
-
-<!-- *************************************************************
-******************************************************************
-******************************************************************
-***************************Acheminement***************************
-******************************************************************
-****************************************************************** -->
-<!-- <div id="tableAcheminement" class="tables-container">
-        <div class="table-header">
-            <p>Mise à jour des demandes d'acheminement</p>
-        </div>
-        <div class="header_fixed">
-            <table>
-                <thead>
-                    <tr>
-                        <th>N° demande</th>
-                        <th>Date demande</th>
-                        <th>Objet mission</th>
-                        <th>Période du</th>
-                        <th>Période au</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <a href="edit_acheminement.php">
-                                <button><i class='bx bxs-edit'></i></button>
-                            </a>
-                            <a href="delete_acheminement.php">
-                                <button><i class='bx bxs-trash'></i></button>
-                            </a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-
-</div>
- -->
 
 </div>
 <script src="tableswitcher.js"></script>

@@ -40,7 +40,11 @@ if(isset($_POST['valider-etranger-rs'])){
 
 }
 ?>
-
+<?php
+$sql = "SELECT * FROM `users` WHERE username = '" . $_SESSION["username"] . "'";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result);
+?>
 <div class="content" id="table-etranger">
 <form method="post">
     <p class="header-text">Ajouter une demande à l'étranger</p>
@@ -48,12 +52,12 @@ if(isset($_POST['valider-etranger-rs'])){
         <div class="container-kr">
             <label for="direction-etranger">
                 Direction
-                <input type="text" name="direction-etranger" readonly>
+                <input type="text" name="direction-etranger" value="<?php echo $row['direction'];?>" readonly>
             </label><!-- <br><br> -->
             
             <label for="departement-etranger">
                 Département
-                <input type="text" name="departement-etranger" readonly>
+                <input type="text" name="departement-etranger" value="<?php echo $row['Departement']?>" readonly>
             </label><!-- <br><br> -->
 
             <label for="demandeur-etranger">
@@ -64,7 +68,7 @@ if(isset($_POST['valider-etranger-rs'])){
 
             <label for="compte-analytique-etranger">
                 Compte analytique
-                <input type="text" name="compte-analytique-etranger" readonly>
+                <input type="text" name="compte-analytique-etranger" value="<?php echo $row['CompteAnalytique'];?>" readonly>
             </label><!-- <br><br> -->
 
             <label>

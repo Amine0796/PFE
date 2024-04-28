@@ -49,18 +49,24 @@ if(isset($_POST['valider-formation'])){
 }
 ?>
 
+<?php
+$sql = "SELECT * FROM `users` WHERE username = '" . $_SESSION["username"] . "'";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result);
+?>
+
 <div class="content" id="table-formation">
     <form method="post">
     <p class="header-text">Ajouter une demande de formation</p>
         <div class="container-kr">
             <label for="direction-formation">
                 Direction
-                <input type="text" name="direction-formation">
+                <input type="text" name="direction-formation" value="<?php echo $row['direction'];?>" readonly>
             </label><!-- <br><br> -->
             
             <label for="departement-formation">
                 Département
-                <input type="text" name="departement-formation" readonly>
+                <input type="text" name="departement-formation" value="<?php echo $row['Departement'];?>" readonly>
             </label><!-- <br><br> -->
 
             <label for="demande-dffuctuee-par-formation">
@@ -70,7 +76,7 @@ if(isset($_POST['valider-formation'])){
 
             <label for="compte-analytique-formation">
                 Compte analytique
-                <input type="text" name="compte-analytique-formation" readonly>
+                <input type="text" name="compte-analytique-formation" value="<?php echo $row['CompteAnalytique'];?>" readonly>
             </label><!-- <br><br> -->
 
             <label>

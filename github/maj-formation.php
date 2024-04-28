@@ -3,7 +3,7 @@
     
     <div class="navbar-Table-Button">
         <button onclick="showTable('tableFormation')" id="formation-btn-maj">Formation</button>
-        <button onclick="showTable('tableFormationEtranger')" id="">Formation à l'étranger</button>
+        <button onclick="showTable('tableFormationEtranger')" id="formation-etranger-btn-maj">Formation à l'étranger</button>
     </div>
 
     <div id="tableFormation" class="tables-container">
@@ -48,8 +48,8 @@
                             <td>
                             <form action="delete_update_formation.php?idF='.$row["id"].'" method="post">
                             <div class="btn-dlt-upt">
-                                <button ><i class="bx bxs-edit"></i></button> 
-                                <button name="delete-formation" ><i class="bx bxs-trash"></i></button>
+                                <button name="update-formation"><i class="bx bxs-edit"></i></button> 
+                                <button name="delete-formation"><i class="bx bxs-trash"></i></button>
                                 </div>
                             </form>
                             </td>
@@ -111,7 +111,7 @@
                             <td>
                             <form action="delete_update_etranger_formation.php?idRSF='.$row["id"].'" method="post">
                             <div class="btn-dlt-upt">
-                                <button ><i class="bx bxs-edit"></i></button> 
+                                <button name="update-etranger-formation" ><i class="bx bxs-edit"></i></button> 
                                 <button name="delete-etranger-formation" ><i class="bx bxs-trash"></i></button>
                                 </div>
                             </form>

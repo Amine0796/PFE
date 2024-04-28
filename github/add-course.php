@@ -33,6 +33,12 @@ if(isset($_POST['valider-course'])){
 
 }
 ?>
+
+<?php
+$sql = "SELECT * FROM `users` WHERE username = '" . $_SESSION["username"] . "'";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result);
+?>
 <form method="post">
 <div class="content" id="table-course">
         <p class="header-text">Ajouter une demande de course</p>
@@ -40,12 +46,12 @@ if(isset($_POST['valider-course'])){
         <div class="container-kr">
             <label for="direction-course">
                 Direction
-                <input type="text" name="direction-course" readonly>
+                <input type="text" name="direction-course" value="<?php echo $row['direction'];?>" readonly>
             </label><!-- <br><br> -->
             
             <label for="departement-course">
                 Département
-                <input type="text" name="departement-course" readonly>
+                <input type="text" name="departement-course" value="<?php echo $row['Departement']?>" readonly>
             </label><!-- <br><br> -->
 
             <label for="demandeur-course">
@@ -60,7 +66,7 @@ if(isset($_POST['valider-course'])){
 
             <label for="compte-analytique-course">
                 Compte analytique
-                <input type="text" name="compte-analytique-course" readonly>
+                <input type="text" name="compte-analytique-course" value="<?php echo $row['CompteAnalytique'];?>" readonly>
             </label><!-- <br><br> -->
 
             <label for="date-demande-course">

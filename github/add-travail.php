@@ -49,6 +49,13 @@ if(isset($_POST['valider-travail'])){
 
 }
 ?>
+
+<?php
+$sql = "SELECT * FROM `users` WHERE username = '" . $_SESSION["username"] . "'";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result);
+?>
+
 <div class="content" id="table-travail">
     <form method="post">
     <p class="header-text">Ajouter une demande de mission du terrain</p>
@@ -57,13 +64,13 @@ if(isset($_POST['valider-travail'])){
         <!-- <div class="fixed-form-head"> -->
             <label >
                 Direction
-                <input type="text"  name="direction-travail" readonly>
+                <input type="text"  name="direction-travail" value="<?php echo $row['direction'];?>" readonly>
             </label>
                                                     
 
             <label >
                 Département 
-                <input type="text"  name="departement-travail" readonly>
+                <input type="text"  name="departement-travail" value="<?php echo $row['Departement']?>" readonly>
             </label>
 
 
@@ -75,7 +82,7 @@ if(isset($_POST['valider-travail'])){
 
             <label >
                 Compte Analytique
-                <input type="text" id="text4" name="compte-analytique-travail" readonly>
+                <input type="text" id="text4" name="compte-analytique-travail" value="<?php echo $row['CompteAnalytique'];?>" readonly>
             </label>
                                                     
 
