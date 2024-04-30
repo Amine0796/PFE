@@ -2,9 +2,11 @@
 
     <div class="popup" id="popupformation">
         <!-- <div class="traiter-formation" id="traitement-formation-box"> -->
-            <?php
 
-            $sql = "SELECT Demandeur FROM formation WHERE NumDemande = 5";
+
+            <?php
+            
+            $sql = "SELECT Demandeur FROM formation WHERE NumDemande = 4";
             // Execute query
             $result = $conn->query($sql);
             
@@ -13,7 +15,9 @@
                 // Fetch the result (assuming there's only one row)
                 $row = $result->fetch_assoc();
                 $demandeur = $row["Demandeur"];
-                $_SESSION["demandeur"]=$demandeur;
+                
+            }else{
+                echo "aucun resultat $numDemande1";
             }
             ?>
             <form method="post">
@@ -22,7 +26,7 @@
                         <div class="mini-container">
                             <label for="direction-formation-relex">
                                 Direction
-                                <input type="text" name="direction-formation-relex" id="direction-formation-relex" value="<?php echo $_SESSION["demandeur"]?>" >
+                                <input type="text" name="direction-formation-relex" id="direction-formation-relex"  >
                             </label><!-- <br><br> -->
                             
                             <label for="departement-formation-relex">
@@ -32,7 +36,7 @@
 
                             <label for="demande-dffuctuee-par-formation-relex">
                                 Demande effectuée par
-                                <input type="text" name="demande-dffuctuee-par-formation-relex" readonly>
+                                <input type="text" name="demande-dffuctuee-par-formation-relex" value="<?php echo $demandeur?>" readonly>
                             </label><!-- <br><br> -->
 
                             <label for="compte-analytique-formation-relex">

@@ -27,15 +27,28 @@ if(isset($_POST['valider-etrangerF'])){
     $sql = "INSERT INTO etranger (Direction, Departement, Demandeur, CompteAnalytique, NumDemande, DateDemande, Destinataire, DateDu, DateAu, NombreDesJours, ObjetMission, LieuMission, Pays, CadreMission, InformationComplementaire, NomMissionnaires, SituationVisa, InformationComplementaireVisa, ObjectifsMission, OpportuniteMission, Etat) 
     VALUES ('$Direction', '$Departement', '$Demandeur', '$CompteAnalytique','$NumDemande', '$DateDemande', '$Destinataire', '$DateDu', '$DateAu', '$NombreDesJours', '$ObjetMission', '$LieuMission','$Pays', '$CadreMission', '$InformationComplementaire', '$NomMissionnaires', '$SituationVisa', '$InformationComplementaireVisa', '$ObjectifsMission', '$OpportuniteMission', '$Etat')";
     
-    $result=mysqli_query($conn,$sql);
-    if($result){
-        echo "<script>alert('Data inserted successfully!');</script>";
-        echo "<script>window.location.replace('chef-formation.php');</script>";
-        exit();
+    
+    if($DateDu < $DateAu){
+        if($DateDu > $DateDemande) {
+            $result = mysqli_query($conn, $sql);
+            if ($result) {
+                echo "<script>alert('Données insérées avec succès!');</script>";
+                echo "<script>window.location.replace('chef-formation.php');</script>";
+                exit();
+            }else{
+                echo "<script>alert('Le numéro de la demande doit être unique.');</script>";
+                echo "<script>window.location.replace('chef-formation.php');</script>";
+                exit();
+            }
+        }else{
+            echo "<script>alert('La date de départ doit être supérieure à la date actuelle.');</script>";
+            echo "<script>window.location.replace('chef-formation.php');</script>";
+            exit();
+        }
     }else{
-        echo "<script>alert('Something went wrong');</script>";
-        echo "<script>window.location.replace('chef-formation.php');</script>";
-        exit();
+        echo "<script>alert('La date de départ doit être inferieur à la date de retour.');</script>";
+            echo "<script>window.location.replace('chef-formation.php');</script>";
+            exit();
     }
 
 }
@@ -44,6 +57,8 @@ if(isset($_POST['valider-etrangerF'])){
 $sql = "SELECT * FROM `users` WHERE username = '" . $_SESSION["username"] . "'";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
+
+
 ?>
 <div class="content" id="table-etranger">
 <form method="post">

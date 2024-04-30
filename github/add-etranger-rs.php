@@ -27,15 +27,27 @@ if(isset($_POST['valider-etranger-rs'])){
     $sql = "INSERT INTO etranger (Direction, Departement, Demandeur, CompteAnalytique, NumDemande, DateDemande, Destinataire, DateDu, DateAu, NombreDesJours, ObjetMission, LieuMission, Pays, CadreMission, InformationComplementaire, NomMissionnaires, SituationVisa, InformationComplementaireVisa, ObjectifsMission, OpportuniteMission, Etat) 
     VALUES ('$Direction', '$Departement', '$Demandeur', '$CompteAnalytique','$NumDemande', '$DateDemande', '$Destinataire', '$DateDu', '$DateAu', '$NombreDesJours', '$ObjetMission', '$LieuMission','$Pays', '$CadreMission', '$InformationComplementaire', '$NomMissionnaires', '$SituationVisa', '$InformationComplementaireVisa', '$ObjectifsMission', '$OpportuniteMission', '$Etat')";
     
-    $result=mysqli_query($conn,$sql);
-    if($result){
-        echo "<script>alert('Data inserted successfully!');</script>";
-        echo "<script>window.location.replace('RS.php');</script>";
-        exit();
+    if($DateDu < $DateAu){
+        if($DateDu >= $DateDemande) {
+            $result = mysqli_query($conn, $sql);
+            if ($result) {
+                echo "<script>alert('Données insérées avec succès!');</script>";
+                echo "<script>window.location.replace('RS.php');</script>";
+                exit();
+            }else{
+                echo "<script>alert('Le numéro de la demande doit être unique.');</script>";
+                echo "<script>window.location.replace('RS.php');</script>";
+                exit();
+            }
+        }else{
+            echo "<script>alert('La date de départ doit être supérieure ou egale à la date actuelle.');</script>";
+            echo "<script>window.location.replace('RS.php');</script>";
+            exit();
+        }
     }else{
-        echo "<script>alert('Something went wrong');</script>";
-        echo "<script>window.location.replace('RS.php');</script>";
-        exit();
+        echo "<script>alert('La date de départ doit être inferieur à la date de retour.');</script>";
+            echo "<script>window.location.replace('RS.php');</script>";
+            exit();
     }
 
 }

@@ -20,6 +20,30 @@ if(isset($_POST['valider-course'])){
     $sql = "INSERT INTO courses (Direction, Departement, Demandeur, CompteAnalytique, NumDemande, DateDemande, Destinataire, Destination, ObjetCourse, NomMissionnaires, DateDepart, HeureDepart, PointDepart, Etat) 
     VALUES ('$Direction', '$Departement', '$Demandeur', '$CompteAnalytique','$NumDemande', '$DateDemande', '$Destinataire', '$Destination', '$ObjetCourse', '$NomMissionnaires', '$DateDepart', '$HeureDepart', '$PointDepart', '$Etat')";
     
+
+    if ($DateDepart >= $DateDemande) {
+        
+        $result=mysqli_query($conn,$sql);
+        if($result){
+            echo "<script>alert('Data inserted successfully!');</script>";
+            echo "<script>window.location.replace('RS.php');</script>";
+            exit();
+        }else{
+            echo "<script>alert('Le numero de la demande doit etre unique.');</script>";
+            echo "<script>window.location.replace('RS.php');</script>";
+            exit();
+        }
+    }else {
+        echo "<script>alert('La date de départ doit être superieur a la date actuelle.');</script>";
+        echo "<script>window.location.replace('RS.php');</script>";
+        exit();
+    }
+
+
+
+
+
+
     $result=mysqli_query($conn,$sql);
     if($result){
         echo "<script>alert('Data inserted successfully!');</script>";

@@ -34,18 +34,29 @@ if(isset($_POST['valider-formation'])){
     $sql = "INSERT INTO Formation (Direction, Departement, Demandeur, CompteAnalytique, NumDemande, DateDemande, Destinataire, DateDu, DateAu, RegionDeroulementFormation, LieuFormation, Itineraire, ObjetFormation, DemandeHebergement, DemandeBilletterie, OrganismeFormateur, NomMissionnaires, MoyenTransportAller, MoyenTransportRetour, DemandeVehiculeServiceAeroport, PointDepartAvion, DemandeVehiculeLieuFormation, PointDepartVehicule, Observations, Etat) 
     VALUES ('$Direction', '$Departement', '$Demandeur', '$CompteAnalytique','$NumDemande', '$DateDemande', '$Destinataire', '$DateDu', '$DateAu', '$RegionDeroulementFormation', '$LieuFormation', '$Itineraire', '$ObjetFormation', '$DemandeHebergement', '$DemandeBilletterie', '$OrganismeFormateur', '$NomMissionnaires', '$MoyenTransportAller', '$MoyenTransportRetour', '$DemandeVehiculeServiceAeroport', '$PointDepartAvion', '$DemandeVehiculeLieuFormation', '$PointDepartVehicule', '$Observations', '$Etat')";
     
-    $result=mysqli_query($conn,$sql);
-    if($result){
-        echo "<script>alert('Data inserted successfully!');</script>";
-        echo "<script>window.location.replace('chef-formation.php');</script>";
-        exit();
-    }else{
-        // Display specific error message
-        echo "<script>alert('Something went wrong try again');</script>";
-        echo "<script>window.location.replace('chef-formation.php');</script>";
-        exit();
-    }
 
+    if($DateDu < $DateAu){
+        if($DateDu >= $DateDemande) {
+            $result = mysqli_query($conn, $sql);
+            if ($result) {
+                echo "<script>alert('Données insérées avec succès!');</script>";
+                echo "<script>window.location.replace('chef-formation.php');</script>";
+                exit();
+            }else{
+                echo "<script>alert('Le numéro de la demande doit être unique.');</script>";
+                echo "<script>window.location.replace('chef-formation.php');</script>";
+                exit();
+            }
+        }else{
+            echo "<script>alert('La date de départ doit être supérieure ou egale à la date actuelle.');</script>";
+            echo "<script>window.location.replace('chef-formation.php');</script>";
+            exit();
+        }
+    }else{
+        echo "<script>alert('La date de départ doit être inferieur à la date de retour.');</script>";
+            echo "<script>window.location.replace('chef-formation.php');</script>";
+            exit();
+    }
 }
 ?>
 

@@ -61,22 +61,25 @@ trFormation.forEach(function(tr) {
 // ***************************************************************************
 // valeur de NumDemande
     // Récupérer toutes les lignesFormation avec la classe "tr-relex-formation"
-    var lignesFormation = document.querySelectorAll('.tr-relex-formation');
+    // var lignesFormation = document.querySelectorAll('.tr-relex-formation');
 
-    // Parcourir chaque ligne
-    lignesFormation.forEach(function(ligne) {
-        // Ajouter un gestionnaire d'événements de clic à chaque ligne
-        ligne.addEventListener('click', function() {
-            // Récupérer la cellule contenant NumDemande dans cette ligne
-            var celluleNumDemande = ligne.querySelector('.td-relex-formation');
+    // // Parcourir chaque ligne
+    // lignesFormation.forEach(function(ligne) {
+    //     // Ajouter un gestionnaire d'événements de clic à chaque ligne
+    //     ligne.addEventListener('click', function() {
+    //         // Récupérer la cellule contenant NumDemande dans cette ligne
+    //         var celluleNumDemande = ligne.querySelector('.td-relex-formation');
 
-            // Récupérer la valeur de NumDemande
-            var numDemande = celluleNumDemande.textContent;
+    //         // Récupérer la valeur de NumDemande
+    //         var numDemande = celluleNumDemande.textContent;
 
-            // Afficher la valeur de NumDemande
-            console.log(numDemande)
-        });
-    });
+    //         // Afficher la valeur de NumDemande
+    //         console.log(numDemande)
+    //         let nFor = document.getElementById("nfor");
+    //         nFor.value = numDemande;
+
+    //     });
+    // });
 
 
 

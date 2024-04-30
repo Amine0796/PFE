@@ -4,7 +4,7 @@
 
 
         <div class="table-header">
-            <p>Traitement des demandes de formation</p>
+            <p>Traitement des demandes de course</p>
         </div>
 
 

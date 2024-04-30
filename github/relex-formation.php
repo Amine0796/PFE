@@ -10,7 +10,10 @@
 
 
         <!-- add form to get num demande cliquee -->
-        
+                    
+                    
+
+
             <div class="header_fixed" id="table-demande-formation-relex">
                 <table id="table-formation-relex">
                     <thead>
@@ -23,7 +26,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php
+                    
+                    
+                    <?php
                             require_once 'database.php';
                             $sql="Select * from `formation`";
                             $result=mysqli_query($conn,$sql);
@@ -60,13 +65,33 @@
         <a href="relex.php">
         <button id="retour-table-demande">Retour</button>
         </a>
-
+        
 
     </div>
 
 <!--*******************                    ************************ -->
 <!--****************   div traitement formation   ***************** -->
 <!--*******************                    ************************ -->
+<script>
+    var lignesFormation = document.querySelectorAll('.tr-relex-formation');
+
+// Parcourir chaque ligne
+lignesFormation.forEach(function(ligne) {
+    // Ajouter un gestionnaire d'événements de clic à chaque ligne
+    ligne.addEventListener('click', function() {
+        // Récupérer la cellule contenant NumDemande dans cette ligne
+        var celluleNumDemande = ligne.querySelector('.td-relex-formation');
+
+        // Récupérer la valeur de NumDemande
+        var numDemande = celluleNumDemande.textContent;
+
+        // Afficher la valeur de NumDemande
+        console.log(numDemande)
+    });
+});
+
+</script>
+
 
 <?php require_once 'traitement-formation.php'; ?>
 
