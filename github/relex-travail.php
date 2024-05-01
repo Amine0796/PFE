@@ -29,23 +29,24 @@
                     $sql="Select * from `travail`";
                     $result=mysqli_query($conn,$sql);
                     if ($result) {
-                        
                         while ($row=mysqli_fetch_assoc($result)) {
-                            $NumDemande = $row['NumDemande'];
-                            $DateDemande = $row['DateDemande'];
-                            $ObjetMission = $row['ObjetMission'];
-                            $DateDu = $row['DateDu'];
-                            $DateAu = $row['DateAu'];
-                            $Departement = $row['Departement'];
-                            
-                            echo '<tr class="tr-relex-travail">
-                            <td class="tr-relex-travail">'.$NumDemande.'</td>
-                            <td class="tr-relex-travail">'.$DateDemande.'</td>
-                            <td class="tr-relex-travail">'.$ObjetMission.'</td>
-                            <td class="tr-relex-travail">'.$DateDu.'</td>
-                            <td class="tr-relex-travail">'.$DateAu.'</td>
-                            <td class="tr-relex-travail">'.$Departement.'</td>
-                        </tr>';
+                                if ($row['Etat']=='NON TRAITE') {
+                                $NumDemande = $row['NumDemande'];
+                                $DateDemande = $row['DateDemande'];
+                                $ObjetMission = $row['ObjetMission'];
+                                $DateDu = $row['DateDu'];
+                                $DateAu = $row['DateAu'];
+                                $Departement = $row['Departement'];
+                                
+                                echo '<tr class="tr-relex-travail">
+                                <td class="tr-relex-travail">'.$NumDemande.'</td>
+                                <td class="tr-relex-travail">'.$DateDemande.'</td>
+                                <td class="tr-relex-travail">'.$ObjetMission.'</td>
+                                <td class="tr-relex-travail">'.$DateDu.'</td>
+                                <td class="tr-relex-travail">'.$DateAu.'</td>
+                                <td class="tr-relex-travail">'.$Departement.'</td>
+                            </tr>';
+                            }
                         }
                     }
                 

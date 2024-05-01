@@ -38,20 +38,22 @@
                                     
                                     $idF = $row['id'];
                                     $_SESSION['idF'] = $idF;
-                                    
-                                    $NumDemande = $row['NumDemande'];
-                                    $DateDemande = $row['DateDemande'];
-                                    $ObjetFormation = $row['ObjetFormation'];
-                                    $Demandeur = $row['Demandeur'];
-                                    $Departement = $row['Departement'];
-                                    
-                                    echo '<tr class="tr-relex-formation">
-                                    <td class="td-relex-formation">'.$NumDemande.'</td>
-                                    <td class="td-relex-formation">'.$DateDemande.'</td>
-                                    <td class="td-relex-formation">'.$ObjetFormation.'</td>
-                                    <td class="td-relex-formation">'.$Demandeur.'</td>
-                                    <td class="td-relex-formation">'.$Departement.'</td>
-                                </tr>';
+                                    if ($row['Etat']=='NON TRAITE') {
+                                        
+                                        $NumDemande = $row['NumDemande'];
+                                        $DateDemande = $row['DateDemande'];
+                                        $ObjetFormation = $row['ObjetFormation'];
+                                        $Demandeur = $row['Demandeur'];
+                                        $Departement = $row['Departement'];
+                                        
+                                        echo '<tr class="tr-relex-formation">
+                                        <td class="td-relex-formation">'.$NumDemande.'</td>
+                                        <td class="td-relex-formation">'.$DateDemande.'</td>
+                                        <td class="td-relex-formation">'.$ObjetFormation.'</td>
+                                        <td class="td-relex-formation">'.$Demandeur.'</td>
+                                        <td class="td-relex-formation">'.$Departement.'</td>
+                                    </tr>';
+                                    }
                                 }
                             }
                         
@@ -73,17 +75,17 @@
 <!--****************   div traitement formation   ***************** -->
 <!--*******************                    ************************ -->
 <script>
-    var lignesFormation = document.querySelectorAll('.tr-relex-formation');
+    let lignesFormation = document.querySelectorAll('.tr-relex-formation');
 
 // Parcourir chaque ligne
 lignesFormation.forEach(function(ligne) {
     // Ajouter un gestionnaire d'événements de clic à chaque ligne
     ligne.addEventListener('click', function() {
         // Récupérer la cellule contenant NumDemande dans cette ligne
-        var celluleNumDemande = ligne.querySelector('.td-relex-formation');
+        let celluleNumDemande = ligne.querySelector('.td-relex-formation');
 
         // Récupérer la valeur de NumDemande
-        var numDemande = celluleNumDemande.textContent;
+        let numDemande = celluleNumDemande.textContent;
 
         // Afficher la valeur de NumDemande
         console.log(numDemande)

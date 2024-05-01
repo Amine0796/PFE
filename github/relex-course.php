@@ -33,18 +33,20 @@
                         if ($result) {
                             
                             while ($row=mysqli_fetch_assoc($result)) {
-                                $NumDemande = $row['NumDemande'];
-                                $DateDemande = $row['DateDemande'];
-                                $PointDepart = $row['PointDepart'];
-                                $DateDepart = $row['DateDepart'];
-                                $HeureDepart = $row['HeureDepart'];
-                                echo '<tr class="tr-relex-course">
-                                <td class="tr-relex-course">'.$NumDemande.'</td>
-                                <td class="tr-relex-course">'.$DateDemande.'</td>
-                                <td class="tr-relex-course">'.$PointDepart.'</td>
-                                <td class="tr-relex-course">'.$DateDepart.'</td>
-                                <td class="tr-relex-course">'.$HeureDepart.'</td>
-                                </tr>';
+                                    if ($row['Etat']=='NON TRAITE') {
+                                    $NumDemande = $row['NumDemande'];
+                                    $DateDemande = $row['DateDemande'];
+                                    $PointDepart = $row['PointDepart'];
+                                    $DateDepart = $row['DateDepart'];
+                                    $HeureDepart = $row['HeureDepart'];
+                                    echo '<tr class="tr-relex-course">
+                                    <td class="tr-relex-course">'.$NumDemande.'</td>
+                                    <td class="tr-relex-course">'.$DateDemande.'</td>
+                                    <td class="tr-relex-course">'.$PointDepart.'</td>
+                                    <td class="tr-relex-course">'.$DateDepart.'</td>
+                                    <td class="tr-relex-course">'.$HeureDepart.'</td>
+                                    </tr>';
+                                }
                             }
                         }
                     

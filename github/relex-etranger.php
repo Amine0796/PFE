@@ -32,7 +32,7 @@
                         while ($row=mysqli_fetch_assoc($result)) {
                             
                             
-
+                            if ($row['Etat']=='NON TRAITE') {
                             $NumDemande = $row['NumDemande'];
                             $DateDemande = $row['DateDemande'];
                             $Pays = $row['Pays'];
@@ -46,6 +46,7 @@
                             <td class="tr-relex-etranger">'.$Demandeur.'</td>
                             <td class="tr-relex-etranger">'.$ObjetMission.'</td>
                         </tr>';
+                            }
                         }
                     }
                 
