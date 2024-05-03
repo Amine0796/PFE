@@ -149,7 +149,7 @@ if ($result1->num_rows > 0)
         
 </div>
 <?php
-        $sql_formation = "SELECT COUNT(*) AS totalDemandesF FROM `formation`";
+        $sql_formation = "SELECT COUNT(*) AS totalDemandesF FROM `formation` where Etat = 'NON TRAITE'";
         $result_formation = mysqli_query($conn, $sql_formation);
 
         if ($result_formation) {
@@ -162,7 +162,7 @@ if ($result1->num_rows > 0)
             echo "Erreur lors de la récupération du nombre total de demandes.";
         }
 
-        $sql_course = "SELECT COUNT(*) AS totalDemandesC FROM `courses`";
+        $sql_course = "SELECT COUNT(*) AS totalDemandesC FROM `courses` where Etat = 'NON TRAITE'";
         $result = mysqli_query($conn, $sql_course);
 
         if ($result) {
@@ -175,7 +175,7 @@ if ($result1->num_rows > 0)
             echo "Erreur lors de la récupération du nombre total de demandes.";
         }
 
-        $sql_etranger = "SELECT COUNT(*) AS totalDemandesE FROM `etranger`";
+        $sql_etranger = "SELECT COUNT(*) AS totalDemandesE FROM `etranger` where Etat = 'NON TRAITE'";
         $result_etranger = mysqli_query($conn, $sql_etranger);
 
         if ($result_etranger) {
@@ -189,7 +189,7 @@ if ($result1->num_rows > 0)
         }
         
 
-        $sql_travail = "SELECT COUNT(*) AS totalDemandesT FROM `travail`";
+        $sql_travail = "SELECT COUNT(*) AS totalDemandesT FROM `travail` where Etat = 'NON TRAITE'";
         $result_travail = mysqli_query($conn, $sql_travail);
 
         if ($result_travail) {

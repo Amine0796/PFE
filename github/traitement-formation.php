@@ -1,69 +1,71 @@
 <?php
-
 if (isset($_POST["btn-valider-popup-formation"])) {
+    // Assume $conn is your database connection
+
+    // Retrieve form data
     $numDemandeChoisi = $_POST['num-demande-choisi'];
-    $numBCH=$_POST['num-bc-formation'];
-    $dateBCH=$_POST['date-bc-hotel-formation'];
-    $regionH=$_POST['region-hotel-formation']; 
-    $nomH=$_POST['nom-hotel-formation']; 
-    $objetBCH=$_POST['objet-bc-formation'];
-    $dureeSejour=$_POST['duree-sejour']; 
-    $nomMissionnaireH=$_POST['nom-missionnaire-hotel-formation']; 
-    $compteAnalytiqueH=$_POST['compte-analytique-hotel-formation']; 
-    $chambreH=$_POST['chambre-formation'];
+    $numBCH = $_POST['num-bc-formation'];
+    $dateBCH = $_POST['date-bc-hotel-formation'];
+    $regionH = $_POST['region-hotel-formation'];
+    $nomH = $_POST['nom-hotel-formation'];
+    $objetBCH = $_POST['objet-bc-formation'];
+    $dureeSejour = $_POST['duree-sejour'];
+    $nomMissionnaireH = $_POST['nom-missionnaire-hotel-formation'];
+    $compteAnalytiqueH = $_POST['compte-analytique-hotel-formation'];
+    $chambreH = $_POST['chambre-formation'];
+    $restaurationH = isset($_POST['restauration-formation']) ? implode(', ', $_POST['restauration-formation']) : '';
+    $compagnieB = $_POST['compagnie-formation'];
+    $refBCB = $_POST['ref-bc-formation'];
+    $dateBCB = $_POST['date-bc-billet-formation'];
+    $regionB = $_POST['region-Billet-formation'];
+    $typeTrajetB = $_POST['type-trajet-formation'];
+    $trajetB = $_POST['trajet-formation'];
+    $classeB = $_POST['classe-billet-formation'];
+    $objetBCB = $_POST['objet-bc-billet-formation'];
+    $DateDepartB = $_POST['date-depart-billet-formation'];
+    $DateRetourB = $_POST['date-retour-billet-formation'];
+    $nomMissionnairesB = $_POST['nom-missionnaire-billet-formation'];
+    $compteAnalytiqueB = $_POST['compte-analytique-billet-formation'];
 
-
-    // $restaurationH=$_POST['restauration-formation'] ;
-    if(isset($_POST['restauration-formation']) && is_array($_POST['restauration-formation'])) {
-        // Combine all selected values into a single string
-        $restaurationH = implode(', ', $_POST['restauration-formation']);
-    } else {
-        // If no checkboxes were selected, set the value to an empty string or any default value as needed
-        $restaurationH = '';
-    }
-    
-    
-    // $compagnieB=$_POST['compagnie-formation'] ;
-    // $refBCB=$_POST['ref-bc-formation'] ;
-    // $dateBCB=$_POST['date-bc-billet-formation'] ;
-    // $regionB=$_POST['region-Billet-formation'] ;
-    // $typeTrajetB=$_POST['type-trajet-formation'] ;
-    // $trajetB=$_POST['trajet-formation'] ;
-    // $classeB=$_POST['classe-billet-formation'] ;
-    // $objetBCB=$_POST['objet-bc-billet-formation'] ;
-    // $DateDepartB=$_POST['date-depart-billet-formation'] ;
-    // $DateRetourB=$_POST['date-retour-billet-formation'] ;
-    // $nomMissionnairesB=$_POST['nom-missionnaire-billet-formation'] ;
-    // $compteAnalytiqueB=$_POST['compte-analytique-billet-formation'] ;
-    
-    
-    $sql = "INSERT INTO bc_hotel (numBCH, dateBCH , objetBCH , chambreH, restaurationH, compteAnalytiqueH) VALUES ('$numBCH', '$dateBCH ', '$objetBCH ', '$chambreH', '$restaurationH', '$compteAnalytiqueH')";
+    // Insert data into database
+    $sql = "INSERT INTO bc_hotel (numBCH, dateBCH, objetBCH, chambreH, restaurationH, compteAnalytiqueH) VALUES ('$numBCH', '$dateBCH', '$objetBCH', '$chambreH', '$restaurationH', '$compteAnalytiqueH')";
     $result = mysqli_query($conn, $sql);
 
-    $sql1 = "INSERT INTO hotel (nomH, regionH) VALUES ('$nomH', '$regionH')";  
+    $sql1 = "INSERT INTO hotel (nomH, regionH) VALUES ('$nomH', '$regionH')";
     $result1 = mysqli_query($conn, $sql1);
 
-    $sql2 = "INSERT INTO reservation_hotel (nomMissionnaireH, dureeSejour) VALUES ('$nomMissionnaireH', '$dureeSejour')";  
+    $sql2 = "INSERT INTO reservation_hotel (nomMissionnaireH, dureeSejour) VALUES ('$nomMissionnaireH', '$dureeSejour')";
     $result2 = mysqli_query($conn, $sql2);
 
-    if ($result && $result1 && $result2) {
+    $sql3 = "INSERT INTO bc_billet (compagnieB, refBCB, dateBCB, classeB, objetBCB, DateDepartB, DateRetourB, compteAnalytiqueB) VALUES ('$compagnieB', '$refBCB', '$dateBCB', '$classeB', '$objetBCB', '$DateDepartB', '$DateRetourB', '$compteAnalytiqueB')";
+    $result3 = mysqli_query($conn, $sql3);
+
+    $sql4 = "INSERT INTO reservation_billet (regionB, typeTrajetB, trajetB, nomMissionnairesB) VALUES ('$regionB', '$typeTrajetB', '$trajetB', '$nomMissionnairesB')";
+    $result4 = mysqli_query($conn, $sql4);
+
+    if ($result && $result1 && $result2 && $result3 && $result4) {
         $update_sql = "UPDATE formation SET Etat = 'TRAITE' WHERE NumDemande = '$numDemandeChoisi'";
         $update_result = mysqli_query($conn, $update_sql);
         if ($update_result) {
             echo "<script>alert('Données insérées avec succès!');</script>";
             echo "<script>window.location.replace('relex.php');</script>";
-        exit();
-        }else {
-            echo "<script>alert('Erreur lors de la mise à jour de l'état!');</script>";
+            exit();
+        } else {
+            $error_message = "Erreur lors de la mise à jour de l'état!";
         }
-        
-    }else {
-        echo "<script>alert('Erreur lors de l'insertion des données!');</script>";
+    } else {
+        $error_message = "Erreur lors de l'insertion des données!";
     }
 
+    // Display error message if any
+    if (isset($error_message)) {
+        echo "<script>alert('$error_message');</script>";
+        echo "<script>window.location.replace('relex.php');</script>";
+        exit();
+    }
 }
-
 ?>
+
 
 
 

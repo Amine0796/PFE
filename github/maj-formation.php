@@ -24,7 +24,7 @@
                 </thead>
                 <tbody>
                 <?php
-                    $sql="Select * from `formation`";
+                    $sql = "SELECT * FROM `formation` WHERE Etat = 'NON TRAITE'";
                     $result=mysqli_query($conn,$sql);
                     if ($result) {
                         
@@ -48,7 +48,6 @@
                             <td>
                             <form action="delete_update_formation.php?idF='.$row["id"].'" method="post">
                             <div class="btn-dlt-upt">
-                                <button name="update-formation"><i class="bx bxs-edit"></i></button> 
                                 <button name="delete-formation"><i class="bx bxs-trash"></i></button>
                                 </div>
                             </form>
@@ -88,7 +87,7 @@
                 <tbody>
                 <?php
                     
-                    $sql="Select * from `etranger`";
+                    $sql = "SELECT * FROM `etranger` WHERE Etat = 'NON TRAITE'";
                     $result=mysqli_query($conn,$sql);
                     if ($result) {
                         
@@ -111,7 +110,6 @@
                             <td>
                             <form action="delete_update_etranger_formation.php?idRSF='.$row["id"].'" method="post">
                             <div class="btn-dlt-upt">
-                                <button name="update-etranger-formation" ><i class="bx bxs-edit"></i></button> 
                                 <button name="delete-etranger-formation" ><i class="bx bxs-trash"></i></button>
                                 </div>
                             </form>

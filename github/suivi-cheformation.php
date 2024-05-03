@@ -26,7 +26,7 @@
                 <tbody>
                 <?php
                     
-                    $sql="Select * from `formation`";
+                    $sql = "SELECT * FROM `formation` WHERE Etat = 'TRAITE'";
                     $result=mysqli_query($conn,$sql);
                     if ($result) {
                         

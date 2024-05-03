@@ -35,7 +35,7 @@
                      
                     <?php
                     
-                    $sql="Select * from `travail`";
+                    $sql = "SELECT * FROM `travail` WHERE Etat = 'NON TRAITE'";
                     $result=mysqli_query($conn,$sql);
                     if ($result) {
                         
@@ -58,7 +58,6 @@
                             <td>
                             <form action="delete_update_travail_rs.php?idT='.$row["id"].'" method="post">
                             <div class="btn-dlt-upt-rs">
-                                <button name="update-travail-rs" ><i class="bx bxs-edit"></i></button> 
                                 <button name="delete-travail-rs" ><i class="bx bxs-trash"></i></button>
                                 </div>
                             </form>
@@ -100,7 +99,7 @@
                 <tbody>
                 <?php
                     
-                    $sql="Select * from `etranger`";
+                    $sql = "SELECT * FROM `etranger` WHERE Etat = 'NON TRAITE'";
                     $result=mysqli_query($conn,$sql);
                     if ($result) {
                         
@@ -124,7 +123,6 @@
                             <td>
                             <form action="delete_update_etranger_rs.php?idRSE='.$row["id"].'" method="post">
                             <div class="btn-dlt-upt-rs">
-                                <button name="update-etranger-rs" ><i class="bx bxs-edit"></i></button> 
                                 <button name="delete-etranger-rs" ><i class="bx bxs-trash"></i></button>
                                 </div>
                             </form>
@@ -169,7 +167,7 @@
                     
                     <?php
                     
-                    $sql="Select * from `courses`";
+                    $sql = "SELECT * FROM `courses` WHERE Etat = 'NON TRAITE'";
                     $result=mysqli_query($conn,$sql);
                     if ($result) {
                         
@@ -190,7 +188,6 @@
                             <td>
                             <form action="delete_update_course_rs.php?idC='.$row["id"].'" method="post">
                             <div class="btn-dlt-upt-rs">
-                                <button name="update-course-rs" ><i class="bx bxs-edit"></i></button> 
                                 <button name="delete-course-rs" ><i class="bx bxs-trash"></i></button>
                                 </div>
                             </form>
