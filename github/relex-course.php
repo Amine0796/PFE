@@ -28,7 +28,7 @@
                     <tbody>
                     <?php
                         
-                        $sql="Select * from `courses`";
+                        $sql="Select * from `courses` ORDER BY id";
                         $result=mysqli_query($conn,$sql);
                         if ($result) {
                             

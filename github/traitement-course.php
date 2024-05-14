@@ -1,108 +1,111 @@
+<?php
+if (isset($_POST["btn-valider-popup-course"])) {
+    // Assume $conn is your database connection
+
+    // Retrieve form data
+    $numDemandeChoisi = $_POST['num-demande-choisi'];
+    $numBCH = $_POST['num-bc-course'];
+    $dateBCH = $_POST['date-bc-hotel-course'];
+    $regionH = $_POST['region-hotel-course'];
+    $nomH = $_POST['nom-hotel-course'];
+    $objetBCH = $_POST['objet-bc-course'];
+    $dureeSejour = $_POST['duree-sejour'];
+    $nomMissionnaireH = $_POST['nom-missionnaire-hotel-course'];
+    $compteAnalytiqueH = $_POST['compte-analytique-hotel-course'];
+    $chambreH = $_POST['chambre-course'];
+    $restaurationH = isset($_POST['restauration-course']) ? implode(', ', $_POST['restauration-course']) : '';
+    $compagnieB = $_POST['compagnie-course'];
+    $refBCB = $_POST['ref-bc-course'];
+    $dateBCB = $_POST['date-bc-billet-course'];
+    $regionB = $_POST['region-Billet-course'];
+    $typeTrajetB = $_POST['type-trajet-course'];
+    $trajetB = $_POST['trajet-course'];
+    $classeB = $_POST['classe-billet-course'];
+    $objetBCB = $_POST['objet-bc-billet-course'];
+    $DateDepartB = $_POST['date-depart-billet-course'];
+    $DateRetourB = $_POST['date-retour-billet-course'];
+    $nomMissionnairesB = $_POST['nom-missionnaire-billet-course'];
+    $compteAnalytiqueB = $_POST['compte-analytique-billet-course'];
+
+    // Insert data into database
+    $sql = "INSERT INTO bc_hotel (numBCH, dateBCH, objetBCH, chambreH, restaurationH, compteAnalytiqueH) VALUES ('$numBCH', '$dateBCH', '$objetBCH', '$chambreH', '$restaurationH', '$compteAnalytiqueH')";
+    $result = mysqli_query($conn, $sql);
+
+    $sql1 = "INSERT INTO hotel (nomH, regionH) VALUES ('$nomH', '$regionH')";
+    $result1 = mysqli_query($conn, $sql1);
+
+    $sql2 = "INSERT INTO reservation_hotel (nomMissionnaireH, dureeSejour) VALUES ('$nomMissionnaireH', '$dureeSejour')";
+    $result2 = mysqli_query($conn, $sql2);
+
+    $sql3 = "INSERT INTO bc_billet (compagnieB, refBCB, dateBCB, classeB, objetBCB, DateDepartB, DateRetourB, compteAnalytiqueB) VALUES ('$compagnieB', '$refBCB', '$dateBCB', '$classeB', '$objetBCB', '$DateDepartB', '$DateRetourB', '$compteAnalytiqueB')";
+    $result3 = mysqli_query($conn, $sql3);
+
+    $sql4 = "INSERT INTO reservation_billet (regionB, typeTrajetB, trajetB, nomMissionnairesB) VALUES ('$regionB', '$typeTrajetB', '$trajetB', '$nomMissionnairesB')";
+    $result4 = mysqli_query($conn, $sql4);
+
+    if ($result && $result1 && $result2 && $result3 && $result4) {
+        $update_sql = "UPDATE courses SET Etat = 'TRAITE' WHERE NumDemande = '$numDemandeChoisi'";
+        $update_result = mysqli_query($conn, $update_sql);
+        if ($update_result) {
+            echo "<script>alert('Données insérées avec succès!');</script>";
+            echo "<script>window.location.replace('relex.php');</script>";
+            exit();
+        } else {
+            $error_message = "Erreur lors de la mise à jour de l'état!";
+        }
+    } else {
+        $error_message = "Erreur lors de l'insertion des données!";
+    }
+
+    // Display error message if any
+    if (isset($error_message)) {
+        echo "<script>alert('$error_message');</script>";
+        echo "<script>window.location.replace('relex.php');</script>";
+        exit();
+    }
+}
+?>
+
 <div class="traiter-course" id="traitement-course-box">
 
     <div class="popup" id="popupcourse">
         <!-- <div class="traiter-course" id="traitement-course-box"> -->
             <?php
 
-            $sql = "SELECT Demandeur FROM courses WHERE NumDemande = 5";
-            // Execute query
-            $result = $conn->query($sql);
+            // $sql = "SELECT Demandeur FROM courses WHERE NumDemande = 5";
+            // // Execute query
+            // $result = $conn->query($sql);
             
-            // Check if any rows were returned
-            if ($result->num_rows > 0) {
-                // Fetch the result (assuming there's only one row)
-                $row = $result->fetch_assoc();
-                $demandeur = $row["Demandeur"];
-                $_SESSION["demandeur"]=$demandeur;
-            }
+            // // Check if any rows were returned
+            // if ($result->num_rows > 0) {
+            //     // Fetch the result (assuming there's only one row)
+            //     $row = $result->fetch_assoc();
+            //     $demandeur = $row["Demandeur"];
+            //     $_SESSION["demandeur"]=$demandeur;
+            // }
             ?>
             <form method="post">
                 <p class="header-text">Traiter une demande de course</p>
                     <div class="container-relex">
-                        <div class="mini-container">
-                            <label for="direction-course-relex">
-                                Direction
-                                <input type="text" name="direction-course-relex" readonly>
-                            </label><!-- <br><br> -->
-                            
-                            <label for="departement-course-relex">
-                                Département
-                                <input type="text" name="departement-course-relex" readonly>
-                            </label><!-- <br><br> -->
-
-                            <label for="demandeur-course-relex">
-                                Demande effectuée par
-                                <input type="text" name="demandeur-course-relex" value="<?php echo $_SESSION["username"]; ?>" readonly>
-                            </label><!-- <br><br> -->
-
-                            <label for="num-demande-course-relex">
-                                Num Demande 
-                                <input type="number" name="num-demande-course-relex" value="1" min="1" required>
-                            </label>
-
-                            <label for="compte-analytique-course-relex">
-                                Compte analytique
-                                <input type="text" name="compte-analytique-course-relex" readonly>
-                            </label><!-- <br><br> -->
-
-                            <label for="date-demande-course-relex">
-                                Date de demande
-                                <input type="date" name="date-demande-course-relex" value="<?php echo date('Y-m-d'); ?>" readonly>
-                            </label><!-- <br><br> -->
-
-                            <label for="destinataire-course-relex">
-                                Destinataire
-                                <input type="text" name="destinataire-course-relex" value="RELEX" readonly>
-                            </label>
-
-                            <label for="destination-course-relex">
-                                Destination
-                                <input type="text" name="destination-course-relex">
-                            </label>
-
-                            <label for="objet-demande-course-relex">
-                                Objet de la demande
-                                <input type="text" name="objet-demande-course-relex">
-                            </label><!-- <br><br> -->
-
-
-                            <label for="date-depart-course-relex">
-                                Date du départ
-                                <input type="date" name="date-depart-course-relex" value="<?php echo date('Y-m-d'); ?>">
-                            </label><!-- <br><br> -->
-
-                            <label for="heure-depart-course-relex">
-                                Heure du départ
-                                <input type="text" name="heure-depart-course-relex">
-                            </label><!-- <br><br> -->
-
-                            <label for="point-depart-course-relex">
-                                Point du départ
-                                <input type="text" name="point-depart-course-relex">
-                            </label>
-                            
-                            <label for="missionnaires-course-relex">
-                                Nom(s) du(des) missionnaire(s)
-                                <input type="text" name="missionnaires-course-relex">
-                            </label>
-
-
-                            <input type="hidden"  name="etat-course" readonly value="NON TRAITE" hidden>
-
-                        </div>
-
+                    <label for="num-bc-course">
+                                        N° Demande choisi 
+                                        <input type="number" name="num-demande-choisi" value="1" min="1" required>
+                                    </label>
+                        
+                        
                         <div class="mini-container-relex">
+
                             <fieldset>
-                                <legend>Hotellerie</legend>
+                                <legend><div style="background-color:#eeeeee;border-radius:5px;">Hotellerie</div></legend>
                                     <!-- <p>Hotellerie</p> -->
                                     <label for="num-bc-course">
                                         N° BC 
-                                        <input type="number" name="num-bc-course">
+                                        <input type="number" name="num-bc-course" value="1" min="1" required>
                                     </label>
 
                                     <label for="date-bc-hotel-course">
                                         Date BC 
-                                        <input type="date" name="date-bc-hotel-course">
+                                        <input type="date" name="date-bc-hotel-course" value="<?php echo date('Y-m-d'); ?>">
                                     </label>
 
 
@@ -120,23 +123,12 @@
 
                                     <label for="objet-bc-hotel-course">
                                         Objet BC 
-                                        <input type="number" name="objet-bc-course">
+                                        <input type="text" name="objet-bc-course">
                                     </label>
 
-                                    <label for="sejour-du-course">
-                                        Séjour du 
-                                        <input type="date" name="sejour-du-course">
-                                    </label>
-
-
-                                    <label for="sejour-au-course">
-                                        Au
-                                        <input type="date" name="sejour-au-course">
-                                    </label>
-
-                                    <label for="nb-nuit-course">
-                                        Nombre de nuitée  
-                                        <input type="number" name="nb-nuit-course">
+                                    <label for="duree-sejour">
+                                    duree Séjour 
+                                        <input type="number" name="duree-sejour" value="1" min="1" required>
                                     </label>
 
                                     <label for="nom-missionnaire-hotel-course">
@@ -159,16 +151,16 @@
 
                                     <label for="restauration-course">
                                         Réstaurant
-                                        <input type="checkbox" name="restauration-course" value="petit dejeuner"> Petit Déjeuner
-                                        <input type="checkbox" name="restauration-course" value="dejeuner"> Déjeuner
-                                        <input type="checkbox" name="restauration-course" value="diner"> Diner
-                                        <input type="checkbox" name="restauration-course" value="boissons non alcoolisées"> boissons non alcoolisées incluses
+                                        <input type="checkbox" name="restauration-course[]" value="petit dejeuner"> Petit Déjeuner
+                                        <input type="checkbox" name="restauration-course[]" value="dejeuner"> Déjeuner
+                                        <input type="checkbox" name="restauration-course[]" value="diner"> Diner
+                                        <input type="checkbox" name="restauration-course[]" value="boissons non alcoolisées"> boissons non alcoolisées incluses
                                     </label>
 
                             </fieldset>
 
                             <fieldset>
-                                <legend>billetterie</legend>
+                                <legend><div style="background-color:#eeeeee;border-radius:5px;">billetterie</div></legend>
                                 <!-- <p>Billetterie</p> -->
 
                                     <label for="compagnie-course">
@@ -178,12 +170,12 @@
                                     </label>
                                     <label for="ref-bc-course">
                                         Réf. BC 
-                                        <input type="number" name="ref-bc-course">
+                                        <input type="number" name="ref-bc-course" value="1" min="1" required>
                                     </label>
 
                                     <label for="date-bc-billet-course">
                                         Date BC 
-                                        <input type="date" name="date-bc-billet-course">
+                                        <input type="date" name="date-bc-billet-course" value="<?php echo date('Y-m-d'); ?>">
                                     </label>
 
 
@@ -221,12 +213,12 @@
 
                                     <label for="date-depart-billet-course">
                                         Date départ  
-                                        <input type="date" name="date-depart-billet-course">
+                                        <input type="date" name="date-depart-billet-course" value="<?php echo date('Y-m-d'); ?>">
                                     </label>
 
                                     <label for="date-retour-billet-course">
                                         Date retour  
-                                        <input type="date" name="date-retour-billet-course">
+                                        <input type="date" name="date-retour-billet-course" value="<?php echo date('Y-m-d'); ?>">
                                     </label>
 
 
@@ -244,8 +236,8 @@
                         </div>
                     
                         <div class="boutons-relex">
-                            <button type="button" id="btn-valider-popup-course">Valider</button>
-                            <button type="button" id="btn-Annuler-popup-course">Annuler</button>
+                            <button type="submit" id="btn-valider-popup-course" name="btn-valider-popup-course">Valider</button>
+                            <button type="button" id="btn-Annuler-popup-course" name="btn-annuler-popup-course">Annuler</button>
                         </div>
                     </div>
             </form>

@@ -1,3 +1,72 @@
+<?php
+if (isset($_POST["btn-valider-popup-travail"])) {
+    // Assume $conn is your database connection
+
+    // Retrieve form data
+    $numDemandeChoisi = $_POST['num-demande-choisi'];
+    $numBCH = $_POST['num-bc-travail'];
+    $dateBCH = $_POST['date-bc-hotel-travail'];
+    $regionH = $_POST['region-hotel-travail'];
+    $nomH = $_POST['nom-hotel-travail'];
+    $objetBCH = $_POST['objet-bc-travail'];
+    $dureeSejour = $_POST['duree-sejour'];
+    $nomMissionnaireH = $_POST['nom-missionnaire-hotel-travail'];
+    $compteAnalytiqueH = $_POST['compte-analytique-hotel-travail'];
+    $chambreH = $_POST['chambre-travail'];
+    $restaurationH = isset($_POST['restauration-travail']) ? implode(', ', $_POST['restauration-travail']) : '';
+    $compagnieB = $_POST['compagnie-travail'];
+    $refBCB = $_POST['ref-bc-travail'];
+    $dateBCB = $_POST['date-bc-billet-travail'];
+    $regionB = $_POST['region-Billet-travail'];
+    $typeTrajetB = $_POST['type-trajet-travail'];
+    $trajetB = $_POST['trajet-travail'];
+    $classeB = $_POST['classe-billet-travail'];
+    $objetBCB = $_POST['objet-bc-billet-travail'];
+    $DateDepartB = $_POST['date-depart-billet-travail'];
+    $DateRetourB = $_POST['date-retour-billet-travail'];
+    $nomMissionnairesB = $_POST['nom-missionnaire-billet-travail'];
+    $compteAnalytiqueB = $_POST['compte-analytique-billet-travail'];
+
+    // Insert data into database
+    $sql = "INSERT INTO bc_hotel (numBCH, dateBCH, objetBCH, chambreH, restaurationH, compteAnalytiqueH) VALUES ('$numBCH', '$dateBCH', '$objetBCH', '$chambreH', '$restaurationH', '$compteAnalytiqueH')";
+    $result = mysqli_query($conn, $sql);
+
+    $sql1 = "INSERT INTO hotel (nomH, regionH) VALUES ('$nomH', '$regionH')";
+    $result1 = mysqli_query($conn, $sql1);
+
+    $sql2 = "INSERT INTO reservation_hotel (nomMissionnaireH, dureeSejour) VALUES ('$nomMissionnaireH', '$dureeSejour')";
+    $result2 = mysqli_query($conn, $sql2);
+
+    $sql3 = "INSERT INTO bc_billet (compagnieB, refBCB, dateBCB, classeB, objetBCB, DateDepartB, DateRetourB, compteAnalytiqueB) VALUES ('$compagnieB', '$refBCB', '$dateBCB', '$classeB', '$objetBCB', '$DateDepartB', '$DateRetourB', '$compteAnalytiqueB')";
+    $result3 = mysqli_query($conn, $sql3);
+
+    $sql4 = "INSERT INTO reservation_billet (regionB, typeTrajetB, trajetB, nomMissionnairesB) VALUES ('$regionB', '$typeTrajetB', '$trajetB', '$nomMissionnairesB')";
+    $result4 = mysqli_query($conn, $sql4);
+
+    if ($result && $result1 && $result2 && $result3 && $result4) {
+        $update_sql = "UPDATE travail SET Etat = 'TRAITE' WHERE NumDemande = '$numDemandeChoisi'";
+        $update_result = mysqli_query($conn, $update_sql);
+        if ($update_result) {
+            echo "<script>alert('Données insérées avec succès!');</script>";
+            echo "<script>window.location.replace('relex.php');</script>";
+            exit();
+        } else {
+            $error_message = "Erreur lors de la mise à jour de l'état!";
+        }
+    } else {
+        $error_message = "Erreur lors de l'insertion des données!";
+    }
+
+    // Display error message if any
+    if (isset($error_message)) {
+        echo "<script>alert('$error_message');</script>";
+        echo "<script>window.location.replace('relex.php');</script>";
+        exit();
+    }
+}
+?>
+
+
 <div class="traiter-travail" id="traitement-travail-box">
 
     <div class="popup" id="popuptravail">
@@ -16,370 +85,159 @@
                 $_SESSION["demandeur"]=$demandeur;
             }
             ?>
-            <form method="post">
-                <p class="header-text">Traiter une demande de mission du terrain</p>
+            <form method="post" id="myform">
+                <p class="header-text">Traiter une demande de travail</p>
                     <div class="container-relex">
-                        <div class="mini-container">
-                            <label >
-                                Direction
-                                <input type="text"  name="direction-travail" readonly>
-                            </label>
-                                                                    
-
-                            <label >
-                                Département 
-                                <input type="text"  name="departement-travail" readonly>
-                            </label>
-
-
-                            <label >
-                                Demande effuctuée par 
-                                <input type="text" name="demande-dffuctuee-par-travail" value="<?php echo $_SESSION["username"]; ?>" readonly>
-                            </label>
-                                                                    
-
-                            <label >
-                                Compte Analytique
-                                <input type="text" id="text4" name="compte-analytique-travail" readonly>
-                            </label>
-                                                                    
-
-                            <label>
-                                Num Demande 
-                                <input type="number" name="num-demande-travail" value="1" min="1" required>
-                            </label>
-
-
-
-                            <label >
-                                Date Demande 
-                                <input type="date"  name="date-demande-travail" value="<?php echo date('Y-m-d'); ?>" readonly>
-                            </label>
-
                         
-
-                                    <!-- </div> -->
-                        
-                                                            
-                                <!-- <div class="secondformdiv"> -->
-
-                            <label >
-                                Destinataire 
-                                <input type="text"  name="destinataire-travail" readonly value="RELEX">
-                            </label>
-                            
-                            <label>
-                                Date début           
-                                <input type="date" name="du-travail" value="<?php echo date('Y-m-d'); ?>">
-                            </label>
-
-                            <label>
-                                Date fin          
-                                <input type="date" name="au-travail" value="<?php echo date('Y-m-d'); ?>">
-                            </label>
-                                                                    
-
-                            <label>
-                                Region deroulement mission
-                                <select id="select1" name="region-deroulement-mission-travail">
-                                    <option value="nord">NORD</option>
-                                    <option value="sud">SUD</option>
-                                    <option value="est">EST</option>
-                                    <option value="ouest">OUEST</option>
-                                </select>
-                            </label>
-                                                                    
-                            <label >
-                                lieu de la mission 
-                                <input type="text" name="lieu-de-la-mission-travail">
-                            </label>
-                                                                    
-
-                            <label >
-                                Itineraire
-                                <input type="text" name="itineraire-travail">
-                            </label>
-
-                            <label >
-                                objet de la mission
-                                <input type="text" name="objet-de-la-mission-travail">
-                            </label>
-                                                                    
-
-                            <label>
-                                Nom(s) du(des) missionaire(s)
-                                <input type="text" name="noms-des-missionaires-travail">
-                            </label>
-
-
-                            <label >
-                                Moyen de Transport aller 
-                                <select  name="moyen-de-transport-aller-travail">
-                                    <option>Avion</option>
-                                    <option>Vehicule</option>
-                                </select>
-                            </label>
-                                
-                            <label >
-                                Moyen de transport retour 
-                                <select  name="moyen-de-transport-retour-travail">
-                                    <option>Avion</option>
-                                    <option>Vehicule</option>
-                                </select>
-                            </label>
-                                                                    
-
-                            
-                        <!-- </div> -->
-                        
-                    <!-- </div> -->
-                                                
-                        <fieldset>
-                            <legend>Aller</legend>
-                            <div class="aller">
-                                <label for="text10">
-                                    Demande Vehicule service aller 
-                                    <select  name="demande-vehicule-service-aller-travail">
-                                        <!-- <option></option>  -->
-                                        <option value="oui">Oui</option> 
-                                        <option value="non">Non</option>
-                                    </select>
-                                </label>
-
-
-                                <label>
-                                    Point de depart
-                                    <input type="text" name="point-de-depart-travail">
-                                </label>
-
-
-                                <label>
-                                    Demande hebergement aller
-                                    <select  name="demande-hebergement-aller-travail">
-                                        <option value="oui">Oui</option> 
-                                        <option value="non">Non</option>
-                                    </select>
-                                </label>
-
-
-                                <label >
-                                    nombre de nuite du trajet - Aller
-                                    <input type="number" name="nombre-de-nuite-du-trajet-aller-travail" value="0" min="0">
-                                </label>
-                            </div>
-
-                        </fieldset>
-
-
-                        <fieldset>
-                            <legend>Retour</legend>
-
-                            <div class="retour">
-                                <label for="text10">
-                                    Demande Vehicule service Retour 
-                                    <select  name="demande-vehicule-service-retour-travail">
-                                        <option value="oui">Oui</option> 
-                                        <option value="non">Non</option>
-                                    </select>
-                                </label>
-
-                                <label>
-                                    Point de retour
-                                    <input type="text"  name="point-de-retour-travail">
-                                </label>
-
-                                <label>
-                                    Demande hebergement Retour
-                                    <select  name="demande-hebergement-retour-travail">
-                                                                                    
-                                        <option>Oui</option> 
-                                        <option>Non</option>
-                                    </select>
-                                </label>
-
-                                <label >
-                                    nombre de nuite du trajet - Retour
-                                    <input type="number" id="text13" name="nombre-de-nuite-du-trajet-retour-travail" value="0" min="0" >
-                                </label>
-                            </div>
-                        </fieldset>
-
-                        <label >
-                                    Demande hebergement
-                                    <select  name="demande-hebergement-travail">
-                                        <!-- <option> </option>  -->
-                                        <option value="oui">Oui</option> 
-                                        <option value="non">Non</option>
-                                    </select>
-                        </label>
-
-                        <div class="observation-travail">
-                        
-                            <label for="observation-travail">
-                                Observation
-                                <input type="text" name="observation-travail">
-                            </label>
-
-                            <input type="hidden"  name="etat-travail" readonly value="NON TRAITE" hidden>
-
-
-                        </div>
-                    </div>
-
+                    <label for="num-bc-travail">
+                                        N° Demande choisi 
+                                        <input type="number" name="num-demande-choisi" value="1" min="1" required>
+                                    </label>
                         <div class="mini-container-relex">
+
                             <fieldset>
-                                <legend>Hotellerie</legend>
+                                <legend><div style="background-color:#eeeeee;border-radius:5px;">Hotellerie</div></legend>
                                     <!-- <p>Hotellerie</p> -->
-                                    <label for="num-bc-formation">
+                                    <label for="num-bc-travail">
                                         N° BC 
-                                        <input type="number" name="num-bc-formation">
+                                        <input type="number" name="num-bc-travail" value="1" min="1" required>
                                     </label>
 
-                                    <label for="date-bc-hotel-formation">
+                                    <label for="date-bc-hotel-travail">
                                         Date BC 
-                                        <input type="date" name="date-bc-hotel-formation">
+                                        <input type="date" name="date-bc-hotel-travail" value="<?php echo date('Y-m-d'); ?>">
                                     </label>
 
 
-                                    <label for="region-hotel-formation">
+                                    <label for="region-hotel-travail">
                                         Région 
-                                        <input type="text" name="region-hotel-formation">
+                                        <input type="text" name="region-hotel-travail">
                                     </label>
 
 
-                                    <label for="nom-hotel-formation">
+                                    <label for="nom-hotel-travail">
                                         Nom hotel 
-                                        <input type="text" name="nom-hotel-formation">
+                                        <input type="text" name="nom-hotel-travail">
                                     </label>
 
 
-                                    <label for="objet-bc-hotel-formation">
+                                    <label for="objet-bc-hotel-travail">
                                         Objet BC 
-                                        <input type="number" name="objet-bc-formation">
+                                        <input type="text" name="objet-bc-travail">
                                     </label>
 
-                                    <label for="sejour-du-formation">
-                                        Séjour du 
-                                        <input type="date" name="sejour-du-formation">
+                                    <label for="duree-sejour">
+                                    duree Séjour 
+                                        <input type="number" name="duree-sejour" value="1" min="1" required>
                                     </label>
 
-
-                                    <label for="sejour-au-formation">
-                                        Au
-                                        <input type="date" name="sejour-au-formation">
-                                    </label>
-
-                                    <label for="nb-nuit-formation">
-                                        Nombre de nuitée  
-                                        <input type="number" name="nb-nuit-formation">
-                                    </label>
-
-                                    <label for="nom-missionnaire-hotel-formation">
+                                    <label for="nom-missionnaire-hotel-travail">
                                         Nom missionnaire  
-                                        <input type="text" name="nom-missionnaire-hotel-formation">
+                                        <input type="text" name="nom-missionnaire-hotel-travail">
                                     </label>
 
-                                    <label for="compte-analytique-hotel-formation">
+                                    <label for="compte-analytique-hotel-travail">
                                         Compte analytique  
-                                        <input type="text" name="compte-analytique-hotel-formation">
+                                        <input type="text" name="compte-analytique-hotel-travail">
                                     </label>
 
 
-                                    <label for="chambre-formation">
+                                    <label for="chambre-travail">
                                         Chambre
-                                        <input type="radio" name="chambre-formation" value="double"> Double
-                                        <input type="radio" name="chambre-formation" value="single"> Single
+                                        <input type="radio" name="chambre-travail" value="double"> Double
+                                        <input type="radio" name="chambre-travail" value="single"> Single
                                     </label>
 
 
-                                    <label for="restauration-formation">
+                                    <label for="restauration-travail">
                                         Réstaurant
-                                        <input type="checkbox" name="restauration-formation" value="petit dejeuner"> Petit Déjeuner
-                                        <input type="checkbox" name="restauration-formation" value="dejeuner"> Déjeuner
-                                        <input type="checkbox" name="restauration-formation" value="diner"> Diner
-                                        <input type="checkbox" name="restauration-formation" value="boissons non alcoolisées"> boissons non alcoolisées incluses
+                                        <input type="checkbox" name="restauration-travail[]" value="petit dejeuner"> Petit Déjeuner
+                                        <input type="checkbox" name="restauration-travail[]" value="dejeuner"> Déjeuner
+                                        <input type="checkbox" name="restauration-travail[]" value="diner"> Diner
+                                        <input type="checkbox" name="restauration-travail[]" value="boissons non alcoolisées"> boissons non alcoolisées incluses
                                     </label>
 
                             </fieldset>
 
                             <fieldset>
-                                <legend>billetterie</legend>
+                                <legend><div style="background-color:#eeeeee;border-radius:5px;">billetterie</div></legend>
                                 <!-- <p>Billetterie</p> -->
 
-                                    <label for="compagnie-formation">
+                                    <label for="compagnie-travail">
                                         Compagnies
-                                        <input type="radio" name="compagnie-formation" value="air algerie"> Air Algérie
-                                        <input type="radio" name="compagnie-formation" value="tassili"> Tassili
+                                        <input type="radio" name="compagnie-travail" value="air algerie"> Air Algérie
+                                        <input type="radio" name="compagnie-travail" value="tassili"> Tassili
                                     </label>
-                                    <label for="ref-bc-formation">
+                                    <label for="ref-bc-travail">
                                         Réf. BC 
-                                        <input type="number" name="ref-bc-formation">
+                                        <input type="number" name="ref-bc-travail" value="1" min="1" required>
                                     </label>
 
-                                    <label for="date-bc-billet-formation">
+                                    <label for="date-bc-billet-travail">
                                         Date BC 
-                                        <input type="date" name="date-bc-billet-formation">
+                                        <input type="date" name="date-bc-billet-travail" value="<?php echo date('Y-m-d'); ?>">
                                     </label>
 
 
-                                    <label for="region-Billet-formation">
+                                    <label for="region-Billet-travail">
                                         Région de Destination
-                                        <input type="text" name="region-Billet-formation">
+                                        <input type="text" name="region-Billet-travail">
                                     </label>
 
 
-                                    <label for="type-trajet-formation">
+                                    <label for="type-trajet-travail">
                                         Type trajet 
-                                        <input type="text" name="type-trajet-formation">
+                                        <input type="text" name="type-trajet-travail">
                                     </label>
 
 
-                                    <label for="trajet-formation">
+                                    <label for="trajet-travail">
                                         Trajet 
-                                        <input type="text" name="trajet-formation">
+                                        <input type="text" name="trajet-travail">
                                     </label>
 
-                                    <label for="classe-billet-formation">
+                                    <label for="classe-billet-travail">
                                         Classe 
-                                        <select name="classe-billet-formation" id="classe-billet-formation">
+                                        <select name="classe-billet-travail" id="classe-billet-travail">
                                             <option value="economy">ECONOMY</option>
-                                            <option value="first classe">FIRST CLASSE</option>
+                                            <option value="business class">BUSINESS CLASS</option>
+                                            <option value="first class">FIRST CLASS</option>
                                         </select>
                                     </label>
 
 
-                                    <label for="objet-bc-billet-formation">
+                                    <label for="objet-bc-billet-travail">
                                         Objet BC
-                                        <input type="text" name="objet-bc-billet-formation">
+                                        <input type="text" name="objet-bc-billet-travail">
                                     </label>
 
-                                    <label for="date-depart-billet-formation">
+                                    <label for="date-depart-billet-travail">
                                         Date départ  
-                                        <input type="date" name="date-depart-billet-formation">
+                                        <input type="date" name="date-depart-billet-travail" value="<?php echo date('Y-m-d'); ?>">
                                     </label>
 
-                                    <label for="date-retour-billet-formation">
+                                    <label for="date-retour-billet-travail">
                                         Date retour  
-                                        <input type="date" name="date-retour-billet-formation">
+                                        <input type="date" name="date-retour-billet-travail" value="<?php echo date('Y-m-d'); ?>">
                                     </label>
 
 
-                                    <label for="nom-missionnaire-billet-formation">
+                                    <label for="nom-missionnaire-billet-travail">
                                         Nom missionnaire  
-                                        <input type="text" name="nom-missionnaire-billet-formation">
+                                        <input type="text" name="nom-missionnaire-billet-travail">
                                     </label>
 
-                                    <label for="compte-analytique-billet-formation">
+                                    <label for="compte-analytique-billet-travail">
                                         Compte analytique  
-                                        <input type="text" name="compte-analytique-billet-formation">
+                                        <input type="text" name="compte-analytique-billet-travail">
                                     </label>
                                     
                             </fieldset>
                         </div>
                     
                         <div class="boutons-relex">
-                            <button type="button" id="btn-valider-popup-travail">Valider</button>
-                            <button type="button" id="btn-Annuler-popup-travail">Annuler</button>
+                            <button type="submit" id="btn-valider-popup-travail" name="btn-valider-popup-travail">Valider</button>
+                            <button type="button" id="btn-Annuler-popup-travail" name="btn-annuler-popup-travail">Annuler</button>
                         </div>
                     </div>
             </form>

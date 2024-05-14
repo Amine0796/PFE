@@ -1,153 +1,112 @@
+<?php
+if (isset($_POST["btn-valider-popup-etranger"])) {
+    // Assume $conn is your database connection
+
+    // Retrieve form data
+    $numDemandeChoisi = $_POST['num-demande-choisi'];
+    $numBCH = $_POST['num-bc-etranger'];
+    $dateBCH = $_POST['date-bc-hotel-etranger'];
+    $regionH = $_POST['region-hotel-etranger'];
+    $nomH = $_POST['nom-hotel-etranger'];
+    $objetBCH = $_POST['objet-bc-etranger'];
+    $dureeSejour = $_POST['duree-sejour'];
+    $nomMissionnaireH = $_POST['nom-missionnaire-hotel-etranger'];
+    $compteAnalytiqueH = $_POST['compte-analytique-hotel-etranger'];
+    $chambreH = $_POST['chambre-etranger'];
+    $restaurationH = isset($_POST['restauration-etranger']) ? implode(', ', $_POST['restauration-etranger']) : '';
+    $compagnieB = $_POST['compagnie-etranger'];
+    $refBCB = $_POST['ref-bc-etranger'];
+    $dateBCB = $_POST['date-bc-billet-etranger'];
+    $regionB = $_POST['region-Billet-etranger'];
+    $typeTrajetB = $_POST['type-trajet-etranger'];
+    $trajetB = $_POST['trajet-etranger'];
+    $classeB = $_POST['classe-billet-etranger'];
+    $objetBCB = $_POST['objet-bc-billet-etranger'];
+    $DateDepartB = $_POST['date-depart-billet-etranger'];
+    $DateRetourB = $_POST['date-retour-billet-etranger'];
+    $nomMissionnairesB = $_POST['nom-missionnaire-billet-etranger'];
+    $compteAnalytiqueB = $_POST['compte-analytique-billet-etranger'];
+
+    // Insert data into database
+    $sql = "INSERT INTO bc_hotel (numBCH, dateBCH, objetBCH, chambreH, restaurationH, compteAnalytiqueH) VALUES ('$numBCH', '$dateBCH', '$objetBCH', '$chambreH', '$restaurationH', '$compteAnalytiqueH')";
+    $result = mysqli_query($conn, $sql);
+
+    $sql1 = "INSERT INTO hotel (nomH, regionH) VALUES ('$nomH', '$regionH')";
+    $result1 = mysqli_query($conn, $sql1);
+
+    $sql2 = "INSERT INTO reservation_hotel (nomMissionnaireH, dureeSejour) VALUES ('$nomMissionnaireH', '$dureeSejour')";
+    $result2 = mysqli_query($conn, $sql2);
+
+    $sql3 = "INSERT INTO bc_billet (compagnieB, refBCB, dateBCB, classeB, objetBCB, DateDepartB, DateRetourB, compteAnalytiqueB) VALUES ('$compagnieB', '$refBCB', '$dateBCB', '$classeB', '$objetBCB', '$DateDepartB', '$DateRetourB', '$compteAnalytiqueB')";
+    $result3 = mysqli_query($conn, $sql3);
+
+    $sql4 = "INSERT INTO reservation_billet (regionB, typeTrajetB, trajetB, nomMissionnairesB) VALUES ('$regionB', '$typeTrajetB', '$trajetB', '$nomMissionnairesB')";
+    $result4 = mysqli_query($conn, $sql4);
+
+    if ($result && $result1 && $result2 && $result3 && $result4) {
+        $update_sql = "UPDATE etranger SET Etat = 'TRAITE' WHERE NumDemande = '$numDemandeChoisi'";
+        $update_result = mysqli_query($conn, $update_sql);
+        if ($update_result) {
+            echo "<script>alert('Données insérées avec succès!');</script>";
+            echo "<script>window.location.replace('relex.php');</script>";
+            exit();
+        } else {
+            $error_message = "Erreur lors de la mise à jour de l'état!";
+        }
+    } else {
+        $error_message = "Erreur lors de l'insertion des données!";
+    }
+
+    // Display error message if any
+    if (isset($error_message)) {
+        echo "<script>alert('$error_message');</script>";
+        echo "<script>window.location.replace('relex.php');</script>";
+        exit();
+    }
+}
+?>
+
+
+
 <div class="traiter-etranger" id="traitement-etranger-box">
 
     <div class="popup" id="popupetranger">
         <!-- <div class="traiter-etranger" id="traitement-etranger-box"> -->
             <?php
 
-            $sql = "SELECT Demandeur FROM etranger WHERE NumDemande = 5";
-            // Execute query
-            $result = $conn->query($sql);
+            // $sql = "SELECT Demandeur FROM etranger WHERE NumDemande = 5";
+            // // Execute query
+            // $result = $conn->query($sql);
             
-            // Check if any rows were returned
-            if ($result->num_rows > 0) {
-                // Fetch the result (assuming there's only one row)
-                $row = $result->fetch_assoc();
-                $demandeur = $row["Demandeur"];
-                $_SESSION["demandeur"]=$demandeur;
-            }
+            // // Check if any rows were returned
+            // if ($result->num_rows > 0) {
+            //     // Fetch the result (assuming there's only one row)
+            //     $row = $result->fetch_assoc();
+            //     $demandeur = $row["Demandeur"];
+            //     $_SESSION["demandeur"]=$demandeur;
+            // }
             ?>
             <form method="post">
                 <p class="header-text">Traiter une demande à l'étranger</p>
                     <div class="container-relex">
-                        <div class="mini-container">
-                            <label for="direction-etranger-relex">
-                                Direction
-                                <input type="text" name="direction-etranger-relex" readonly>
-                            </label><!-- <br><br> -->
-                            
-                            <label for="departement-etranger-relex">
-                                Département
-                                <input type="text" name="departement-etranger-relex" readonly>
-                            </label><!-- <br><br> -->
-
-                            <label for="demandeur-etranger-relex">
-                                Demande effectuée par
-                                <input type="text" name="demandeur-etranger-relex" value="<?php echo $_SESSION["username"]; ?>" readonly>
-                            </label><!-- <br><br> -->
-
-
-                            <label for="compte-analytique-etranger-relex">
-                                Compte analytique
-                                <input type="text" name="compte-analytique-etranger-relex" readonly>
-                            </label><!-- <br><br> -->
-
-                            <label for="num-demande-etranger-relex">
-                                Num Demande 
-                                <input type="number" name="num-demande-etranger-relex" value="1" min="1" required>
-                            </label>
-
-                            <label for="date-demande-etranger-relex">
-                                Date de demande
-                                <input type="date" name="date-demande-etranger-relex" value="<?php echo date('Y-m-d'); ?>" readonly>
-                            </label><!-- <br><br> -->
-
-                            <label for="destinataire-etranger-relex">
-                                Destinataire
-                                <input type="text" name="destinataire-etranger-relex" value="RELEX" readonly>
-                            </label>
-
-                            <label for="du-etranger-relex">
-                                Date début           
-                                <input type="date" name="du-etranger-relex" value="<?php echo date('Y-m-d'); ?>">
-                            </label>
-
-                            <label for="au-etranger-relex">
-                                Date fin
-                                <input type="date" name="au-etranger-relex" value="<?php echo date('Y-m-d'); ?>">
-                            </label><!-- <br><br> -->
-
-                            <label for="nb-jours-etranger-relex">
-                                Nombre des jours
-                                <input type="number" name="nb-jours-etranger-relex" value="0" min="0">
-                            </label><!-- <br><br> -->
                         
-                            <label for="objet-mission-etranger-relex">
-                                Objet de la mission
-                                <input type="text" name="objet-mission-etranger-relex">
-                            </label><!-- <br><br> -->
-                            
-                            
-                            <label for="lieu-mission-etranger-relex">
-                                Lieu de mission
-                                <input type="text" name="lieu-mission-etranger-relex">
-                            </label>
-                            
-                            <label for="pays-etranger-relex">
-                                Pays de formation  
-                                <input type="text" name="pays-etranger-relex">
-                            </label>
-                            
-                            <label for="cadre-mission-etranger-relex">
-                                Cadre de la mission
-                                <select name="cadre-mission-etranger-relex" >
-                                    <option value="contrat">Contrat</option> 
-                                    <option value="plan de formation">Plan de formation</option>
-                                    <option value="autre">Autre</option>
-                                </select><!-- <br><br> -->            
-                            </label>
-                            
-                            <label for="info-complement-etranger-relex">
-                                Information complémentaire <!-- contrat N° if contrat -->
-                                <input type="text" name="info-complement-etranger-relex">
-                            </label>
-                            
-                            <label for="missionnaires-etranger-relex">
-                                Nom(s) et fonction du (des) missionnaire(s)
-                                <input type="text" name="missionnaires-etranger-relex">
-                            </label>
-                            
-                            <label for="situation-visa-etranger-relex">
-                                Situation visa
-                                <select name="situation-visa-etranger-relex" >
-                                    <option value="Obtenue pour tous les missionnaires">Obtenue pour tous</option> 
-                                    <option value="En cours pour tous les missoinnaires">En cours pour tous</option>
-                                    <option value="En cours pour une partie des missoinnaires">En cours pour une partie</option>
-                                    <option value="Autres">Autres</option>
-                                </select><!-- <br><br> -->            
-                            </label>
-                            
-                            <label for="info-visa-etranger-relex">
-                                Information complémentaire visa
-                                <input type="text" name="info-visa-etranger-relex">
-                            </label>
-                            
-                            <label for="objectifs-mission-etranger-relex">
-                                Objectifs de la mission
-                                <input type="text" name="objectifs-mission-etranger-relex">
-                            </label>
-                            
-                            <label for="opportunite-etranger-relex">
-                                Opportunité Mission
-                                <input type="text" name="opportunite-etranger-relex">
-                            </label>
-
-                            <input type="hidden"  name="etat-etranger-form" readonly value="NON TRAITE" hidden>
-
-
-                        </div>
-
+                    <label for="num-bc-etranger">
+                                        N° Demande choisi 
+                                        <input type="number" name="num-demande-choisi" value="1" min="1" required>
+                                    </label>
                         <div class="mini-container-relex">
+
                             <fieldset>
-                                <legend>Hotellerie</legend>
+                                <legend><div style="background-color:#eeeeee;border-radius:5px;">Hotellerie</div></legend>
                                     <!-- <p>Hotellerie</p> -->
                                     <label for="num-bc-etranger">
                                         N° BC 
-                                        <input type="number" name="num-bc-etranger">
+                                        <input type="number" name="num-bc-etranger" value="1" min="1" required>
                                     </label>
 
                                     <label for="date-bc-hotel-etranger">
                                         Date BC 
-                                        <input type="date" name="date-bc-hotel-etranger">
+                                        <input type="date" name="date-bc-hotel-etranger" value="<?php echo date('Y-m-d'); ?>">
                                     </label>
 
 
@@ -165,23 +124,12 @@
 
                                     <label for="objet-bc-hotel-etranger">
                                         Objet BC 
-                                        <input type="number" name="objet-bc-etranger">
+                                        <input type="text" name="objet-bc-etranger">
                                     </label>
 
-                                    <label for="sejour-du-etranger">
-                                        Séjour du 
-                                        <input type="date" name="sejour-du-etranger">
-                                    </label>
-
-
-                                    <label for="sejour-au-etranger">
-                                        Au
-                                        <input type="date" name="sejour-au-etranger">
-                                    </label>
-
-                                    <label for="nb-nuit-etranger">
-                                        Nombre de nuitée  
-                                        <input type="number" name="nb-nuit-etranger">
+                                    <label for="duree-sejour">
+                                    duree Séjour 
+                                        <input type="number" name="duree-sejour" value="1" min="1" required>
                                     </label>
 
                                     <label for="nom-missionnaire-hotel-etranger">
@@ -204,34 +152,31 @@
 
                                     <label for="restauration-etranger">
                                         Réstaurant
-                                        <input type="checkbox" name="restauration-etranger" value="petit dejeuner"> Petit Déjeuner
-                                        <input type="checkbox" name="restauration-etranger" value="dejeuner"> Déjeuner
-                                        <input type="checkbox" name="restauration-etranger" value="diner"> Diner
-                                        <input type="checkbox" name="restauration-etranger" value="boissons non alcoolisées"> boissons non alcoolisées incluses
+                                        <input type="checkbox" name="restauration-etranger[]" value="petit dejeuner"> Petit Déjeuner
+                                        <input type="checkbox" name="restauration-etranger[]" value="dejeuner"> Déjeuner
+                                        <input type="checkbox" name="restauration-etranger[]" value="diner"> Diner
+                                        <input type="checkbox" name="restauration-etranger[]" value="boissons non alcoolisées"> boissons non alcoolisées incluses
                                     </label>
 
                             </fieldset>
 
                             <fieldset>
-                                <legend>billetterie</legend>
+                                <legend><div style="background-color:#eeeeee;border-radius:5px;">billetterie</div></legend>
                                 <!-- <p>Billetterie</p> -->
 
                                     <label for="compagnie-etranger">
-                                    <!-- <fieldset> -->
-                                        <!-- <legend>Compagnies</legend> -->
                                         Compagnies
                                         <input type="radio" name="compagnie-etranger" value="air algerie"> Air Algérie
                                         <input type="radio" name="compagnie-etranger" value="tassili"> Tassili
                                     </label>
-                                    <!-- </fieldset> -->
                                     <label for="ref-bc-etranger">
                                         Réf. BC 
-                                        <input type="number" name="ref-bc-etranger">
+                                        <input type="number" name="ref-bc-etranger" value="1" min="1" required>
                                     </label>
 
                                     <label for="date-bc-billet-etranger">
                                         Date BC 
-                                        <input type="date" name="date-bc-billet-etranger">
+                                        <input type="date" name="date-bc-billet-etranger" value="<?php echo date('Y-m-d'); ?>">
                                     </label>
 
 
@@ -269,12 +214,12 @@
 
                                     <label for="date-depart-billet-etranger">
                                         Date départ  
-                                        <input type="date" name="date-depart-billet-etranger">
+                                        <input type="date" name="date-depart-billet-etranger" value="<?php echo date('Y-m-d'); ?>">
                                     </label>
 
                                     <label for="date-retour-billet-etranger">
                                         Date retour  
-                                        <input type="date" name="date-retour-billet-etranger">
+                                        <input type="date" name="date-retour-billet-etranger" value="<?php echo date('Y-m-d'); ?>">
                                     </label>
 
 
@@ -292,8 +237,8 @@
                         </div>
                     
                         <div class="boutons-relex">
-                            <button type="button" id="btn-valider-popup-etranger">Valider</button>
-                            <button type="button" id="btn-Annuler-popup-etranger">Annuler</button>
+                            <button type="submit" id="btn-valider-popup-etranger" name="btn-valider-popup-etranger">Valider</button>
+                            <button type="button" id="btn-Annuler-popup-etranger" name="btn-annuler-popup-etranger">Annuler</button>
                         </div>
                     </div>
             </form>

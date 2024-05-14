@@ -35,7 +35,7 @@
                      
                     <?php
                     
-                    $sql = "SELECT * FROM `travail` WHERE Etat = 'NON TRAITE'";
+                    $sql = "SELECT * FROM `travail` WHERE Etat = 'NON TRAITE' ORDER BY id";
                     $result=mysqli_query($conn,$sql);
                     if ($result) {
                         
@@ -99,7 +99,7 @@
                 <tbody>
                 <?php
                     
-                    $sql = "SELECT * FROM `etranger` WHERE Etat = 'NON TRAITE'";
+                    $sql = "SELECT * FROM `etranger` WHERE Etat = 'NON TRAITE' ORDER BY id";
                     $result=mysqli_query($conn,$sql);
                     if ($result) {
                         
@@ -167,7 +167,7 @@
                     
                     <?php
                     
-                    $sql = "SELECT * FROM `courses` WHERE Etat = 'NON TRAITE'";
+                    $sql = "SELECT * FROM `courses` WHERE Etat = 'NON TRAITE' ORDER BY id";
                     $result=mysqli_query($conn,$sql);
                     if ($result) {
                         

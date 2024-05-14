@@ -80,19 +80,19 @@ if (isset($_POST["btn-valider-popup-formation"])) {
 
             <?php
 
-            $sql = "SELECT Demandeur FROM formation WHERE NumDemande = 4";
-            // Execute query
-            $result = $conn->query($sql);
+            // $sql = "SELECT Demandeur FROM formation WHERE NumDemande = 4";
+            // // Execute query
+            // $result = $conn->query($sql);
             
-            // Check if any rows were returned
-            if ($result->num_rows > 0) {
-                // Fetch the result (assuming there's only one row)
-                $row = $result->fetch_assoc();
-                $demandeur = $row["Demandeur"];
+            // // Check if any rows were returned
+            // if ($result->num_rows > 0) {
+            //     // Fetch the result (assuming there's only one row)
+            //     $row = $result->fetch_assoc();
+            //     $demandeur = $row["Demandeur"];
                 
-            }else{
-                echo "aucun resultat $numDemande1";
-            }
+            // }else{
+            //     echo "aucun resultat $numDemande1";
+            // }
             ?>
             <form method="post" id="myform">
                 <p class="header-text">Traiter une demande de formation</p>

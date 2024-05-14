@@ -25,7 +25,7 @@
                 <tbody>
                 <?php
                     
-                    $sql="Select * from `etranger`";
+                    $sql="Select * from `etranger` ORDER BY id";
                     $result=mysqli_query($conn,$sql);
                     if ($result) {
                         

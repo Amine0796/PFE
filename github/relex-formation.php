@@ -30,7 +30,7 @@
                     
                     <?php
                             require_once 'database.php';
-                            $sql="Select * from `formation`";
+                            $sql="Select * from `formation` ORDER BY id";
                             $result=mysqli_query($conn,$sql);
                             if ($result) {
                                 

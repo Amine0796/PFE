@@ -28,14 +28,14 @@
                         <th>Période du</th>
                         <th>Période au</th>
                         <th>Departement</th>
-                        <th>Action</th>
+                        <th>Etat</th>
                     </tr>
                 </thead>
                 <tbody>
                      
                     <?php
                     
-                    $sql="Select * from `travail`";
+                    $sql="Select * from `travail` ORDER BY id";
                     $result=mysqli_query($conn,$sql);
                     if ($result) {
                         
@@ -46,6 +46,8 @@
                             $DateDu = $row['DateDu'];
                             $DateAu = $row['DateAu'];
                             $Departement = $row['Departement'];
+                            $Etat = $row['Etat'];
+
                             echo '<tr>
                             <td>'.$NumDemande.'</td>
                             <td>'.$DateDemande.'</td>
@@ -53,11 +55,7 @@
                             <td>'.$DateDu.'</td>
                             <td>'.$DateAu.'</td>
                             <td>'.$Departement.'</td>
-                            <td>
-                            <a href="#">
-                            <button class="btnconsulter">Consulter</button>
-                            </a>
-                            </td>
+                            <td>'.$Etat.'</td>
                         </tr>';
                         }
                     }
@@ -92,13 +90,13 @@
                         <th>Pays</th>
                         <th>Nom demandeur</th>
                         <th>Objet</th>
-                        <th>Action</th>
+                        <th>Etat</th>
                     </tr>
                 </thead>
                 <tbody>
                 <?php
                     
-                    $sql="Select * from `etranger`";
+                    $sql="Select * from `etranger` ORDER BY id";
                     $result=mysqli_query($conn,$sql);
                     if ($result) {
                         
@@ -108,6 +106,8 @@
                             $Pays = $row['Pays'];
                             $Demandeur = $row['Demandeur'];
                             $ObjetMission = $row['ObjetMission'];
+                            $Etat = $row['Etat'];
+
                             
                             echo '<tr>
                             <td>'.$NumDemande.'</td>
@@ -115,13 +115,7 @@
                             <td>'.$Pays.'</td>
                             <td>'.$Demandeur.'</td>
                             <td>'.$ObjetMission.'</td>
-                            
-                            <td>
-                            <a href="#">
-                                <button class="btnconsulter">Consulter</button>
-                            </a>
-
-                        </td>
+                            <td>'.$Etat.'</td>
                         </tr>';
                         }
                     }
@@ -151,14 +145,14 @@
                         <th>Point depart</th>
                         <th>Date depart</th>
                         <th>Heure depart</th>
-                        <th>Action</th>
+                        <th>Etat</th>
                     </tr>
                     </tr>
                 </thead>
                 <tbody>
                 <?php
                     
-                    $sql="Select * from `courses`";
+                    $sql="Select * from `courses` ORDER BY id";
                     $result=mysqli_query($conn,$sql);
                     if ($result) {
                         
@@ -168,18 +162,15 @@
                             $PointDepart = $row['PointDepart'];
                             $DateDepart = $row['DateDepart'];
                             $HeureDepart = $row['HeureDepart'];
+                            $Etat = $row['Etat'];
+
                             echo '<tr>
                             <td>'.$NumDemande.'</td>
                             <td>'.$DateDemande.'</td>
                             <td>'.$PointDepart.'</td>
                             <td>'.$DateDepart.'</td>
                             <td>'.$HeureDepart.'</td>
-                            <td>
-                            <a href="#">
-                                <button class="btnconsulter">Consulter</button>
-                            </a>
-                           
-                        </td>
+                            <td>'.$Etat.'</td>
                             </tr>';
                         }
                     }

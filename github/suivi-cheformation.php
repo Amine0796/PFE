@@ -20,13 +20,13 @@
                         <th>Objet formation</th>
                         <th>Nom demandeur</th>
                         <th>Departement</th>
-                        <th>Action</th>
+                        <th>Etat</th>
                     </tr>
                 </thead>
                 <tbody>
                 <?php
                     
-                    $sql = "SELECT * FROM `formation` WHERE Etat = 'TRAITE'";
+                    $sql = "SELECT * FROM `formation` ORDER BY id";
                     $result=mysqli_query($conn,$sql);
                     if ($result) {
                         
@@ -36,6 +36,7 @@
                             $ObjetFormation = $row['ObjetFormation'];
                             $Demandeur = $row['Demandeur'];
                             $Departement = $row['Departement'];
+                            $Etat = $row['Etat'];
                             
                             echo '<tr>
                             <td>'.$NumDemande.'</td>
@@ -43,12 +44,7 @@
                             <td>'.$ObjetFormation.'</td>
                             <td>'.$Demandeur.'</td>
                             <td>'.$Departement.'</td>
-                            
-                            <td>
-                            <a href="#">
-                                <button class="btnconsulter">Consulter</button>
-                            </a>
-                            </td>
+                            <td>'.$Etat.'</td>
                         </tr>';
                         }
                     }
@@ -77,13 +73,13 @@
                         <th>Pays</th>
                         <th>Nom demandeur</th>
                         <th>Objet</th>
-                        <th>Action</th>
+                        <th>Etat</th>
                     </tr>
                 </thead>
                 <tbody>
                 <?php
                     
-                    $sql="Select * from `etranger`";
+                    $sql="SELECT * FROM `etranger` ORDER BY id";
                     $result=mysqli_query($conn,$sql);
                     if ($result) {
                         
@@ -93,7 +89,8 @@
                             $Pays = $row['Pays'];
                             $Demandeur = $row['Demandeur'];
                             $ObjetMission = $row['ObjetMission'];
-                            
+                            $Etat = $row['Etat'];
+
                             echo '<tr>
                             <td>'.$NumDemande.'</td>
                             <td>'.$DateDemande.'</td>
@@ -101,12 +98,7 @@
                             <td>'.$Demandeur.'</td>
                             <td>'.$ObjetMission.'</td>
                             
-                            <td>
-                            <a href="#">
-                                <button class="btnconsulter">Consulter</button>
-                            </a>
-
-                        </td>
+                            <td>'.$Etat.'</td>
                         </tr>';
                         }
                     }

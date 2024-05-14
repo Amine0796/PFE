@@ -26,7 +26,7 @@
                 <tbody>
                 <?php
                     
-                    $sql="Select * from `travail`";
+                    $sql="Select * from `travail` ORDER BY id";
                     $result=mysqli_query($conn,$sql);
                     if ($result) {
                         while ($row=mysqli_fetch_assoc($result)) {

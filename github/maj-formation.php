@@ -24,7 +24,7 @@
                 </thead>
                 <tbody>
                 <?php
-                    $sql = "SELECT * FROM `formation` WHERE Etat = 'NON TRAITE'";
+                    $sql = "SELECT * FROM `formation` WHERE Etat = 'NON TRAITE' ORDER BY id";
                     $result=mysqli_query($conn,$sql);
                     if ($result) {
                         
@@ -87,7 +87,7 @@
                 <tbody>
                 <?php
                     
-                    $sql = "SELECT * FROM `etranger` WHERE Etat = 'NON TRAITE'";
+                    $sql = "SELECT * FROM `etranger` WHERE Etat = 'NON TRAITE' ORDER BY id";
                     $result=mysqli_query($conn,$sql);
                     if ($result) {
                         
@@ -106,6 +106,7 @@
                             <td>'.$Pays.'</td>
                             <td>'.$Demandeur.'</td>
                             <td>'.$ObjetMission.'</td>
+                            
                             
                             <td>
                             <form action="delete_update_etranger_formation.php?idRSF='.$row["id"].'" method="post">

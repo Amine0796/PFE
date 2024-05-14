@@ -32,7 +32,7 @@ if(isset($_POST['valider-formation'])){
  
 
     $sql = "INSERT INTO Formation (Direction, Departement, Demandeur, CompteAnalytique, NumDemande, DateDemande, Destinataire, DateDu, DateAu, RegionDeroulementFormation, LieuFormation, Itineraire, ObjetFormation, DemandeHebergement, DemandeBilletterie, OrganismeFormateur, NomMissionnaires, MoyenTransportAller, MoyenTransportRetour, DemandeVehiculeServiceAeroport, PointDepartAvion, DemandeVehiculeLieuFormation, PointDepartVehicule, Observations, Etat) 
-    VALUES ('$Direction', '$Departement', '$Demandeur', '$CompteAnalytique','$NumDemande', '$DateDemande', '$Destinataire', '$DateDu', '$DateAu', '$RegionDeroulementFormation', '$LieuFormation', '$Itineraire', '$ObjetFormation', '$DemandeHebergement', '$DemandeBilletterie', '$OrganismeFormateur', '$NomMissionnaires', '$MoyenTransportAller', '$MoyenTransportRetour', '$DemandeVehiculeServiceAeroport', '$PointDepartAvion', '$DemandeVehiculeLieuFormation', '$PointDepartVehicule', '$Observations', '$Etat')";
+    VALUES ('$Direction', '$Departement', '$Demandeur', '$CompteAnalytique','$NumDemande', '$DateDemande', '$Destinataire', '$DateDu', '$DateAu', '$RegionDeroulementFormation', '$LieuFormation', '$Itineraire', '$ObjetFormation', '$DemandeHebergement', '$DemandeBilletterie', '$OrganismeFormateur', '$NomMissionnaires', '$MoyenTransportAller', '$MoyenTransportRetour', '$DemandeVehiculeServiceAeroport', '$PointDepartAvion', '$DemandeVehiculeLieuFormation', '$PointDepartVehicule', '$Observations', '$Etat')"; 
     
 
     if($DateDu < $DateAu){
