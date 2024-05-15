@@ -98,7 +98,7 @@ if (isset($_POST["btn-valider-popup-formation"])) {
                 <p class="header-text">Traiter une demande de formation</p>
                     <div class="container-relex">
                         
-                    <label for="num-bc-formation">
+                                    <label for="num-demande-choisi">
                                         N° Demande choisi 
                                         <input type="number" name="num-demande-choisi" value="1" min="1" required>
                                     </label>

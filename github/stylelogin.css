@@ -85,7 +85,7 @@ input{
 }
 
 .input-submit{
-    margin-top: 45px;
+    margin-top: 0px;
     background:#fff;
     border: 2px solid;
     color: #ff7300;
@@ -104,5 +104,51 @@ input{
 }
 
 .checkpwd{
-    margin-bottom: -23px;
+    margin-top: 20px;
+    margin-bottom: 0;
 }
+
+.error-message{
+    position: fixed; 
+    margin-top: 350px;
+    margin-left: 35.5%;
+    width: 300px; 
+    height: 30px; 
+    font-weight: bold;
+    /* border-radius: 20px; */
+    /* background-color: rgb(255, 205, 205);  */
+    color: rgb(255, 0, 0); 
+    display: flex; 
+    text-decoration: solid;
+    justify-content: left; 
+    align-items: center; 
+    z-index: 9999; 
+}
+
+
+ /* Mobile Styles (up to 600px) */
+@media screen and (max-width: 600px) {
+    .box {
+        padding: 4%;
+    }
+    /* .input-submit {
+        margin-top: 30px;
+    } */
+    i {
+        font-size: 20px;
+    }
+    
+}
+
+/* Tablet Styles (601px to 1024px) */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .box {
+        padding: 5%;
+    }
+    header img {
+        max-width: 110px;
+    }
+    
+
+}
+

@@ -24,8 +24,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['username']) && isset($
     <?php
 
     if ($result->num_rows == 0) {
-        echo "Password or username invalid";
+        // echo "Password or username invalid";
+        echo '<div class="error-message">Password or username invalid</div>';
         include('login.html');
+        
         exit();
     }
     ?>
