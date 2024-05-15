@@ -28,20 +28,15 @@ if (!isset($_SESSION["username"]) || !isset($_SESSION["password"])) {
             <nav class="nav">
                 <div>
                     <!-- menu outline  -->
-                    <div class="nav__brand" >
-                        <ion-icon name="menu-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
+                    <div class="nav__brand" style="height: 0;margin-left: 14px;gap: 12px;" >
+                    <img src="../images/menu.png" name="menu-outline"  id="nav-toggle">
                     <div class="sonatrach">
-                            <a class="nav__logo">Sonatrach</a>
+                            <a class="nav__logo">Relex</a>
                     </div> 
                     <!-- **************** -->
 
                     <!-- home outline -->
-                    <div class="nav__brand" id="home" style="cursor: pointer;">
-                            <ion-icon name="home-outline" class="nav__toggle"></ion-icon>
-                        <div class="">
-                            <a  class="nav__logo">accueil</a>
-                        </div> 
-                    </div>
+                    
 
                     <!-- **************** -->
 
@@ -50,7 +45,14 @@ if (!isset($_SESSION["username"]) || !isset($_SESSION["password"])) {
                     
                     <div class="nav__list">
 
-                        <a  class="nav__link  " id="travail">
+                        <a  class="nav__link  " id="home" >
+                            <img src="../images/home.png" alt="">
+                            <!-- <ion-icon name="home-outline" class="nav__icon"></ion-icon> -->
+                            <span class="nav__name" >Home</span>
+                        </a>
+
+
+                        <a  class="nav__link  " id="travail" style="margin-top: 46px;">
                             <img src="../images/travail.png" alt="">
                             <!-- <ion-icon name="chatbubbles-outline" class="nav__icon"></ion-icon> -->
                             <span class="nav__name">Travail</span>

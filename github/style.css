@@ -91,9 +91,9 @@ a{
   margin-bottom: 4rem;
 
 }
-.nav__toggle{
+#nav-toggle{
   font-size: 1.25rem;
-  padding: .75rem;
+  /* padding: .75rem; */
   cursor: pointer;
 }
 .nav__logo{

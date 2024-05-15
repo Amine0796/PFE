@@ -24,7 +24,7 @@
                 </thead>
                 <tbody>
                 <?php
-                    $sql = "SELECT * FROM `formation` WHERE Etat = 'NON TRAITE' ORDER BY id";
+                    $sql = "SELECT * FROM `formation` ORDER BY id";
                     $result=mysqli_query($conn,$sql);
                     if ($result) {
                         
@@ -87,7 +87,7 @@
                 <tbody>
                 <?php
                     
-                    $sql = "SELECT * FROM `etranger` WHERE Etat = 'NON TRAITE' ORDER BY id";
+                    $sql = "SELECT * FROM `etranger` ORDER BY id";
                     $result=mysqli_query($conn,$sql);
                     if ($result) {
                         

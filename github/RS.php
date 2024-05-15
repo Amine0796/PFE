@@ -30,32 +30,35 @@ include "database.php"
         <div class="l-navbar" id="navbar">
             <nav class="nav">
                 <div>
+                    <!-- <img src="../images/menu.png" alt=""> -->
                     <!-- menu outline  -->
-                    <div class="nav__brand" >
-                        <ion-icon name="menu-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
+                    <div class="nav__brand" style="height: 0;margin-left: 14px;gap: 12px;" >
+                        <img src="../images/menu.png" name="menu-outline"  id="nav-toggle">
                     <div class="sonatrach">
-                            <a class="nav__logo">Sonatrach</a>
+                            <a class="nav__logo">RS</a>
                     </div> 
                     <!-- **************** -->
 
                     <!-- home outline -->
-                    <div class="nav__brand" id="home" style="cursor: pointer;">
-                            <ion-icon name="home-outline" class="nav__toggle"></ion-icon>
-                        <div class="">
-                            <a  class="nav__logo">accueil</a>
-                        </div> 
-                    </div>
+                    
 
                     <!-- **************** -->
 
                 <!-- *******NAV LISTTTTTT********* -->
                     </div>
                     <div class="nav__list">
-                        <a  class="nav__link  " id="maj" >
+                        <a  class="nav__link  " id="home" >
+                            <img src="../images/home.png" alt="">
+                            <!-- <ion-icon name="home-outline" class="nav__icon"></ion-icon> -->
+                            <span class="nav__name" >Home</span>
+                        </a>
+
+                        <a  class="nav__link" id="maj" style="margin-top: 46px;" >
                             <img src="../images/file.png" alt="">
                             <!-- <ion-icon name="home-outline" class="nav__icon"></ion-icon> -->
                             <span class="nav__name" >Mise a jour</span>
                         </a>
+
                         
                         <a  class="nav__link  " id="travail">
                             <img src="../images/travail.png" alt="">
