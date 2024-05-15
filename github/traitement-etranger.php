@@ -90,7 +90,7 @@ if (isset($_POST["btn-valider-popup-etranger"])) {
                 <p class="header-text">Traiter une demande à l'étranger</p>
                     <div class="container-relex">
                         
-                    <label for="num-bc-etranger">
+                                    <label for="num-demande-choisi">
                                         N° Demande choisi 
                                         <input type="number" name="num-demande-choisi" value="1" min="1" required>
                                     </label>

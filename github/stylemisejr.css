@@ -8,19 +8,22 @@
 }
 
 .navbar-Table-Button{
-    margin-left: 70px;
-    margin-top: 30px;
+    /* margin-left: 70px; */
+    /* margin-top: 30px; */
+    background-color: #b55400;
     display: flex;
     justify-content: left;
 }
 .navbar-Table-Button button {
-    background-color: #e88a1a;
+    background-color: #b55400;
     color: rgb(0, 0, 0);
+    width: 50%;
+    height: 50%;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     cursor: pointer;
-    margin-right: 1px;
+    /* margin-right: 1px; */
     font-size: 16px;
 }
 
@@ -31,6 +34,7 @@
 /* .tables-container {
     display: none;
 } */
+
 #tableFormationEtranger,#tableEtranger, #tableCourse,#suiviFormationEtranger, #suiviEtranger ,#suiviCourse {
     display: none;
 }
