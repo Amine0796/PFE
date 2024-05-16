@@ -2,8 +2,8 @@
 <div class="table content" id="table-maj">
     
     <div class="navbar-Table-Button">
-        <button onclick="showTable('tableFormation')" id="formation-btn-maj">Formation</button>
-        <button onclick="showTable('tableFormationEtranger')" id="formation-etranger-btn-maj">Formation à l'étranger</button>
+        <button class="active-btn" onclick="showTable('tableFormation')" id="formation-btn-maj">Formation</button>
+        <button class="active-btn" onclick="showTable('tableFormationEtranger')" id="formation-etranger-btn-maj">Formation à l'étranger</button>
     </div>
 
     <div id="tableFormation" class="tables-container">
@@ -24,7 +24,7 @@
                 </thead>
                 <tbody>
                 <?php
-                    $sql = "SELECT * FROM `formation` ORDER BY id";
+                    $sql = "SELECT * FROM `formation` WHERE Etat='NON TRAITE' ORDER BY id";
                     $result=mysqli_query($conn,$sql);
                     if ($result) {
                         
@@ -87,7 +87,7 @@
                 <tbody>
                 <?php
                     
-                    $sql = "SELECT * FROM `etranger` ORDER BY id";
+                    $sql = "SELECT * FROM `etranger` WHERE Etat='NON TRAITE' ORDER BY id";
                     $result=mysqli_query($conn,$sql);
                     if ($result) {
                         
