@@ -34,7 +34,7 @@ body{
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   transition: .5s;
-  
+  background-color: ivory;
 }
 
 /* la couleur quand je clique */
@@ -196,7 +196,6 @@ background-color: red;
 .bg-dlab{
 height: 100vh;
 width: 100%;
-background-color: rgb(126, 52, 115);
 } 
  .sonatrach-img{
   /* position: relative; */

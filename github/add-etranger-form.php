@@ -32,7 +32,7 @@ if(isset($_POST['valider-etrangerF'])){
         if($DateDu > $DateDemande) {
             $result = mysqli_query($conn, $sql);
             if ($result) {
-                echo "<script>alert('Données insérées avec succès!');</script>";
+                echo "<script>alert('Data inserted successfully!');</script>";
                 echo "<script>window.location.replace('chef-formation.php');</script>";
                 exit();
             }else{

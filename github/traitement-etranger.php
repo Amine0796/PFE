@@ -47,7 +47,7 @@ if (isset($_POST["btn-valider-popup-etranger"])) {
         $update_sql = "UPDATE etranger SET Etat = 'TRAITE' WHERE NumDemande = '$numDemandeChoisi'";
         $update_result = mysqli_query($conn, $update_sql);
         if ($update_result) {
-            echo "<script>alert('Données insérées avec succès!');</script>";
+            echo "<script>alert('Demande de mission a l'etranger traitée avec succès!');</script>";
             echo "<script>window.location.replace('relex.php');</script>";
             exit();
         } else {

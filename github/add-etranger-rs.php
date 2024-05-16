@@ -31,7 +31,7 @@ if(isset($_POST['valider-etranger-rs'])){
         if($DateDu >= $DateDemande) {
             $result = mysqli_query($conn, $sql);
             if ($result) {
-                echo "<script>alert('Données insérées avec succès!');</script>";
+                echo "<script>alert('Data inserted successfully!');</script>";
                 echo "<script>window.location.replace('RS.php');</script>";
                 exit();
             }else{
