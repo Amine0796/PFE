@@ -156,14 +156,13 @@ if (isset($_POST["btn-valider-popup-formation"])) {
                                         <input type="radio" name="chambre-formation" value="double"> Double
                                         <input type="radio" name="chambre-formation" value="single"> Single
                                     </label>
-
-
+                                    
                                     <label for="restauration-formation">
                                         Réstaurant
-                                        <input type="checkbox" name="restauration-formation[]" value="petit dejeuner"> Petit Déjeuner
-                                        <input type="checkbox" name="restauration-formation[]" value="dejeuner"> Déjeuner
-                                        <input type="checkbox" name="restauration-formation[]" value="diner"> Diner
-                                        <input type="checkbox" name="restauration-formation[]" value="boissons non alcoolisées"> boissons non alcoolisées incluses
+                                        <input class="checkbox-restauration-formation" type="checkbox" name="restauration-formation[]" value="petit dejeuner"> Petit Déjeuner
+                                        <input class="checkbox-restauration-formation" type="checkbox" name="restauration-formation[]" value="dejeuner"> Déjeuner
+                                        <input class="checkbox-restauration-formation" type="checkbox" name="restauration-formation[]" value="diner"> Diner
+                                        <input class="checkbox-restauration-formation" type="checkbox" name="restauration-formation[]" value="boissons non alcoolisées"> boissons non alcoolisées incluses
                                     </label>
 
                             </fieldset>
