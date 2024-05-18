@@ -161,3 +161,35 @@ tr:nth-child(even) {
     background-color: rgb(179, 87, 0);
 }
 
+#checkbox-restauration-formation{
+    width: 20px;
+}
+#checkbox-restauration-etranger{
+    width: 20px;
+}
+#checkbox-restauration-travail{
+    width: 20px;
+}
+#checkbox-restauration-course{
+    width: 20px;
+}
+
+.span-resto{
+    width: fit-content;
+    height: fit-content;
+}
+
+.div1{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: inherit;
+}
+.div2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 25px;
+    margin-top: -78px;
+}

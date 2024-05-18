@@ -144,18 +144,32 @@ if (isset($_POST["btn-valider-popup-course"])) {
 
                                     <label for="chambre-course">
                                         Chambre
-                                        <input type="radio" name="chambre-course" value="double"> Double
-                                        <input type="radio" name="chambre-course" value="single"> Single
+                                        <select name="chambre-course">
+                                            <option value="">Single</option> 
+                                            <option value="">Double</option>
+                                        </select>
                                     </label>
 
 
-                                    <label for="restauration-course">
+                                    <div>
+
                                         Réstaurant
-                                        <input type="checkbox" name="restauration-course[]" value="petit dejeuner"> Petit Déjeuner
-                                        <input type="checkbox" name="restauration-course[]" value="dejeuner"> Déjeuner
-                                        <input type="checkbox" name="restauration-course[]" value="diner"> Diner
-                                        <input type="checkbox" name="restauration-course[]" value="boissons non alcoolisées"> boissons non alcoolisées incluses
-                                    </label>
+    
+                                        <div class="div1">
+    
+                                            <input id="checkbox-restauration-course" type="checkbox" name="restauration-course[]" value="petit dejeuner">
+                                            <input id="checkbox-restauration-course" type="checkbox" name="restauration-course[]" value="dejeuner">
+                                            <input id="checkbox-restauration-course" type="checkbox" name="restauration-course[]" value="diner">
+                                            <input id="checkbox-restauration-course" type="checkbox" name="restauration-course[]" value="boissons non alcoolisées">
+                                        </div>
+                                        <div class="div2">
+    
+                                            <span class="span-resto">Petit Déjeuner</span>
+                                            <span class="span-resto">Déjeuner</span>
+                                           <span class="span-resto">Diner</span>
+                                            <span class="span-resto">boissons non alcoolisées</span>
+                                        </div>
+                                    </div>
 
                             </fieldset>
 
@@ -165,8 +179,10 @@ if (isset($_POST["btn-valider-popup-course"])) {
 
                                     <label for="compagnie-course">
                                         Compagnies
-                                        <input type="radio" name="compagnie-course" value="air algerie"> Air Algérie
-                                        <input type="radio" name="compagnie-course" value="tassili"> Tassili
+                                        <select name="chambre-course">
+                                            <option value="">Tassili</option> 
+                                            <option value="">Air Algérie</option>
+                                        </select>
                                     </label>
                                     <label for="ref-bc-course">
                                         Réf. BC 
