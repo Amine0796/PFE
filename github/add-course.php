@@ -123,10 +123,11 @@ $row = mysqli_fetch_assoc($result);
                 <input type="date" name="date-depart-course" value="<?php echo date('Y-m-d'); ?>">
             </label><!-- <br><br> -->
 
+            
             <label for="heure-depart-course">
                 Heure du départ
                 <input type="text" name="heure-depart-course">
-            </label><!-- <br><br> -->
+            </label>
 
             <label for="point-depart-course">
                 Point du départ

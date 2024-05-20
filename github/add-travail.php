@@ -169,16 +169,16 @@ $row = mysqli_fetch_assoc($result);
             <label >
                 Moyen de Transport aller 
                 <select  name="moyen-de-transport-aller-travail">
-                    <option>Avion</option>
-                    <option>Vehicule</option>
+                    <option value="Avion">Avion</option>
+                    <option value="Vehicule">Vehicule</option>
                 </select>
             </label>
                 
             <label >
                 Moyen de transport retour 
                 <select  name="moyen-de-transport-retour-travail">
-                    <option>Avion</option>
-                    <option>Vehicule</option>
+                    <option value="Avion">Avion</option>
+                    <option value="Vehicule">Vehicule</option>
                 </select>
             </label>
                                                     
@@ -195,8 +195,8 @@ $row = mysqli_fetch_assoc($result);
                 Demande Vehicule service aller 
                 <select  name="demande-vehicule-service-aller-travail">
                     <!-- <option></option>  -->
-                    <option>Oui</option> 
-                    <option>Non</option>
+                    <option value="Oui">Oui</option> 
+                    <option value="Non">Non</option>
                 </select>
             </label>
 
@@ -210,8 +210,8 @@ $row = mysqli_fetch_assoc($result);
             <label>
                 Demande hebergement aller
                 <select  name="demande-hebergement-aller-travail">
-                    <option>Oui</option> 
-                    <option>Non</option>
+                    <option value="Oui">Oui</option> 
+                    <option value="Non">Non</option>
                 </select>
             </label>
 
@@ -232,8 +232,8 @@ $row = mysqli_fetch_assoc($result);
             <label for="text10">
                 Demande Vehicule service Retour 
                 <select  name="demande-vehicule-service-retour-travail">
-                    <option>Oui</option> 
-                    <option>Non</option>
+                    <option value="Oui">Oui</option> 
+                    <option value="Non">Non</option>
                 </select>
             </label>
 
@@ -246,8 +246,8 @@ $row = mysqli_fetch_assoc($result);
                 Demande hebergement Retour
                 <select  name="demande-hebergement-retour-travail">
                                                                 
-                    <option>Oui</option> 
-                    <option>Non</option>
+                    <option value="Oui">Oui</option> 
+                    <option value="Non">Non</option>
                 </select>
             </label>
 
@@ -262,40 +262,13 @@ $row = mysqli_fetch_assoc($result);
                 Demande hebergement
                 <select  name="demande-hebergement-travail">
                     <!-- <option> </option>  -->
-                    <option>Oui</option> 
-                    <option>Non</option>
+                    <option value="Oui">Oui</option> 
+                    <option value="Non">Non</option>
                 </select>
     </label>
 
     <div class="observation-travail">
-        <!-- <label for="besoin-autorisation-transport-produits-dangereux-travail">
-            Besoin Autorisation Transport Produits Dangereux
-            <select  name="besoin-autorisation-transport-produits-dangereux-travail">
-                                                        
-                <option>Oui</option> 
-                <option>Non</option>
-            </select>
-        </label><br>
-
-        <label for="type-produits-travail">
-            Type Produits
-            <input type="text" name="type-produits-travail">
-        </label>
-
-        <label for="demande-acheminement-du-materiel-travail">
-            Demande Acheminement du materiel
-            <select  name="demande-acheminement-du-materiel-travail">
-                
-                <option>Oui</option> 
-                <option>Non</option>
-            </select>
-        </label><br>
-
-        <label for="type-acheminement-du-materiel-travail">
-            Type Acheminement du materiel
-            <input type="text" name="type-acheminement-du-materiel-travail">
-        </label>
- -->
+       
 
         <label for="observation-travail">
             Observation
