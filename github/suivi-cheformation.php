@@ -15,11 +15,19 @@
             <table>
                 <thead>
                     <tr>
-                        <th>N° demande</th>
-                        <th>Date demande</th>
-                        <th>Objet formation</th>
-                        <th>Nom demandeur</th>
+                        <th>N°&nbsp;demande</th>
+                        <th>Date&nbsp;demande</th>
+                        <th>Objet&nbsp;formation</th>
+                        <th>Nom&nbsp;demandeur</th>
                         <th>Departement</th>
+                        <th>Compte&nbsp;Analytique</th>
+                        <th>Region</th>
+                        <th>Lieu&nbsp;de&nbsp;la&nbsp;formation</th>
+                        <th>Nom&nbsp;missionnaire</th>
+                        <th>Transport&nbsp;Aller</th>
+                        <th>Transport&nbsp;Retour</th>
+                        <th>Demande&nbsp;Hebergement</th>
+                        <th>Demande&nbsp;Billetterie</th>
                         <th>Etat</th>
                     </tr>
                 </thead>
@@ -36,6 +44,14 @@
                             $ObjetFormation = $row['ObjetFormation'];
                             $Demandeur = $row['Demandeur'];
                             $Departement = $row['Departement'];
+                            $CompteAnalytique = $row['CompteAnalytique'];
+                            $RegionDeroulementFormation = $row['RegionDeroulementFormation'];
+                            $LieuFormation = $row['LieuFormation'];
+                            $NomMissionnaires = $row['NomMissionnaires'];
+                            $MoyenTransportAller = $row['MoyenTransportAller'];
+                            $MoyenTransportRetour = $row['MoyenTransportRetour'];
+                            $DemandeHebergement = $row['DemandeHebergement'];
+                            $DemandeBilletterie = $row['DemandeBilletterie'];
                             $Etat = $row['Etat'];
                             
                             echo '<tr>
@@ -44,6 +60,14 @@
                             <td>'.$ObjetFormation.'</td>
                             <td>'.$Demandeur.'</td>
                             <td>'.$Departement.'</td>
+                            <td>'.$CompteAnalytique.'</td>
+                            <td>'.$RegionDeroulementFormation.'</td>
+                            <td>'.$LieuFormation.'</td>
+                            <td>'.$NomMissionnaires.'</td>
+                            <td>'.$MoyenTransportAller.'</td>
+                            <td>'.$MoyenTransportRetour.'</td>
+                            <td>'.$DemandeHebergement.'</td>
+                            <td>'.$DemandeBilletterie.'</td>
                             <td>'.$Etat.'</td>
                         </tr>';
                         }
@@ -67,12 +91,16 @@
         <div class="header_fixed">
         <table>
                 <thead>
-                <tr>
-                        <th>N° demande</th>
-                        <th>Date demande</th>
+                    <tr>
+                        <th>N°&nbsp;demande</th>
+                        <th>Date&nbsp;demande</th>
                         <th>Pays</th>
                         <th>Nom demandeur</th>
                         <th>Objet</th>
+                        <th>Lieu&nbsp;de&nbsp;la&nbsp;mission</th>
+                        <th>Nombre&nbsp;des&nbsp;jours</th>
+                        <th>Nom&nbsp;missionnaires</th>
+                        <th>Stiuation&nbsp;visa</th>
                         <th>Etat</th>
                     </tr>
                 </thead>
@@ -89,6 +117,10 @@
                             $Pays = $row['Pays'];
                             $Demandeur = $row['Demandeur'];
                             $ObjetMission = $row['ObjetMission'];
+                            $NombreDesJours = $row['NombreDesJours'];
+                            $LieuMission = $row['LieuMission'];
+                            $NomMissionnaires = $row['NomMissionnaires'];
+                            $SituationVisa = $row['SituationVisa'];
                             $Etat = $row['Etat'];
 
                             echo '<tr>
@@ -97,7 +129,10 @@
                             <td>'.$Pays.'</td>
                             <td>'.$Demandeur.'</td>
                             <td>'.$ObjetMission.'</td>
-                            
+                            <td>'.$LieuMission.'</td>
+                            <td>'.$NombreDesJours.'</td>
+                            <td>'.$NomMissionnaires.'</td>
+                            <td>'.$SituationVisa.'</td>
                             <td>'.$Etat.'</td>
                         </tr>';
                         }

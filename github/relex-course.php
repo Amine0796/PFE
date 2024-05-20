@@ -16,11 +16,17 @@
                     <thead>
                         <tr>
                         <tr>
-                            <th class="th-relex-course">N° demande</th>
-                            <th class="th-relex-course">Date demande</th>
-                            <th class="th-relex-course">Point depart</th>
-                            <th class="th-relex-course">Date depart</th>
-                            <th class="th-relex-course">Heure depart</th>
+                            <th class="th-relex-course">N°&nbsp;demande</th>
+                            <th class="th-relex-course">Departement</th>
+                            <th class="th-relex-course">Nom&nbsp;demandeur</th>
+                            <th class="th-relex-course">Compte&nbsp;Analytique</th>
+                            <th class="th-relex-course">Objet</th>
+                            <th class="th-relex-course">Nom&nbsp;missionnaire</th>
+                            <th class="th-relex-course">Destination</th>
+                            <th class="th-relex-course">Date&nbsp;demande</th>
+                            <th class="th-relex-course">Point&nbsp;depart</th>
+                            <th class="th-relex-course">Date&nbsp;depart</th>
+                            <th class="th-relex-course">Heure&nbsp;depart</th>
                             
                         </tr>
                         </tr>
@@ -34,17 +40,30 @@
                             
                             while ($row=mysqli_fetch_assoc($result)) {
                                     if ($row['Etat']=='NON TRAITE') {
-                                    $NumDemande = $row['NumDemande'];
-                                    $DateDemande = $row['DateDemande'];
-                                    $PointDepart = $row['PointDepart'];
-                                    $DateDepart = $row['DateDepart'];
-                                    $HeureDepart = $row['HeureDepart'];
+                                        $NumDemande = $row['NumDemande'];
+                                        $Departement = $row['Departement'];
+                                        $Demandeur = $row['Demandeur'];
+                                        $CompteAnalytique = $row['CompteAnalytique'];
+                                        $ObjetCourse = $row['ObjetCourse'];
+                                        $NomMissionnaires = $row['NomMissionnaires'];
+                                        $Destination = $row['Destination'];
+                                        $DateDemande = $row['DateDemande'];
+                                        $PointDepart = $row['PointDepart'];
+                                        $DateDepart = $row['DateDepart'];
+                                        $HeureDepart = $row['HeureDepart'];
                                     echo '<tr class="tr-relex-course">
                                     <td class="tr-relex-course">'.$NumDemande.'</td>
+                                    <td class="tr-relex-course">'.$Departement.'</td>
+                                    <td class="tr-relex-course">'.$Demandeur.'</td>
+                                    <td class="tr-relex-course">'.$CompteAnalytique.'</td>
+                                    <td class="tr-relex-course">'.$ObjetCourse.'</td>
+                                    <td class="tr-relex-course">'.$NomMissionnaires.'</td>
+                                    <td class="tr-relex-course">'.$Destination.'</td>
                                     <td class="tr-relex-course">'.$DateDemande.'</td>
                                     <td class="tr-relex-course">'.$PointDepart.'</td>
                                     <td class="tr-relex-course">'.$DateDepart.'</td>
                                     <td class="tr-relex-course">'.$HeureDepart.'</td>
+
                                     </tr>';
                                 }
                             }

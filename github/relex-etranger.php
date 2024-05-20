@@ -15,11 +15,15 @@
             <table id="table-etranger-relex">
                 <thead>
                     <tr>
-                        <th class="th-relex-etranger">N° demande</th>
-                        <th class="th-relex-etranger">Date demande</th>
+                        <th class="th-relex-etranger">N°&nbsp;demande</th>
+                        <th class="th-relex-etranger">Date&nbsp;demande</th>
                         <th class="th-relex-etranger">Pays</th>
                         <th class="th-relex-etranger">Nom demandeur</th>
                         <th class="th-relex-etranger">Objet</th>
+                        <th class="th-relex-etranger">Lieu&nbsp;de&nbsp;la&nbsp;mission</th>
+                        <th class="th-relex-etranger">Nombre&nbsp;des&nbsp;jours</th>
+                        <th class="th-relex-etranger">Nom&nbsp;missionnaires</th>
+                        <th class="th-relex-etranger">Stiuation&nbsp;visa</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,11 +37,15 @@
                             
                             
                             if ($row['Etat']=='NON TRAITE') {
-                            $NumDemande = $row['NumDemande'];
-                            $DateDemande = $row['DateDemande'];
-                            $Pays = $row['Pays'];
-                            $Demandeur = $row['Demandeur'];
-                            $ObjetMission = $row['ObjetMission'];
+                                $NumDemande = $row['NumDemande'];
+                                $DateDemande = $row['DateDemande'];
+                                $Pays = $row['Pays'];
+                                $Demandeur = $row['Demandeur'];
+                                $ObjetMission = $row['ObjetMission'];
+                                $NombreDesJours = $row['NombreDesJours'];
+                                $LieuMission = $row['LieuMission'];
+                                $NomMissionnaires = $row['NomMissionnaires'];
+                                $SituationVisa = $row['SituationVisa'];
                             
                             echo '<tr class="tr-relex-etranger">
                             <td class="tr-relex-etranger">'.$NumDemande.'</td>
@@ -45,6 +53,11 @@
                             <td class="tr-relex-etranger">'.$Pays.'</td>
                             <td class="tr-relex-etranger">'.$Demandeur.'</td>
                             <td class="tr-relex-etranger">'.$ObjetMission.'</td>
+                            <td class="tr-relex-etranger">'.$NombreDesJours.'</td>
+                            <td class="tr-relex-etranger">'.$LieuMission.'</td>
+                            <td class="tr-relex-etranger">'.$NomMissionnaires.'</td>
+                            <td class="tr-relex-etranger">'.$SituationVisa.'</td>
+
                         </tr>';
                             }
                         }

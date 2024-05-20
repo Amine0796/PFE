@@ -65,23 +65,23 @@ $row = mysqli_fetch_assoc($result);
             <label for="direction-etranger">
                 Direction
                 <input type="text" name="direction-etranger" value="<?php echo $row['direction'];?>" readonly>
-            </label><!-- <br><br> -->
+            </label>
             
             <label for="departement-etranger">
                 Département
                 <input type="text" name="departement-etranger" value="<?php echo $row['Departement']?>" readonly>
-            </label><!-- <br><br> -->
+            </label>
 
             <label for="demandeur-etranger">
                 Demande effectuée par
                 <input type="text" name="demandeur-etranger" value="<?php echo $_SESSION["username"]; ?>" readonly>
-            </label><!-- <br><br> -->
+            </label>
 
 
             <label for="compte-analytique-etranger">
                 Compte analytique
                 <input type="text" name="compte-analytique-etranger" value="<?php echo $row['CompteAnalytique'];?>" readonly>
-            </label><!-- <br><br> -->
+            </label>
 
             <label>
             Num Demande 
@@ -91,7 +91,7 @@ $row = mysqli_fetch_assoc($result);
             <label for="date-demande-etranger">
                 Date de demande
                 <input type="date" name="date-demande-etranger" value="<?php echo date('Y-m-d'); ?>" readonly>
-            </label><!-- <br><br> -->
+            </label>
 
             <label for="destinataire-etranger">
                 Destinataire
@@ -106,17 +106,17 @@ $row = mysqli_fetch_assoc($result);
             <label for="au-etranger">
                 Date fin
                 <input type="date" name="au-etranger" value="<?php echo date('Y-m-d'); ?>">
-            </label><!-- <br><br> -->
+            </label>
 
             <label for="nb-jours-etranger">
                 Nombre des jours
                 <input type="number" name="nb-jours-etranger" value="1" min="1">
-            </label><!-- <br><br> -->
+            </label>
         
             <label for="objet-mission-etranger">
                 Objet de la mission
                 <input type="text" name="objet-mission-etranger">
-            </label><!-- <br><br> -->
+            </label>
             
             <label for="lieu-mission-etranger">
                 Lieu de mission
@@ -131,10 +131,10 @@ $row = mysqli_fetch_assoc($result);
             <label for="cadre-mission-etranger">
                 Cadre de la mission
                 <select name="cadre-mission-etranger" >
-                    <option value="">Contrat</option> 
-                    <option value="">Plan de formation</option>
-                    <option value="">Autre</option>
-                </select><!-- <br><br> -->            
+                    <option value="Contrat">Contrat</option> 
+                    <option value="Plan de formation">Plan de formation</option>
+                    <option value="Autre">Autre</option>
+                </select>            
             </label>
             
             <label for="info-complement-etranger">
@@ -149,12 +149,12 @@ $row = mysqli_fetch_assoc($result);
             
             <label for="situation-visa-etranger">
                 Situation visa
-                <select name="situation-visa-etranger" >
-                    <option value="">Obtenue pour tous les missionnaires</option> 
-                    <option value="">En cours pour tous les missoinnaires</option>
-                    <option value="">En cours pour une partie des missoinnaires</option>
-                    <option value="">Autres</option>
-                </select><!-- <br><br> -->            
+                <select name="situation-visa-etranger">
+                    <option value="Obtenue pour tous les missionnaires">Obtenue pour tous les missionnaires</option> 
+                    <option value="En cours pour tous les missionnaires">En cours pour tous les missionnaires</option>
+                    <option value="En cours pour une partie des missionnaires">En cours pour une partie des missionnaires</option>
+                    <option value="Autres">Autres</option>
+                </select>            
             </label>
             
             <label for="info-visa-etranger">

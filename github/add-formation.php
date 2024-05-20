@@ -146,16 +146,16 @@ $row = mysqli_fetch_assoc($result);
             <label for="demande-hebergement-formation">
                 Demande hébergement
                 <select name="demande-hebergement-formation" >
-                    <option value="">Oui</option> 
-                    <option value="">Non</option>
+                    <option value="Oui">Oui</option> 
+                    <option value="Non">Non</option>
                 </select><!-- <br><br> -->
             </label>
 
             <label for="demande-billet-formation">
                 Demande billetterie
                 <select name="demande-billet-formation" >
-                    <option value="">Oui</option> 
-                    <option value="">Non</option>
+                    <option value="Oui">Oui</option> 
+                    <option value="Non">Non</option>
                 </select><!-- <br><br> -->
             </label>
 
@@ -168,8 +168,8 @@ $row = mysqli_fetch_assoc($result);
             <label for="moyen-de-transport-aller-formation">
                 Moyen de Transport aller 
                 <select name="moyen-transport-aller-formation" >
-                    <option value="">Avion</option>
-                    <option value="">Vehicule</option>
+                    <option value="Avion">Avion</option>
+                    <option value="Vehicule">Vehicule</option>
                 </select><!-- <br><br> -->
             </label>
             
@@ -177,8 +177,8 @@ $row = mysqli_fetch_assoc($result);
             <label for="moyen-de-transport-retour-formation">
                 Moyen de transport retour 
                 <select name="moyen-transport-retour-formation">
-                    <option value="">Avion</option>
-                    <option value="">Vehicule</option>
+                    <option value="Avion">Avion</option>
+                    <option value="Vehicule">Vehicule</option>
                 </select><!-- <br><br> -->
             </label>
         
@@ -188,10 +188,10 @@ $row = mysqli_fetch_assoc($result);
                <div class="avion">
                     <label for="demande-vehicule-vers-aeroport-formation">
                         Demande Vehicule service vers l'aéroport 
-                        <select name="demande-vehicule-aeroport-formation">
+                        <select name="demande-vehicule-aeroport-formation" id="demande-vehicule-aeroport-formation">
                             <!-- <option value=""></option> -->
-                            <option value="">Oui</option> 
-                            <option value="">Non</option>
+                            <option value="Oui">Oui</option> 
+                            <option value="Non">Non</option>
                         </select><!-- <br><br> -->
                     </label>
                 
@@ -208,10 +208,10 @@ $row = mysqli_fetch_assoc($result);
                 <div class="vehicule">
                     <label for="demande-vehicule-vers-formation">
                         Demande Vehicule vers lieu de formation 
-                        <select name="demande-vehicule-formation">
+                        <select name="demande-vehicule-formation" id="demande-vehicule-formation">
                             <!-- <option value=""></option> -->
-                            <option value="">Oui</option> 
-                            <option value="">Non</option>
+                            <option value="Oui">Oui</option> 
+                            <option value="Non">Non</option>
                         </select><!-- <br><br> -->
                     </label>
                 
@@ -236,6 +236,7 @@ $row = mysqli_fetch_assoc($result);
             <input type="hidden"  name="etat-formation" readonly value="NON TRAITE" hidden>
 
         </div>
+      
 
 
         <div class="boutons-kr">

@@ -22,13 +22,21 @@
             <table>
                 <thead>
                     <tr>
-                        <th>N° demande</th>
-                        <th>Date demande</th>
-                        <th>Objet mission</th>
-                        <th>Période du</th>
-                        <th>Période au</th>
+                    <th>Action</th>
+                        <th>N°&nbsp;demande</th>
+                        <th>Date&nbsp;demande</th>
+                        <th>Objet&nbsp;Mission</th>
+                        <th>Nom&nbsp;demandeur</th>
                         <th>Departement</th>
-                        <th>Action</th>
+                        <th>Compte&nbsp;Analytique</th>
+                        <th>Region</th>
+                        <th>Lieu&nbsp;de&nbsp;la&nbsp;Mission</th>
+                        <th>Nom&nbsp;missionnaire</th>
+                        <th>Transport&nbsp;Aller</th>
+                        <th>Transport&nbsp;Retour</th>
+                        <th>Demande&nbsp;Hebergement</th>
+                        <th>Demande&nbsp;Vehicule Aller</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -45,16 +53,17 @@
                             $NumDemande = $row['NumDemande'];
                             $DateDemande = $row['DateDemande'];
                             $ObjetMission = $row['ObjetMission'];
-                            $DateDu = $row['DateDu'];
-                            $DateAu = $row['DateAu'];
+                            $Demandeur = $row['Demandeur'];
                             $Departement = $row['Departement'];
+                            $CompteAnalytique = $row['CompteAnalytique'];
+                            $RegionDeroulementMission = $row['RegionDeroulementMission'];
+                            $LieuMission = $row['LieuMission'];
+                            $NomMissionnaires = $row['NomMissionnaires'];
+                            $MoyenTransportAller = $row['MoyenTransportAller'];
+                            $MoyenTransportRetour = $row['MoyenTransportRetour'];
+                            $DemandeHebergement = $row['DemandeHebergement'];
+                            $DemandeVehiculeServiceAller = $row['DemandeVehiculeServiceAller'];
                             echo '<tr>
-                            <td>'.$NumDemande.'</td>
-                            <td>'.$DateDemande.'</td>
-                            <td>'.$ObjetMission.'</td>
-                            <td>'.$DateDu.'</td>
-                            <td>'.$DateAu.'</td>
-                            <td>'.$Departement.'</td>
                             <td>
                             <form action="delete_update_travail_rs.php?idT='.$row["id"].'" method="post">
                             <div class="btn-dlt-upt-rs">
@@ -62,6 +71,19 @@
                                 </div>
                             </form>
                             </td>
+                            <td>'.$NumDemande.'</td>
+                            <td>'.$DateDemande.'</td>
+                            <td>'.$ObjetMission.'</td>
+                            <td>'.$Demandeur.'</td>
+                            <td>'.$Departement.'</td>
+                            <td>'.$CompteAnalytique.'</td>
+                            <td>'.$RegionDeroulementMission.'</td>
+                            <td>'.$LieuMission.'</td>
+                            <td>'.$NomMissionnaires.'</td>
+                            <td>'.$MoyenTransportAller.'</td>
+                            <td>'.$MoyenTransportRetour.'</td>
+                            <td>'.$DemandeHebergement.'</td>
+                            <td>'.$DemandeVehiculeServiceAller.'</td>
                         </tr>';
                         }
                     }
@@ -88,12 +110,16 @@
             <table>
                 <thead>
                     <tr>
-                        <th>N° demande</th>
-                        <th>Date demande</th>
-                        <th>Pays</th>
-                        <th>Nom demandeur</th>
-                        <th>Objet</th>
                         <th>Action</th>
+                        <th>N°&nbsp;demande</th>
+                        <th>Date&nbsp;demande</th>
+                        <th>Pays</th>
+                        <th>Nom&nbsp;demandeur</th>
+                        <th>Objet</th>
+                        <th>Lieu&nbsp;de&nbsp;la&nbsp;mission</th>
+                        <th>Nombre&nbsp;des&nbsp;jours</th>
+                        <th>Nom&nbsp;missionnaires</th>
+                        <th>Stiuation&nbsp;visa</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -112,14 +138,12 @@
                             $Pays = $row['Pays'];
                             $Demandeur = $row['Demandeur'];
                             $ObjetMission = $row['ObjetMission'];
+                            $NombreDesJours = $row['NombreDesJours'];
+                            $LieuMission = $row['LieuMission'];
+                            $NomMissionnaires = $row['NomMissionnaires'];
+                            $SituationVisa = $row['SituationVisa'];
                             
                             echo '<tr>
-                            <td>'.$NumDemande.'</td>
-                            <td>'.$DateDemande.'</td>
-                            <td>'.$Pays.'</td>
-                            <td>'.$Demandeur.'</td>
-                            <td>'.$ObjetMission.'</td>
-                            
                             <td>
                             <form action="delete_update_etranger_rs.php?idRSE='.$row["id"].'" method="post">
                             <div class="btn-dlt-upt-rs">
@@ -127,6 +151,16 @@
                                 </div>
                             </form>
                             </td>
+                            <td>'.$NumDemande.'</td>
+                            <td>'.$DateDemande.'</td>
+                            <td>'.$Pays.'</td>
+                            <td>'.$Demandeur.'</td>
+                            <td>'.$ObjetMission.'</td>
+                            <td>'.$LieuMission.'</td>
+                            <td>'.$NombreDesJours.'</td>
+                            <td>'.$NomMissionnaires.'</td>
+                            <td>'.$SituationVisa.'</td>
+                            
                         </tr>';
                         }
                     }
@@ -155,12 +189,19 @@
             <table>
                 <thead>
                     <tr>
-                        <th>N° demande</th>
-                        <th>Date demande</th>
-                        <th>Point depart</th>
-                        <th>Date depart</th>
-                        <th>Heure depart</th>
                         <th>Action</th>
+                        <th>N°&nbsp;demande</th>
+                        <th>Departement</th>
+                        <th>Nom&nbsp;demandeur</th>
+                        <th>Compte&nbsp;Analytique</th>
+                        <th>Objet</th>
+                        <th>Nom&nbsp;missionnaire</th>
+                        <th>Destination</th>
+                        <th>Date&nbsp;demande</th>
+                        <th>Point&nbsp;depart</th>
+                        <th>Date&nbsp;depart</th>
+                        <th>Heure&nbsp;depart</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -175,16 +216,19 @@
                             
 
                             $NumDemande = $row['NumDemande'];
+                            $Departement = $row['Departement'];
+                            $Demandeur = $row['Demandeur'];
+                            $CompteAnalytique = $row['CompteAnalytique'];
+                            $ObjetCourse = $row['ObjetCourse'];
+                            $NomMissionnaires = $row['NomMissionnaires'];
+                            $Destination = $row['Destination'];
                             $DateDemande = $row['DateDemande'];
                             $PointDepart = $row['PointDepart'];
                             $DateDepart = $row['DateDepart'];
                             $HeureDepart = $row['HeureDepart'];
+
+
                             echo '<tr>
-                            <td>'.$NumDemande.'</td>
-                            <td>'.$DateDemande.'</td>
-                            <td>'.$PointDepart.'</td>
-                            <td>'.$DateDepart.'</td>
-                            <td>'.$HeureDepart.'</td>
                             <td>
                             <form action="delete_update_course_rs.php?idC='.$row["id"].'" method="post">
                             <div class="btn-dlt-upt-rs">
@@ -192,6 +236,18 @@
                                 </div>
                             </form>
                             </td>
+                            <td>'.$NumDemande.'</td>
+                            <td>'.$Departement.'</td>
+                            <td>'.$Demandeur.'</td>
+                            <td>'.$CompteAnalytique.'</td>
+                            <td>'.$ObjetCourse.'</td>
+                            <td>'.$NomMissionnaires.'</td>
+                            <td>'.$Destination.'</td>
+
+                            <td>'.$DateDemande.'</td>
+                            <td>'.$PointDepart.'</td>
+                            <td>'.$DateDepart.'</td>
+                            <td>'.$HeureDepart.'</td>
                             </tr>';
                         }
                     }
