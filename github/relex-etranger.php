@@ -20,8 +20,8 @@
                         <th class="th-relex-etranger">Pays</th>
                         <th class="th-relex-etranger">Nom demandeur</th>
                         <th class="th-relex-etranger">Objet</th>
-                        <th class="th-relex-etranger">Lieu&nbsp;de&nbsp;la&nbsp;mission</th>
                         <th class="th-relex-etranger">Nombre&nbsp;des&nbsp;jours</th>
+                        <th class="th-relex-etranger">Lieu&nbsp;de&nbsp;la&nbsp;mission</th>
                         <th class="th-relex-etranger">Nom&nbsp;missionnaires</th>
                         <th class="th-relex-etranger">Stiuation&nbsp;visa</th>
                     </tr>

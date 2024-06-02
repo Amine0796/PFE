@@ -4,7 +4,7 @@ if(isset($_POST['valider-etrangerF'])){
     $Direction=$_POST['direction-etranger'];
     $Departement=$_POST['departement-etranger'];
     $Demandeur=$_POST['demandeur-etranger']; 
-    $CompteAnalytique=$_POST['compte-analytique-etranger']; 
+    $CompteAnalytique=$_POST['compte-analytique-etranger'];
     $NumDemande=$_POST['num-demande-etranger'];
     $DateDemande=$_POST['date-demande-etranger'];
     $Destinataire=$_POST['destinataire-etranger']; 
